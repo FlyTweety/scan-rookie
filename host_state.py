@@ -42,9 +42,12 @@ class HostState:
             '192.168.87.76'
         ]
         self.known_ip_list = ["192.168.38.1"]
+        
+        self.known_ip_list = ["127.0.0.1"]
+        self.known_ip_list = ["192.168.0.14","192.168.0.10","192.168.0.11","192.168.0.1","192.168.0.2"]
         self.known_ip_list = ["192.168.0.14"]
         self.known_ip_list = ["127.0.0.1"]
-
+        #self.known_ip_list = ["192.168.0.14", "127.0.0.1"]
 
 
 

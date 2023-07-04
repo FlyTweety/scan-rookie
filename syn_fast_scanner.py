@@ -2,6 +2,7 @@
 import sys
 from socket import socket, AF_INET, SOCK_STREAM
 import time
+import asyncio
 from asyncio import Queue, TimeoutError, gather
 from typing import List
 
@@ -9,10 +10,11 @@ from async_timeout import timeout
 
 
 class SynFastScanner(object):
-    def __init__(self, time_out: float = 0.1, ip_port: List[int] = None, concurrency: int = 500):
+    def __init__(self, time_out = 0.1, ip_port = None, concurrency = 500):
         self.ip_port = ip_port
-        self.result: List[int] = []
+        self.result = []
         self.loop = self.get_event_loop()
+        self.error = []
         # 队列的事件循环需要用同一个，如果不用同一个会报错，这里还有一点不明白
         self.queue = Queue(loop=self.loop)
         self.timeout = time_out
@@ -39,10 +41,11 @@ class SynFastScanner(object):
             t1 = time.time()
             ip_port = await self.queue.get()
             ip, port = ip_port
+            #print(ip, port)
             sock = socket(AF_INET, SOCK_STREAM)
+            sock.setblocking(False)
             try:
                 with timeout(self.timeout):
-                    
                     # 这里windows和Linux返回值不一样
                     # windows返回sock对象，Linux返回None
                     await self.loop.sock_connect(sock, (ip, port))
@@ -50,20 +53,26 @@ class SynFastScanner(object):
                     # 所以这里直接直接判断sock
                     if sock:
                         self.result.append((ip, port))
-                        #print(time.strftime('%Y-%m-%d %H:%M:%S'), port, 'open', round(t2 - t1, 2))
+                        print(time.strftime('%Y-%m-%d %H:%M:%S'), ip, port, 'open', round(t2 - t1, 2))
             # 这里要捕获所有可能的异常，windows会抛出前两个异常，Linux直接抛最后一个异常
             # 如果有异常不处理的话会卡在这
-            except (TimeoutError, PermissionError, ConnectionRefusedError) as _:
+            except:
+                #self.error.append((ip, port))
                 #print("exception")
                 sock.close()
             sock.close()
             self.queue.task_done()
+            #print("done")
 
     async def start(self):
-        start = time.time()
-        
-        for a in self.ip_port:
-            self.queue.put_nowait(a)
+
+        #start = time.time()
+        if self.ip_port:
+            for a in self.ip_port:
+                self.queue.put_nowait(a)
+        else:
+            for a in range(1, 65536):
+                self.queue.put_nowait(a)
 
         task = [self.loop.create_task(self.scan()) for _ in range(self.concurrency)]
         # 如果队列不为空，则一直在这里阻塞
@@ -73,8 +82,7 @@ class SynFastScanner(object):
             a.cancel()
         # Wait until all worker tasks are cancelled.
         await gather(*task, return_exceptions=True)
-        print(f'扫描所用时间为：{time.time() - start:.2f}')
-
+        #print(f'扫描所用时间为：{time.time() - start:.2f}')
 
 if __name__ == '__main__':
     scan = SynFastScanner('127.0.0.1')

@@ -102,7 +102,7 @@ class SynScan(object):
                 target_ip_list.append(ip)
 
             if len(target_ip_list) == 0:
-                time.sleep(2)
+                time.sleep(5)
                 continue
 
             # [Step 3] Get target Port List 
@@ -113,32 +113,45 @@ class SynScan(object):
                     ', '.join(target_ip_list)
                 ))
             else:
-                target_port_list = list(range(1, 65000)) # Scan All ports on target IPs 
+                target_port_list = list(range(1, 65536)) # Scan All ports on target IPs 
                 utils.log('[SYN Scanning] Start scanning All 65K popular over IPs: {}'.format(
                     ', '.join(target_ip_list)
                 ))
 
             # [Step 4] Assemble the final IP & port list
             ip_port_list = list(itertools.product(target_ip_list, target_port_list))
-            random.shuffle(ip_port_list)
+            #random.shuffle(ip_port_list)
 
             # Main Scan Process
-            scanner = SynFastScanner(ip_port = ip_port_list)
-            scanner.loop.run_until_complete(scanner.start())
-            result = scanner.result
-            print(result)
-            del scanner
+            result = []
+            split_ip_port_list = self.split_array(ip_port_list, 5000)
+            for batch_ip_port_list in split_ip_port_list:
+                start = time.time()
+                scanner = SynFastScanner(time_out = 3.0, ip_port = batch_ip_port_list, concurrency = 300)
+                scanner.loop.run_until_complete(scanner.start())
+                batch_result = scanner.result
+                print(batch_result)
+                result += (batch_result)
+                del scanner
+                print(f'本批扫描所用时间为：{time.time() - start:.2f}')
+                for ip, port in batch_result:
+                    self._host_state.received_ip_port_info.append({"ip": ip, "port": port, "info": "null"})
+                    utils.log("[SYN Scanning] Find Open on ip =", ip, " port =", port)
+                    print("[SYN Scanning] Find Open on ip =", ip, " port =", port)
 
             #现在这个不会被包捕获，所以要自己写结果到hoststate
-            for ip, port in result:
-                self._host_state.received_ip_port_info.append({"ip": ip, "port": port, "info": "null"})
-                utils.log("[SYN Scanning] Find Open on ip = ", ip, " port = ", port)
-                print("[SYN Scanning] Find Open on ip = ", ip, " port = ", port)
 
+        
             print("[SYN Scanning] Done Scan For this Round")
             utils.log("[SYN Scanning] Done Scan For this Round")
             for ip in target_ip_list:
                 self._host_state.last_syn_scan_time[ip] = datetime.now()
+
+    def split_array(self, array, chunk_size):
+        result = []
+        for i in range(0, len(array), chunk_size):
+            result.append(array[i:i+chunk_size])
+        return result
 
     def stop(self):
 
