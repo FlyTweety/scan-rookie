@@ -35,6 +35,9 @@ class PacketProcessor(object):
         utils.log('[SYN Scan Response] From Src IP = {} Dst IP = {} Src Port = {}'.format(
             src_ip, dst_ip, device_port
         ))
+        print('[SYN Scan Response] From Src IP = {} Dst IP = {} Src Port = {}'.format(
+            src_ip, dst_ip, device_port
+        ))
 
         self._host_state.received_ip_port_info.append({"ip": src_ip, "port": device_port, "info": "null"})
 

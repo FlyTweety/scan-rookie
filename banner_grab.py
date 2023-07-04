@@ -5,6 +5,8 @@ from datetime import datetime
 import socket
 import asyncio
 from typing import List
+import random
+import string
 
 import utils
 
@@ -19,6 +21,13 @@ class BannerGrab:
 
         self._thread = threading.Thread(target=self._banner_grab_thread)
         self._thread.daemon = True
+
+        self.banner_grab_send_message = [
+            #b"GET / HTTP/1.1\r\n\r\n",
+            #b"HELO example.com\r\n",
+            #b"USER username\r\n",
+            b"SSH-2.0-OpenSSH_7.6p1 Ubuntu-4ubuntu0.1\r\n"
+        ]
 
     def start(self):
 
@@ -69,59 +78,87 @@ class BannerGrab:
 
 
     async def banner_grab(self, ip, port, loop, timeout=3.0):
+        banner_collect = []
+
+
+        # STEP 1  Build TCP Connection
         try:
             # Create a socket object and connect to an IP  and Port.
-            #print(f"try socket step 1 for {ip}_{port}")
             sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
             sock.setblocking(False)
             await asyncio.wait_for(
                 loop.sock_connect(sock, (ip, port)), 
                 timeout=3.0
             )
-
-            #print(f"try socket step 2 for {ip}_{port}")
-            try:     
-                data = await asyncio.wait_for(
-                    asyncio.gather(
-                        asyncio.sleep(3),
-                        loop.sock_recv(sock, 1024),
-                        return_exceptions=False,
-                    ), 
-                    timeout=6.0)
-            except (asyncio.TimeoutError, asyncio.CancelledError) as e:  #seems to be useless……
-                print("Banner Grab] fail to get inital data")
-            except Exception as e:
-                print("[Banner Grab] gather error:", str(e))
-            else:
-                if isinstance(data, List) and isinstance(data[1], bytes): # data[0]:result of asyncio.sleep(3)  data[1]:result of loop.sock_recv(sock, 1024)
-                    initial_data = data[1]
-                    utils.log(f"[Banner Grab] IP {ip}, Port {port}, Get Initial Data:\n {initial_data.decode('utf-8', errors='ignore').strip()}")
-                    print(f"[Banner Grab] IP {ip}, Port {port}, Get Initial Data:\n {initial_data.decode('utf-8', errors='ignore').strip()}")
-                    return {"ip":ip, "port":port, "serive":"null", "banner":initial_data.decode('utf-8', errors='ignore').strip()} # No need for take initiative to send data
-                else:
-                    print("Banner Grab] get wrong inital data = ", data)
-
-            #print(f"try socket step 3 for {ip}_{port}")
-            # take initiative to send data to trigger a banner response.
-            await loop.sock_sendall(sock, b"GET / HTTP/1.1\r\n\r\n")
-
-            # get banner (1024 bytes at most)
-            banner = await loop.sock_recv(sock, 1024)
-            
-            utils.log(f"[Banner Grab] IP {ip}, Port {port}, Content:\n {banner.decode('utf-8', errors='ignore').strip()}")
-            print(f"[Banner Grab] IP {ip}, Port {port}, Content:\n {banner.decode('utf-8', errors='ignore').strip()}")
-            return {"ip":ip, "port":port, "serive":"null", "banner":banner.decode('utf-8', errors='ignore').strip()}
-
         except asyncio.TimeoutError:
             utils.log(f"[Banner Grab] IP {ip}, Port {port},  Timeout")
             print(f"[Banner Grab] IP {ip}, Port {port},  Timeout")
-            return {"ip":ip, "port":port, "serive":"null", "banner":"timeout"}
+            return {"ip":ip, "port":port, "serive":"null", "banner":["connection build timeout"]}
         except OSError:
             utils.log(f"[Banner Grab] IP {ip}, Port {port},  Connection refused")
             print(f"[Banner Grab] IP {ip}, Port {port},  Connection refused")
-            return {"ip":ip, "port":port, "serive":"null", "banner":"refused"}
-        finally:
-            sock.close()
+            return {"ip":ip, "port":port, "serive":"null", "banner":["connection build refuse"]}
+            
+
+        # STEP 2  Wait for server to send banner
+        try:     
+            data = await asyncio.wait_for(
+                asyncio.gather(
+                    asyncio.sleep(3),
+                    loop.sock_recv(sock, 1024),
+                    return_exceptions=False,
+                ), 
+                timeout=6.0)
+        except (asyncio.TimeoutError, asyncio.CancelledError) as e:  #seems to be useless……
+            print("Banner Grab] fail to get inital data")
+            banner_collect.append((-1, "Grab Initial Error"))
+        except Exception as e:
+            print("[Banner Grab] gather error:", str(e))
+            banner_collect.append((-1, "Grab Initial Error"))
+        else:
+            if isinstance(data, List) and isinstance(data[1], bytes): # data[0]:result of asyncio.sleep(3)  data[1]:result of loop.sock_recv(sock, 1024)
+                initial_data = data[1]
+                utils.log(f"[Banner Grab] IP {ip}, Port {port}, Get Initial Data:\n {initial_data.decode('utf-8', errors='ignore').strip()}")
+                print(f"[Banner Grab] IP {ip}, Port {port}, Get Initial Data:\n {initial_data.decode('utf-8', errors='ignore').strip()}")
+                banner_collect.append((-1, initial_data.decode('utf-8', errors='ignore').strip()))
+                #return {"ip":ip, "port":port, "serive":"null", "banner":initial_data.decode('utf-8', errors='ignore').strip()} # No need for take initiative to send data
+            else:
+                print("[Banner Grab] get wrong inital data = ", data)
+                banner_collect.append((-1, "Grab Initial Error"))
+
+
+        # STEP 3  Send different bytes to server
+
+        # 0704改动 原先只发一个HTTP GET，现在发多个。原先banner是一个字符串，现在改成返回列表。
+        # 多次发送会不会导致连接失败的可能性上升？
+        # 现在似乎就是太频繁了，导致往往只有前一两个成功
+
+        grab_msg_list = [self.generate_random_string(20), self.generate_random_string(200), self.generate_random_string(2000)] + self.banner_grab_send_message
+        for i in range(0, len(grab_msg_list)):
+            grab_msg = grab_msg_list[i]
+            await asyncio.sleep(1.0)
+            try:
+                await asyncio.wait_for(loop.sock_sendall(sock, grab_msg), timeout=5)  # 设置超时时间为 5 秒
+                banner = await asyncio.wait_for(loop.sock_recv(sock, 1024), timeout=5)  # 设置超时时间为 5 秒
+                utils.log(f"[Banner Grab] IP {ip}, Port {port}, Content:\n {banner.decode('utf-8', errors='ignore').strip()}")
+                print(f"[Banner Grab] IP {ip}, Port {port}, Content:\n {banner.decode('utf-8', errors='ignore').strip()}")
+                banner_collect.append((i, banner.decode('utf-8', errors='ignore').strip()))
+            except asyncio.TimeoutError:
+                utils.log(f"[Banner Grab] IP {ip}, Port {port}, Timeout Error")
+                print(f"[Banner Grab] IP {ip}, Port {port}, Timeout Error")
+                banner_collect.append((i, "Timeout Error"))
+            except:
+                utils.log(f"[Banner Grab] IP {ip}, Port {port},  Grab Error")
+                print(f"[Banner Grab] IP {ip}, Port {port},  Grab Error")
+                banner_collect.append((i, "Grab Error"))
+            
+
+        sock.close()
+        return {"ip":ip, "port":port, "serive":"null", "banner":banner_collect}
+
+
+
+            
 
     async def all_banner_grab(self, ip_list, port_list, loop=None):
 
@@ -167,6 +204,10 @@ class BannerGrab:
         loop.close()
 
 
+    def generate_random_string(self, length):
+        letters = string.ascii_lowercase + string.ascii_uppercase + string.digits
+        return ''.join(random.choice(letters) for _ in range(length)).encode()
+
     def stop(self):
 
         with self._lock:
@@ -175,3 +216,10 @@ class BannerGrab:
         self._thread.join()
 
         utils.log('[Banner Grab] Stopped.')
+
+
+
+
+if __name__ == "__main__":
+    BannerGrabInst = BannerGrab(1)
+    print(BannerGrabInst.generate_random_string(5))

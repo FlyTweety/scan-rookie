@@ -1,0 +1,18 @@
+[2023-07-04 09:25:54.267879] [SYN Scanning] Starting.
+[2023-07-04 09:25:54.283014] [Packet Capture] Starting.
+[2023-07-04 09:25:55.271892] [SYN Scanning] Start scanning 329 popular ports over IPs: 192.168.87.1, 192.168.87.20, 192.168.87.22, 192.168.87.26, 192.168.87.27, 192.168.87.28, 192.168.87.29, 192.168.87.30, 192.168.87.31, 192.168.87.35, 192.168.87.36, 192.168.87.41, 192.168.87.42, 192.168.87.46, 192.168.87.47, 192.168.87.48, 192.168.87.49, 192.168.87.83, 192.168.87.85, 192.168.87.89
+[2023-07-04 09:26:49.189391] [SYN Scanning] Find Open on ip = 192.168.87.1  port = 53
+[2023-07-04 09:26:49.204011] [SYN Scanning] Find Open on ip = 192.168.87.1  port = 80
+[2023-07-04 09:26:49.204638] [SYN Scanning] Find Open on ip = 192.168.87.1  port = 8080
+[2023-07-04 09:26:49.205218] [SYN Scanning] Find Open on ip = 192.168.87.1  port = 8081
+[2023-07-04 09:26:49.205717] [SYN Scanning] Find Open on ip = 192.168.87.1  port = 8443
+[2023-07-04 09:26:49.206155] [SYN Scanning] Find Open on ip = 192.168.87.29  port = 22
+[2023-07-04 09:26:49.206585] [SYN Scanning] Find Open on ip = 192.168.87.30  port = 80
+[2023-07-04 09:26:49.207011] [SYN Scanning] Find Open on ip = 192.168.87.47  port = 80
+[2023-07-04 09:26:49.207439] [SYN Scanning] Find Open on ip = 192.168.87.47  port = 8080
+[2023-07-04 09:26:49.207862] [SYN Scanning] Find Open on ip = 192.168.87.47  port = 8081
+[2023-07-04 09:26:49.208287] [SYN Scanning] Find Open on ip = 192.168.87.47  port = 8443
+[2023-07-04 09:26:49.208708] [SYN Scanning] Find Open on ip = 192.168.87.48  port = 80
+[2023-07-04 09:27:09.123185] [SYN Scanning] Find Open on ip = 192.168.87.48  port = 443
+[2023-07-04 09:27:09.144524] [SYN Scanning] Find Open on ip = 192.168.87.48  port = 8080
+[2023-07-04 09:27:09.159741] [SYN Scanning] Done Scan For this Round

@@ -35,9 +35,9 @@ def scan():
     packet_capture_thread.start()
     print("initilize packet_capture_thread")
 
-    banner_grab_thread = BannerGrab(host_state)
-    banner_grab_thread.start()
-    print("initilize banner_grab_thread")
+    #banner_grab_thread = BannerGrab(host_state)
+    #banner_grab_thread.start()
+    #print("initilize banner_grab_thread")
 
     print("start running")
 

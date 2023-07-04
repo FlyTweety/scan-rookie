@@ -127,12 +127,25 @@ class SynScan(object):
             split_ip_port_list = self.split_array(ip_port_list, 5000)
             for batch_ip_port_list in split_ip_port_list:
                 start = time.time()
+                batch_result = []
+                
+
+                """
                 scanner = SynFastScanner(time_out = 3.0, ip_port = batch_ip_port_list, concurrency = 300)
                 scanner.loop.run_until_complete(scanner.start())
                 batch_result = scanner.result
-                print(batch_result)
+                #print(batch_result)
                 result += (batch_result)
                 del scanner
+                """
+
+                host_ip = "192.168.38.129"
+                for ip_port in batch_ip_port_list:
+                    ip, port = ip_port
+                    syn_pkt = sc.IP(src=host_ip, dst=ip) / \
+                        sc.TCP(dport=port, sport=SYN_SCAN_SOURCE_PORT, flags="S", seq=SYN_SCAN_SEQ_NUM)
+                    sc.send(syn_pkt, iface=sc.conf.iface, verbose=0)
+                print("本批最后一个是", batch_ip_port_list[-1])
                 print(f'本批扫描所用时间为：{time.time() - start:.2f}')
                 for ip, port in batch_result:
                     self._host_state.received_ip_port_info.append({"ip": ip, "port": port, "info": "null"})

@@ -6,6 +6,8 @@ import asyncio
 from asyncio import Queue, TimeoutError, gather
 from typing import List
 
+import scapy.all as sc
+
 from async_timeout import timeout
 
 
@@ -63,6 +65,22 @@ class SynFastScanner(object):
             sock.close()
             self.queue.task_done()
             #print("done")
+
+
+
+    async def scan_by_send(self):
+        while True:
+            ip_port = await self.queue.get()
+            ip, port = ip_port
+            SYN_SCAN_SOURCE_PORT = 44444
+            SYN_SCAN_SEQ_NUM = 44444
+            host_ip = "192.168.38.129"
+            syn_pkt = sc.IP(src=host_ip, dst=ip) / \
+                sc.TCP(dport=port, sport=SYN_SCAN_SOURCE_PORT, flags="S", seq=SYN_SCAN_SEQ_NUM)
+            sc.send(syn_pkt, iface=sc.conf.iface, verbose=0)
+            self.queue.task_done()
+
+
 
     async def start(self):
 
