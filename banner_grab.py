@@ -7,6 +7,7 @@ import asyncio
 from typing import List
 import random
 import string
+from host_state import HostState
 
 import utils
 
@@ -221,5 +222,69 @@ class BannerGrab:
 
 
 if __name__ == "__main__":
-    BannerGrabInst = BannerGrab(1)
-    print(BannerGrabInst.generate_random_string(5))
+
+    ip_port_info_popular = [
+        {'ip': '192.168.87.1', 'port': 80, 'info': 'SYN Scan Response'},
+        {'ip': '192.168.87.1', 'port': 8081, 'info': 'SYN Scan Response'},
+        {'ip': '192.168.87.47', 'port': 8443, 'info': 'SYN Scan Response'},
+        {'ip': '192.168.87.1', 'port': 8443, 'info': 'SYN Scan Response'},
+        {'ip': '192.168.87.46', 'port': 8080, 'info': 'SYN Scan Response'},
+        {'ip': '192.168.87.46', 'port': 8081, 'info': 'SYN Scan Response'},
+        {'ip': '192.168.87.1', 'port': 8080, 'info': 'SYN Scan Response'},
+        {'ip': '192.168.87.31', 'port': 80, 'info': 'SYN Scan Response'},
+        {'ip': '192.168.87.1', 'port': 53, 'info': 'SYN Scan Response'},
+        {'ip': '192.168.87.48', 'port': 443, 'info': 'SYN Scan Response'},
+        {'ip': '192.168.87.46', 'port': 80, 'info': 'SYN Scan Response'},
+        {'ip': '192.168.87.46', 'port': 8443, 'info': 'SYN Scan Response'},
+        {'ip': '192.168.87.48', 'port': 8080, 'info': 'SYN Scan Response'},
+        {'ip': '192.168.87.47', 'port': 80, 'info': 'SYN Scan Response'},
+        {'ip': '192.168.87.32', 'port': 80, 'info': 'SYN Scan Response'},
+        {'ip': '192.168.87.47', 'port': 8081, 'info': 'SYN Scan Response'},
+        {'ip': '192.168.87.47', 'port': 8080, 'info': 'SYN Scan Response'},
+        {'ip': '192.168.87.30', 'port': 80, 'info': 'SYN Scan Response'},
+        {'ip': '192.168.87.48', 'port': 80, 'info': 'SYN Scan Response'}
+    ]
+
+    ip_port_info_all = [
+        {'ip': '192.168.87.1', 'port': 53, 'info': 'SYN Scan Response'},
+        {'ip': '192.168.87.1', 'port': 80, 'info': 'SYN Scan Response'},
+        {'ip': '192.168.87.1', 'port': 5000, 'info': 'SYN Scan Response'},
+        {'ip': '192.168.87.1', 'port': 8080, 'info': 'SYN Scan Response'},
+        {'ip': '192.168.87.1', 'port': 8081, 'info': 'SYN Scan Response'},
+        {'ip': '192.168.87.1', 'port': 8443, 'info': 'SYN Scan Response'},
+        {'ip': '192.168.87.20', 'port': 6668, 'info': 'SYN Scan Response'},
+        {'ip': '192.168.87.22', 'port': 6668, 'info': 'SYN Scan Response'},
+        {'ip': '192.168.87.26', 'port': 6668, 'info': 'SYN Scan Response'},
+        {'ip': '192.168.87.27', 'port': 6668, 'info': 'SYN Scan Response'},
+        {'ip': '192.168.87.28', 'port': 6668, 'info': 'SYN Scan Response'},
+        {'ip': '192.168.87.29', 'port': 22, 'info': 'SYN Scan Response'},
+        {'ip': '192.168.87.29', 'port': 51760, 'info': 'SYN Scan Response'},
+        {'ip': '192.168.87.30', 'port': 80, 'info': 'SYN Scan Response'},
+        {'ip': '192.168.87.31', 'port': 80, 'info': 'SYN Scan Response'},
+        {'ip': '192.168.87.35', 'port': 6668, 'info': 'SYN Scan Response'},
+        {'ip': '192.168.87.36', 'port': 6668, 'info': 'SYN Scan Response'},
+        {'ip': '192.168.87.41', 'port': 6668, 'info': 'SYN Scan Response'},
+        {'ip': '192.168.87.42', 'port': 6668, 'info': 'SYN Scan Response'},
+        {'ip': '192.168.87.46', 'port': 80, 'info': 'SYN Scan Response'},
+        {'ip': '192.168.87.46', 'port': 8080, 'info': 'SYN Scan Response'},
+        {'ip': '192.168.87.46', 'port': 8081, 'info': 'SYN Scan Response'},
+        {'ip': '192.168.87.46', 'port': 8443, 'info': 'SYN Scan Response'},
+        {'ip': '192.168.87.47', 'port': 80, 'info': 'SYN Scan Response'},
+        {'ip': '192.168.87.47', 'port': 8080, 'info': 'SYN Scan Response'},
+        {'ip': '192.168.87.47', 'port': 8081, 'info': 'SYN Scan Response'},
+        {'ip': '192.168.87.47', 'port': 8443, 'info': 'SYN Scan Response'},
+        {'ip': '192.168.87.48', 'port': 8080, 'info': 'SYN Scan Response'}
+    ]
+
+
+    host_state = HostState()
+    host_state.received_ip_port_info = ip_port_info_popular
+    BannerGrabInst = BannerGrab(host_state)
+    BannerGrabInst.start()
+
+    while True:
+        try:
+            time.sleep(2)
+        except KeyboardInterrupt:
+            print('')
+            break

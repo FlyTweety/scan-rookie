@@ -66,3 +66,7 @@
 [2023-07-04 18:30:03.137303] [SYN Scan Response] From Src IP = 10.181.250.245 Dst IP = 192.168.38.129 Src Port = 3306
 [2023-07-04 18:31:09.469193] [SYN Scan Response] From Src IP = 10.181.250.245 Dst IP = 192.168.38.129 Src Port = 5040
 [2023-07-04 18:31:21.562055] [SYN Scan Response] From Src IP = 10.181.250.245 Dst IP = 192.168.38.129 Src Port = 5357
+[2023-07-05 13:08:09.098469] [Banner Grab] Starting.
+[2023-07-05 13:08:38.610975] [Banner Grab] Starting.
+[2023-07-05 13:08:39.613395] [Banner Grab] Start Banner Grab on 127.0.0.1_80
+[2023-07-05 13:08:39.614180] [Banner Grab] IP 127.0.0.1, Port 80,  Connection refused
