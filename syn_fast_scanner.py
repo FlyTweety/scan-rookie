@@ -56,8 +56,7 @@ class SynFastScanner(object):
                     if sock:
                         self.result.append((ip, port))
                         print(time.strftime('%Y-%m-%d %H:%M:%S'), ip, port, 'open', round(t2 - t1, 2))
-            # 这里要捕获所有可能的异常，windows会抛出前两个异常，Linux直接抛最后一个异常
-            # 如果有异常不处理的话会卡在这
+            # we have to deal with the exception, otherwise it will stopp
             except:
                 #self.error.append((ip, port))
                 #print("exception")
@@ -85,17 +84,17 @@ class SynFastScanner(object):
     async def start(self):
 
         #start = time.time()
+        # Add target to queue
         if self.ip_port:
             for a in self.ip_port:
                 self.queue.put_nowait(a)
         else:
             for a in range(1, 65536):
                 self.queue.put_nowait(a)
-
         task = [self.loop.create_task(self.scan()) for _ in range(self.concurrency)]
-        # 如果队列不为空，则一直在这里阻塞
+        # If the queue is not empty, it will always block here
         await self.queue.join()
-        # 依次退出
+        # Exit one by one
         for a in task:
             a.cancel()
         # Wait until all worker tasks are cancelled.

@@ -24,9 +24,9 @@ class BannerGrab:
         self._thread.daemon = True
 
         self.banner_grab_send_message = [
-            #b"GET / HTTP/1.1\r\n\r\n",
-            #b"HELO example.com\r\n",
-            #b"USER username\r\n",
+            b"GET / HTTP/1.1\r\n\r\n",
+            b"HELO example.com\r\n",
+            b"USER username\r\n",
             b"SSH-2.0-OpenSSH_7.6p1 Ubuntu-4ubuntu0.1\r\n"
         ]
 
@@ -111,7 +111,7 @@ class BannerGrab:
                 ), 
                 timeout=6.0)
         except (asyncio.TimeoutError, asyncio.CancelledError) as e:  #seems to be useless……
-            print("Banner Grab] fail to get inital data")
+            print("[Banner Grab] fail to get inital data")
             banner_collect.append((-1, "Grab Initial Error"))
         except Exception as e:
             print("[Banner Grab] gather error:", str(e))
@@ -134,13 +134,14 @@ class BannerGrab:
         # 多次发送会不会导致连接失败的可能性上升？
         # 现在似乎就是太频繁了，导致往往只有前一两个成功
 
-        grab_msg_list = [self.generate_random_string(20), self.generate_random_string(200), self.generate_random_string(2000)] + self.banner_grab_send_message
+        grab_msg_list = [self.generate_random_string(2), self.generate_random_string(32), self.generate_random_string(128), self.generate_random_string(2048)] + self.banner_grab_send_message
         for i in range(0, len(grab_msg_list)):
             grab_msg = grab_msg_list[i]
             await asyncio.sleep(1.0)
             try:
-                await asyncio.wait_for(loop.sock_sendall(sock, grab_msg), timeout=5)  # 设置超时时间为 5 秒
-                banner = await asyncio.wait_for(loop.sock_recv(sock, 1024), timeout=5)  # 设置超时时间为 5 秒
+                #await asyncio.wait_for(loop.sock_connect(sock, (ip, port)), timeout=5) bad idea
+                await asyncio.wait_for(loop.sock_sendall(sock, grab_msg), timeout=5)  
+                banner = await asyncio.wait_for(loop.sock_recv(sock, 1024), timeout=5) 
                 utils.log(f"[Banner Grab] IP {ip}, Port {port}, Content:\n {banner.decode('utf-8', errors='ignore').strip()}")
                 print(f"[Banner Grab] IP {ip}, Port {port}, Content:\n {banner.decode('utf-8', errors='ignore').strip()}")
                 banner_collect.append((i, banner.decode('utf-8', errors='ignore').strip()))
@@ -276,9 +277,20 @@ if __name__ == "__main__":
         {'ip': '192.168.87.48', 'port': 8080, 'info': 'SYN Scan Response'}
     ]
 
+    ip_port_info_6668 = [
+        {'ip': '192.168.87.20', 'port': 6668, 'info': 'SYN Scan Response'},
+        {'ip': '192.168.87.22', 'port': 6668, 'info': 'SYN Scan Response'},
+        {'ip': '192.168.87.26', 'port': 6668, 'info': 'SYN Scan Response'},
+        {'ip': '192.168.87.27', 'port': 6668, 'info': 'SYN Scan Response'},
+        {'ip': '192.168.87.28', 'port': 6668, 'info': 'SYN Scan Response'},
+        {'ip': '192.168.87.35', 'port': 6668, 'info': 'SYN Scan Response'},
+        {'ip': '192.168.87.36', 'port': 6668, 'info': 'SYN Scan Response'},
+        {'ip': '192.168.87.41', 'port': 6668, 'info': 'SYN Scan Response'},
+        {'ip': '192.168.87.42', 'port': 6668, 'info': 'SYN Scan Response'}
+    ]
 
     host_state = HostState()
-    host_state.received_ip_port_info = ip_port_info_popular
+    host_state.received_ip_port_info = ip_port_info_all
     BannerGrabInst = BannerGrab(host_state)
     BannerGrabInst.start()
 
