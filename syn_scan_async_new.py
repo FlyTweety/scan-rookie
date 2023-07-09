@@ -102,7 +102,7 @@ class SynScan(object):
                 target_ip_list.append(ip)
 
             if len(target_ip_list) == 0:
-                time.sleep(5)
+                time.sleep(10)
                 continue
 
             # [Step 3] Get target Port List 
