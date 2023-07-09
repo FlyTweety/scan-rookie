@@ -11,6 +11,7 @@ import time
 
 import utils
 
+import xml.etree.ElementTree as ET
 
 class HostState:
 
@@ -49,6 +50,8 @@ class HostState:
         self.known_ip_list = ["10.181.250.245"]
         #self.known_ip_list = ["192.168.0.14", "127.0.0.1"]
 
+        #self.known_ip_list = getIPs()
+
 
 
 
@@ -60,3 +63,21 @@ class HostState:
 
     def is_inspecting(self):
         return True
+
+def getIPs():
+
+    IPs = []
+
+    tree = ET.parse('scan_results.xml')
+    root = tree.getroot()
+
+    # 遍历每个host元素
+    for host in root.findall('host'):
+        # 获取address元素中的addr属性值
+        address = host.find('address')
+        ip_address = address.get('addr')
+        
+        # 打印IP地址
+        IPs.append(ip_address)
+
+    return IPs
