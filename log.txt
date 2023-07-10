@@ -1,93 +1,91 @@
-[2023-07-04 18:07:35.427491] [SYN Scanning] Starting.
-[2023-07-04 18:07:35.427940] [Packet Capture] Starting.
-[2023-07-04 18:07:36.431075] [SYN Scanning] Start scanning All 65K popular over IPs: 10.181.250.245
-[2023-07-04 18:07:37.485433] [SYN Scan Response] From Src IP = 10.181.250.245 Dst IP = 192.168.38.129 Src Port = 25
-[2023-07-04 18:07:39.812887] [SYN Scan Response] From Src IP = 10.181.250.245 Dst IP = 192.168.38.129 Src Port = 80
-[2023-07-04 18:07:41.117367] [SYN Scan Response] From Src IP = 10.181.250.245 Dst IP = 192.168.38.129 Src Port = 110
-[2023-07-04 18:07:42.169447] [SYN Scan Response] From Src IP = 10.181.250.245 Dst IP = 192.168.38.129 Src Port = 135
-[2023-07-04 18:07:42.313346] [SYN Scan Response] From Src IP = 10.181.250.245 Dst IP = 192.168.38.129 Src Port = 139
-[2023-07-04 18:07:54.634074] [SYN Scan Response] From Src IP = 10.181.250.245 Dst IP = 192.168.38.129 Src Port = 445
-[2023-07-04 18:08:12.678126] [SYN Scan Response] From Src IP = 10.181.250.245 Dst IP = 192.168.38.129 Src Port = 902
-[2023-07-04 18:08:13.085170] [SYN Scan Response] From Src IP = 10.181.250.245 Dst IP = 192.168.38.129 Src Port = 912
-[2023-07-04 18:08:19.885046] [SYN Scan Response] From Src IP = 10.181.250.245 Dst IP = 192.168.38.129 Src Port = 1085
-[2023-07-04 18:08:35.024661] [SYN Scan Response] From Src IP = 10.181.250.245 Dst IP = 192.168.38.129 Src Port = 1462
-[2023-07-04 18:09:34.964963] [SYN Scan Response] From Src IP = 10.181.250.245 Dst IP = 192.168.38.129 Src Port = 2968
-[2023-07-04 18:09:48.389544] [SYN Scan Response] From Src IP = 10.181.250.245 Dst IP = 192.168.38.129 Src Port = 3306
-[2023-07-04 18:10:56.549751] [SYN Scan Response] From Src IP = 10.181.250.245 Dst IP = 192.168.38.129 Src Port = 5040
-[2023-07-04 18:11:09.297728] [SYN Scan Response] From Src IP = 10.181.250.245 Dst IP = 192.168.38.129 Src Port = 5357
-[2023-07-04 18:11:49.505536] [SYN Scan Response] From Src IP = 10.181.250.245 Dst IP = 192.168.38.129 Src Port = 6333
-[2023-07-04 18:17:19.125380] [SYN Scanning] Starting.
-[2023-07-04 18:17:19.125705] [Packet Capture] Starting.
-[2023-07-04 18:17:20.128000] [SYN Scanning] Start scanning All 65K popular over IPs: 10.181.250.245
-[2023-07-04 18:17:57.134818] [SYN Scanning] Find Open on ip = 10.181.250.245  port = 25
-[2023-07-04 18:17:57.135065] [SYN Scanning] Find Open on ip = 10.181.250.245  port = 80
-[2023-07-04 18:17:57.135262] [SYN Scanning] Find Open on ip = 10.181.250.245  port = 110
-[2023-07-04 18:17:57.135502] [SYN Scanning] Find Open on ip = 10.181.250.245  port = 135
-[2023-07-04 18:17:57.135764] [SYN Scanning] Find Open on ip = 10.181.250.245  port = 139
-[2023-07-04 18:17:57.136015] [SYN Scanning] Find Open on ip = 10.181.250.245  port = 445
-[2023-07-04 18:17:57.136313] [SYN Scanning] Find Open on ip = 10.181.250.245  port = 902
-[2023-07-04 18:17:57.136425] [SYN Scanning] Find Open on ip = 10.181.250.245  port = 912
-[2023-07-04 18:17:57.136522] [SYN Scanning] Find Open on ip = 10.181.250.245  port = 1085
-[2023-07-04 18:17:57.136627] [SYN Scanning] Find Open on ip = 10.181.250.245  port = 1462
-[2023-07-04 18:17:57.136704] [SYN Scanning] Find Open on ip = 10.181.250.245  port = 2968
-[2023-07-04 18:17:57.136821] [SYN Scanning] Find Open on ip = 10.181.250.245  port = 3306
-[2023-07-04 18:18:32.814652] [SYN Scanning] Find Open on ip = 10.181.250.245  port = 5040
-[2023-07-04 18:18:32.814831] [SYN Scanning] Find Open on ip = 10.181.250.245  port = 5357
-[2023-07-04 18:18:42.237350] [SYN Scanning] Starting.
-[2023-07-04 18:18:42.237852] [Packet Capture] Starting.
-[2023-07-04 18:18:43.240530] [SYN Scanning] Start scanning All 65K popular over IPs: 10.181.250.245
-[2023-07-04 18:19:00.494063] [SYN Scanning] Find Open on ip = 10.181.250.245  port = 25
-[2023-07-04 18:19:00.494204] [SYN Scanning] Find Open on ip = 10.181.250.245  port = 80
-[2023-07-04 18:19:00.494252] [SYN Scanning] Find Open on ip = 10.181.250.245  port = 110
-[2023-07-04 18:19:00.494298] [SYN Scanning] Find Open on ip = 10.181.250.245  port = 135
-[2023-07-04 18:19:00.494413] [SYN Scanning] Find Open on ip = 10.181.250.245  port = 139
-[2023-07-04 18:19:00.494522] [SYN Scanning] Find Open on ip = 10.181.250.245  port = 445
-[2023-07-04 18:19:00.494631] [SYN Scanning] Find Open on ip = 10.181.250.245  port = 912
-[2023-07-04 18:19:00.494698] [SYN Scanning] Find Open on ip = 10.181.250.245  port = 1085
-[2023-07-04 18:19:00.494833] [SYN Scanning] Find Open on ip = 10.181.250.245  port = 1462
-[2023-07-04 18:19:00.494869] [SYN Scanning] Find Open on ip = 10.181.250.245  port = 2968
-[2023-07-04 18:19:00.494915] [SYN Scanning] Find Open on ip = 10.181.250.245  port = 3306
-[2023-07-04 18:19:18.053233] [SYN Scanning] Find Open on ip = 10.181.250.245  port = 5040
-[2023-07-04 18:19:18.055630] [SYN Scanning] Find Open on ip = 10.181.250.245  port = 5357
-[2023-07-04 18:27:54.042255] [SYN Scanning] Starting.
-[2023-07-04 18:27:54.042585] [Packet Capture] Starting.
-[2023-07-04 18:27:55.044810] [SYN Scanning] Start scanning All 65K popular over IPs: 10.181.250.245
-[2023-07-04 18:27:56.261518] [SYN Scan Response] From Src IP = 10.181.250.245 Dst IP = 192.168.38.129 Src Port = 25
-[2023-07-04 18:27:58.509091] [SYN Scan Response] From Src IP = 10.181.250.245 Dst IP = 192.168.38.129 Src Port = 80
-[2023-07-04 18:27:59.808877] [SYN Scan Response] From Src IP = 10.181.250.245 Dst IP = 192.168.38.129 Src Port = 110
-[2023-07-04 18:28:00.800512] [SYN Scan Response] From Src IP = 10.181.250.245 Dst IP = 192.168.38.129 Src Port = 135
-[2023-07-04 18:28:00.977279] [SYN Scan Response] From Src IP = 10.181.250.245 Dst IP = 192.168.38.129 Src Port = 139
-[2023-07-04 18:28:13.049378] [SYN Scan Response] From Src IP = 10.181.250.245 Dst IP = 192.168.38.129 Src Port = 445
-[2023-07-04 18:28:30.573563] [SYN Scan Response] From Src IP = 10.181.250.245 Dst IP = 192.168.38.129 Src Port = 902
-[2023-07-04 18:28:31.013384] [SYN Scan Response] From Src IP = 10.181.250.245 Dst IP = 192.168.38.129 Src Port = 912
-[2023-07-04 18:28:37.929634] [SYN Scan Response] From Src IP = 10.181.250.245 Dst IP = 192.168.38.129 Src Port = 1085
-[2023-07-04 18:28:52.308986] [SYN Scan Response] From Src IP = 10.181.250.245 Dst IP = 192.168.38.129 Src Port = 1462
-[2023-07-04 18:29:50.357416] [SYN Scan Response] From Src IP = 10.181.250.245 Dst IP = 192.168.38.129 Src Port = 2968
-[2023-07-04 18:30:03.137303] [SYN Scan Response] From Src IP = 10.181.250.245 Dst IP = 192.168.38.129 Src Port = 3306
-[2023-07-04 18:31:09.469193] [SYN Scan Response] From Src IP = 10.181.250.245 Dst IP = 192.168.38.129 Src Port = 5040
-[2023-07-04 18:31:21.562055] [SYN Scan Response] From Src IP = 10.181.250.245 Dst IP = 192.168.38.129 Src Port = 5357
-[2023-07-05 13:08:09.098469] [Banner Grab] Starting.
-[2023-07-05 13:08:38.610975] [Banner Grab] Starting.
-[2023-07-05 13:08:39.613395] [Banner Grab] Start Banner Grab on 127.0.0.1_80
-[2023-07-05 13:08:39.614180] [Banner Grab] IP 127.0.0.1, Port 80,  Connection refused
-[2023-07-05 14:49:55.577629] [SYN Scanning] Starting.
-[2023-07-05 14:49:55.578058] [Packet Capture] Starting.
-[2023-07-05 14:49:56.581141] [SYN Scanning] Start scanning All 65K popular over IPs: 10.181.250.245
-[2023-07-05 14:49:57.543802] [SYN Scan Response] From Src IP = 10.181.250.245 Dst IP = 192.168.38.129 Src Port = 25
-[2023-07-05 14:50:01.095585] [SYN Scan Response] From Src IP = 10.181.250.245 Dst IP = 192.168.38.129 Src Port = 110
-[2023-07-05 15:10:58.292040] [SYN Scanning] Starting.
-[2023-07-05 15:10:58.292541] [Packet Capture] Starting.
-[2023-07-05 15:10:59.295278] [SYN Scanning] Start scanning All 65K popular over IPs: 10.181.250.245
-[2023-07-05 15:12:24.567880] [SYN Scanning] Find Open on ip = 10.181.250.245  port = 25
-[2023-07-05 15:12:24.568085] [SYN Scanning] Find Open on ip = 10.181.250.245  port = 110
-[2023-07-05 15:13:18.059415] [SYN Scanning] Starting.
-[2023-07-05 15:13:18.060094] [Packet Capture] Starting.
-[2023-07-05 15:13:19.062560] [SYN Scanning] Start scanning All 65K popular over IPs: 10.181.250.245
-[2023-07-05 15:13:24.363600] [SYN Scanning] Starting.
-[2023-07-05 15:13:24.364160] [Packet Capture] Starting.
-[2023-07-05 15:13:25.371324] [SYN Scanning] Start scanning All 65K popular over IPs: 10.181.250.245
-[2023-07-05 16:53:09.698900] [SYN Scanning] Starting.
-[2023-07-05 16:53:09.699398] [Packet Capture] Starting.
-[2023-07-05 16:53:10.701539] [SYN Scanning] Start scanning All 65K popular over IPs: 10.181.250.245
-[2023-07-05 16:54:35.906722] [SYN Scanning] Find Open on ip = 10.181.250.245  port = 25
-[2023-07-05 16:54:35.906854] [SYN Scanning] Find Open on ip = 10.181.250.245  port = 110
+[2023-07-10 13:54:39.647449] [SYN Scanning] Starting.
+[2023-07-10 13:54:39.647810] [Packet Capture] Starting.
+[2023-07-10 13:54:40.649517] [SYN Scanning] Start scanning 2 IPs: 192.168.0.14, 127.0.0.1
+[2023-07-10 13:54:40.650898] [SYN Scanning] Start scanning All 65K popular on IP: 192.168.0.14
+[2023-07-10 13:55:20.449517] ================================================================================
+Time: 2023-07-10 13:55:20.449211
+Function: <bound method SynScan._syn_scan_thread_helper of <syn_scan_async_new.SynScan object at 0x7f21bbbf3640>> [] {}
+Exception: local variable 'result' referenced before assignment
+Traceback (most recent call last):
+  File "/home/zcy/IoTInspector/new-iot-client-main/utils.py", line 302, in safe_run
+    return func(*args, **kwargs)
+  File "/home/zcy/IoTInspector/new-iot-client-main/syn_scan_async_new.py", line 136, in _syn_scan_thread_helper
+    result += (batch_result)
+UnboundLocalError: local variable 'result' referenced before assignment
+
+
+
+
+[2023-07-10 13:55:22.452881] [SYN Scanning] Start scanning 2 IPs: 192.168.0.14, 127.0.0.1
+[2023-07-10 13:55:22.453905] [SYN Scanning] Start scanning All 65K popular on IP: 192.168.0.14
+[2023-07-10 13:56:17.048476] [SYN Scanning] Starting.
+[2023-07-10 13:56:17.048871] [Packet Capture] Starting.
+[2023-07-10 13:56:18.051052] [SYN Scanning] Start scanning 2 IPs: 192.168.0.14, 127.0.0.1
+[2023-07-10 13:56:18.056297] [SYN Scanning] Start scanning All 65K popular on IP: 192.168.0.14
+[2023-07-10 13:56:57.918401] [SYN Scanning] Find Open on ip = 192.168.0.14  port = 25
+[2023-07-10 13:56:57.918839] [SYN Scanning] Find Open on ip = 192.168.0.14  port = 80
+[2023-07-10 13:56:57.919030] [SYN Scanning] Find Open on ip = 192.168.0.14  port = 110
+[2023-07-10 13:56:57.919209] [SYN Scanning] Find Open on ip = 192.168.0.14  port = 135
+[2023-07-10 13:56:57.919519] [SYN Scanning] Find Open on ip = 192.168.0.14  port = 139
+[2023-07-10 13:56:57.919719] [SYN Scanning] Find Open on ip = 192.168.0.14  port = 445
+[2023-07-10 13:56:57.919917] [SYN Scanning] Find Open on ip = 192.168.0.14  port = 902
+[2023-07-10 13:56:57.920194] [SYN Scanning] Find Open on ip = 192.168.0.14  port = 912
+[2023-07-10 13:56:57.920358] [SYN Scanning] Find Open on ip = 192.168.0.14  port = 1030
+[2023-07-10 13:56:57.920601] [SYN Scanning] Find Open on ip = 192.168.0.14  port = 1462
+[2023-07-10 13:56:57.920758] [SYN Scanning] Find Open on ip = 192.168.0.14  port = 2968
+[2023-07-10 13:56:57.920849] [SYN Scanning] Find Open on ip = 192.168.0.14  port = 3306
+[2023-07-10 13:57:16.473943] [SYN Scanning] Starting.
+[2023-07-10 13:57:16.474410] [Packet Capture] Starting.
+[2023-07-10 13:57:17.476293] [SYN Scanning] Start scanning 2 IPs: 192.168.0.14, 127.0.0.1
+[2023-07-10 13:57:17.476486] [SYN Scanning] Start scanning 329 popular ports on IP: 192.168.0.14
+[2023-07-10 13:57:23.727388] [SYN Scanning] Find Open on ip = 192.168.0.14  port = 25
+[2023-07-10 13:57:23.728364] [SYN Scanning] Find Open on ip = 192.168.0.14  port = 80
+[2023-07-10 13:57:23.729168] [SYN Scanning] Find Open on ip = 192.168.0.14  port = 110
+[2023-07-10 13:57:23.730312] [SYN Scanning] Find Open on ip = 192.168.0.14  port = 139
+[2023-07-10 13:57:23.730477] [SYN Scanning] Find Open on ip = 192.168.0.14  port = 445
+[2023-07-10 13:57:23.731040] [SYN Scanning] Find Open on ip = 192.168.0.14  port = 3306
+[2023-07-10 13:57:23.731997] [SYN Scanning] Find Open on ip = 127.0.0.1  port = 631
+[2023-07-10 13:57:23.733794] [SYN Scanning] Find Open on ip = 127.0.0.1  port = 3306
+[2023-07-10 13:57:23.735559] [SYN Scanning] Find Open on ip = 127.0.0.1  port = 5432
+[2023-07-10 13:57:23.735888] [SYN Scanning] Start scanning 329 popular ports on IP: 127.0.0.1
+[2023-07-10 13:57:30.905289] [SYN Scanning] Find Open on ip = 192.168.0.14  port = 25
+[2023-07-10 13:57:30.906097] [SYN Scanning] Find Open on ip = 192.168.0.14  port = 80
+[2023-07-10 13:57:30.906159] [SYN Scanning] Find Open on ip = 192.168.0.14  port = 110
+[2023-07-10 13:57:30.906229] [SYN Scanning] Find Open on ip = 192.168.0.14  port = 139
+[2023-07-10 13:57:30.906293] [SYN Scanning] Find Open on ip = 192.168.0.14  port = 445
+[2023-07-10 13:57:30.906513] [SYN Scanning] Find Open on ip = 192.168.0.14  port = 3306
+[2023-07-10 13:57:30.906600] [SYN Scanning] Find Open on ip = 127.0.0.1  port = 631
+[2023-07-10 13:57:30.906667] [SYN Scanning] Find Open on ip = 127.0.0.1  port = 3306
+[2023-07-10 13:57:30.906791] [SYN Scanning] Find Open on ip = 127.0.0.1  port = 5432
+[2023-07-10 13:57:30.906845] [SYN Scanning] Done Scan For this Round
+[2023-07-10 13:57:31.908080] [SYN Scanning] give up too frequent TCP-SYN scan on ip =  192.168.0.14
+[2023-07-10 13:57:31.908337] [SYN Scanning] give up too frequent TCP-SYN scan on ip =  127.0.0.1
+[2023-07-10 13:58:21.813017] [SYN Scanning] Starting.
+[2023-07-10 13:58:21.813474] [Packet Capture] Starting.
+[2023-07-10 13:58:22.815322] [SYN Scanning] Start scanning 2 IPs: 192.168.0.14, 127.0.0.1
+[2023-07-10 13:58:22.815577] [SYN Scanning] Start scanning 329 popular ports on IP: 192.168.0.14
+[2023-07-10 13:58:29.114832] [SYN Scanning] Find Open on ip = 192.168.0.14  port = 25
+[2023-07-10 13:58:29.116374] [SYN Scanning] Find Open on ip = 192.168.0.14  port = 80
+[2023-07-10 13:58:29.117683] [SYN Scanning] Find Open on ip = 192.168.0.14  port = 110
+[2023-07-10 13:58:29.118501] [SYN Scanning] Find Open on ip = 192.168.0.14  port = 139
+[2023-07-10 13:58:29.121003] [SYN Scanning] Find Open on ip = 192.168.0.14  port = 445
+[2023-07-10 13:58:29.121867] [SYN Scanning] Find Open on ip = 192.168.0.14  port = 3306
+[2023-07-10 13:58:29.122776] [SYN Scanning] Start scanning 329 popular ports on IP: 127.0.0.1
+[2023-07-10 13:58:29.185073] [SYN Scanning] Find Open on ip = 127.0.0.1  port = 631
+[2023-07-10 13:58:29.185222] [SYN Scanning] Find Open on ip = 127.0.0.1  port = 3306
+[2023-07-10 13:58:29.185330] [SYN Scanning] Find Open on ip = 127.0.0.1  port = 5432
+[2023-07-10 13:58:29.185447] [SYN Scanning] Done Scan For this Round
+[2023-07-10 13:58:30.187381] [SYN Scanning] give up too frequent TCP-SYN scan on ip =  192.168.0.14
+[2023-07-10 13:58:30.187556] [SYN Scanning] give up too frequent TCP-SYN scan on ip =  127.0.0.1
+[2023-07-10 14:00:32.378586] [SYN Scanning] Starting.
+[2023-07-10 14:00:32.379072] [Packet Capture] Starting.
+[2023-07-10 14:00:33.381094] [SYN Scanning] Start scanning 2 IPs: 192.168.0.14, 127.0.0.1
+[2023-07-10 14:00:33.381415] [SYN Scanning] Start scanning 329 popular ports on IP: 192.168.0.14
+[2023-07-10 14:01:26.572515] [SYN Scanning] Starting.
+[2023-07-10 14:01:26.572963] [Packet Capture] Starting.
+[2023-07-10 14:01:27.574905] [SYN Scanning] Start scanning 2 IPs: 192.168.0.14, 127.0.0.1
+[2023-07-10 14:01:27.575155] [SYN Scanning] Start scanning All 65K popular on IP: 192.168.0.14
+[2023-07-10 14:01:49.161521] [SYN Scanning] Starting.
+[2023-07-10 14:01:49.161923] [Packet Capture] Starting.
+[2023-07-10 14:01:50.163639] [SYN Scanning] Start scanning 2 IPs: 192.168.0.14, 127.0.0.1
+[2023-07-10 14:01:50.164872] [SYN Scanning] Start scanning All 65K popular on IP: 192.168.0.14

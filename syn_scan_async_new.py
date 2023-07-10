@@ -95,66 +95,66 @@ class SynScan(object):
             for ip in ip_list:
                 if ip in self._host_state.last_syn_scan_time:
                     time_difference = datetime.now()-self._host_state.last_syn_scan_time[ip]
-                    if time_difference.total_seconds() < 60:  # next scan must after 60s
+                    if time_difference.total_seconds() < 60000:  #
                         print("[SYN Scanning] give up too frequent TCP-SYN scan on ip = ", ip)
                         utils.log("[SYN Scanning] give up too frequent TCP-SYN scan on ip = ", ip)
                         continue
                 target_ip_list.append(ip)
 
             if len(target_ip_list) == 0:
-                time.sleep(10)
+                time.sleep(120)
                 continue
 
-            # [Step 3] Get target Port List 
-            if not self._scanAllPorts:
-                target_port_list = get_port_list()   # Scan Popular ports on target IPs First
-                utils.log('[SYN Scanning] Start scanning {} popular ports over IPs: {}'.format(
-                    len(target_port_list),
-                    ', '.join(target_ip_list)
-                ))
-            else:
-                target_port_list = list(range(1, 65536)) # Scan All ports on target IPs 
-                utils.log('[SYN Scanning] Start scanning All 65K popular over IPs: {}'.format(
-                    ', '.join(target_ip_list)
-                ))
-
-            # [Step 4] Assemble the final IP & port list
-            ip_port_list = list(itertools.product(target_ip_list, target_port_list))
-            #random.shuffle(ip_port_list)
-
             # Main Scan Process
-            result = []
-            split_ip_port_list = self.split_array(ip_port_list, 5000)
-            for batch_ip_port_list in split_ip_port_list:
-                start = time.time()
-                batch_result = []
+            utils.log('[SYN Scanning] Start scanning {} IPs: {}'.format(
+                len(target_ip_list),
+                ', '.join(target_ip_list)
+            ))
+
+            result = []  #目前还没用上
+            for i in range(0, len(target_ip_list)):
+                thisIP = target_ip_list[i]
+
+                #7.10改为对每个ip单独生成port
+                if not self._scanAllPorts:
+                    target_port_list = get_port_list()
+                    utils.log('[SYN Scanning] Start scanning {} popular ports on IP: {}'.format(len(target_port_list), thisIP))
+                else:
+                    target_port_list = list(range(0, 65536)) # Scan All ports on target IPs 
+                    utils.log('[SYN Scanning] Start scanning All 65K popular on IP: {}'.format(thisIP))
+                ip_port_list = list(itertools.product([thisIP], target_port_list))
+                #random.shuffle(ip_port_list)
+                    
+                split_ip_port_list = self.split_array(ip_port_list, 5000)
+                for batch_ip_port_list in split_ip_port_list:
+                    start = time.time()
+                    batch_result = []
                 
+                    scanner = SynFastScanner(time_out = 5.0, ip_port = batch_ip_port_list, concurrency = 300)
+                    scanner.loop.run_until_complete(scanner.start())
+                    batch_result = scanner.result
+                    #print(batch_result)
+                    result += (batch_result)
+                    del scanner
 
-               
-                scanner = SynFastScanner(time_out = 5.0, ip_port = batch_ip_port_list, concurrency = 300)
-                scanner.loop.run_until_complete(scanner.start())
-                batch_result = scanner.result
-                #print(batch_result)
-                result += (batch_result)
-                del scanner
-                """
-                time.sleep(0.01)
-                host_ip = "192.168.38.129"
-                for ip_port in batch_ip_port_list:
-                    ip, port = ip_port
-                    syn_pkt = sc.IP(src=host_ip, dst=ip) / \
-                        sc.TCP(dport=port, sport=SYN_SCAN_SOURCE_PORT, flags="S", seq=SYN_SCAN_SEQ_NUM)
-                    sc.send(syn_pkt, iface=sc.conf.iface, verbose=0)
-                """
+                    """
+                    time.sleep(0.01)
+                    host_ip = "192.168.38.129"
+                    for ip_port in batch_ip_port_list:
+                        ip, port = ip_port
+                        syn_pkt = sc.IP(src=host_ip, dst=ip) / \
+                            sc.TCP(dport=port, sport=SYN_SCAN_SOURCE_PORT, flags="S", seq=SYN_SCAN_SEQ_NUM)
+                        sc.send(syn_pkt, iface=sc.conf.iface, verbose=0)
+                    """
 
-                print("本批最后一个是", batch_ip_port_list[-1])
-                print(f'本批扫描所用时间为：{time.time() - start:.2f}')
-                for ip, port in batch_result:
-                    self._host_state.received_ip_port_info.append({"ip": ip, "port": port, "info": "null"})
-                    utils.log("[SYN Scanning] Find Open on ip =", ip, " port =", port)
-                    print("[SYN Scanning] Find Open on ip =", ip, " port =", port)
+                    print("本批最后一个是", batch_ip_port_list[-1])
+                    print(f'本批扫描所用时间为：{time.time() - start:.2f}')
+                    for ip, port in batch_result:
+                        self._host_state.received_ip_port_info.append({"ip": ip, "port": port, "info": "null"})
+                        utils.log("[SYN Scanning] Find Open on ip =", ip, " port =", port)
+                        print("[SYN Scanning] Find Open on ip =", ip, " port =", port)
 
-            #现在这个不会被包捕获，所以要自己写结果到hoststate
+                #现在这个不会被包捕获，所以要自己写结果到hoststate
 
         
             print("[SYN Scanning] Done Scan For this Round")
