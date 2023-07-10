@@ -27,7 +27,7 @@ def scan():
     host_state.packet_processor = PacketProcessor(host_state)
     print("initilize packet_processor")
 
-    syn_scan_thread = SynScan(host_state, scanAllPorts = True)
+    syn_scan_thread = SynScan(host_state, scanAllPorts = False)
     syn_scan_thread.start()
     print("initilize syn_scan_thread")
 

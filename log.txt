@@ -89,3 +89,23 @@ UnboundLocalError: local variable 'result' referenced before assignment
 [2023-07-10 14:01:49.161923] [Packet Capture] Starting.
 [2023-07-10 14:01:50.163639] [SYN Scanning] Start scanning 2 IPs: 192.168.0.14, 127.0.0.1
 [2023-07-10 14:01:50.164872] [SYN Scanning] Start scanning All 65K popular on IP: 192.168.0.14
+[2023-07-10 14:16:21.616524] [SYN Scanning] Starting.
+[2023-07-10 14:16:21.616993] [Packet Capture] Starting.
+[2023-07-10 14:16:22.618157] [SYN Scanning] Start scanning 2 IPs: 192.168.0.14, 127.0.0.1
+[2023-07-10 14:16:22.618359] [SYN Scanning] Start scanning 329 popular ports on IP: 192.168.0.14
+[2023-07-10 14:16:38.016043] [SYN Scanning] Starting.
+[2023-07-10 14:16:38.016422] [Packet Capture] Starting.
+[2023-07-10 14:16:39.018324] [SYN Scanning] Start scanning 2 IPs: 192.168.0.14, 127.0.0.1
+[2023-07-10 14:16:39.018528] [SYN Scanning] Start scanning 329 popular ports on IP: 192.168.0.14
+[2023-07-10 14:17:01.683691] [SYN Scanning] Starting.
+[2023-07-10 14:17:01.684175] [Packet Capture] Starting.
+[2023-07-10 14:17:02.685506] [SYN Scanning] Start scanning 2 IPs: 192.168.0.14, 127.0.0.1
+[2023-07-10 14:17:02.685860] [SYN Scanning] Start scanning 329 popular ports on IP: 192.168.0.14
+[2023-07-10 14:17:21.973703] [SYN Scanning] Starting.
+[2023-07-10 14:17:21.974340] [Packet Capture] Starting.
+[2023-07-10 14:17:22.975714] [SYN Scanning] Start scanning 2 IPs: 192.168.0.14, 127.0.0.1
+[2023-07-10 14:17:22.976024] [SYN Scanning] Start scanning 329 popular ports on IP: 192.168.0.14
+[2023-07-10 14:38:55.967513] [SYN Scanning] Starting.
+[2023-07-10 14:38:55.968701] [Packet Capture] Starting.
+[2023-07-10 14:38:56.970458] [SYN Scanning] Start scanning 2 IPs: 192.168.0.14, 127.0.0.1
+[2023-07-10 14:38:56.970695] [SYN Scanning] Start scanning 329 popular ports on IP: 192.168.0.14
