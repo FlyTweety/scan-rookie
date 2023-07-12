@@ -69,16 +69,15 @@ class SSDPScanner():
                         '\r\n')
 
         sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+        #sock.setblocking(False) #似乎没什么区别
         sock.sendto(ssdpDiscover.encode('ASCII'), ("239.255.255.250", 1900))
         sock.settimeout(5)
         try:
             while True:
                 data, addr = sock.recvfrom(1024) # buffer size is 1024 bytes
-                #print(data, addr)
                 location_result = location_regex.search(data.decode('ASCII'))
                 if location_result and (location_result.group(1) in locations) == False:
                     locations.add(location_result.group(1))
-
                     match = re.search(ip_port_regex, location_result.group(1))
                     ip = match.group(1)
                     port = match.group(2)       
@@ -86,11 +85,14 @@ class SSDPScanner():
                     ip_ports.add(ip_port)
 
         except socket.error:
-            sock.close()
+            sock.close() # 因为都是通过异常来退出，所以肯定会运行到这里
 
         print('[SSDP Scanning] Discovery complete')
         print('[SSDP Scanning] %d locations found:' % len(locations))
         utils.log('[SSDP Scanning] %d locations found:' % len(locations))
+        for location in locations:
+            print('[SSDP Scanning]\t%s' % location)
+            utils.log('[SSDP Scanning]\t%s' % location)
         return list(locations), list(ip_ports)
 
     ##
@@ -211,6 +213,33 @@ class SSDPScanner():
         locations, ip_ports = self.discover_pnp_locations()
         self.parse_locations(locations)
         print("[SSDP Scanning] Finish.")
+
+    def get_serv_ua(self, resp):
+        lines = resp.split("\r\n")
+        for i in lines:
+            array = i.split(":")
+            if array[0].upper() == "SERVER" or array[0].upper() == "USER-AGENT":
+                return array[1]
+
+    def sniff(self): # 还没有真正用上这个，应该也不会用到
+        print("[SSDP Scanning] [sniffer mode] (stop by Ctrl-C)")
+
+        sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+        sock.bind(("239.255.255.250", 1900))
+
+        # join the multicast group
+        maddr = struct.pack("4sl", socket.inet_aton("239.255.255.250"), socket.INADDR_ANY)
+        sock.setsockopt(socket.IPPROTO_IP, socket.IP_ADD_MEMBERSHIP, maddr)
+
+        # receive and print
+        while True:
+            try:
+                resp, raddr = sock.recvfrom(1024)
+            except:
+                break
+            if resp:
+                data = self.get_serv_ua(resp.decode())
+                print("[SSDP Scanning] [sniffer find]", raddr[0], data)
 
     def getResult(self):
         for ssdp_info in self.known_ssdp_info_list:
