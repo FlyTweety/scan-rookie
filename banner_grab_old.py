@@ -7,29 +7,80 @@ import asyncio
 from typing import List
 import random
 import string
+from host_state import HostState
 
 import utils
 
 class BannerGrab:
 
-    def __init__(self):
+    def __init__(self, host_state):
 
-        self.banner_grab_task_send_message = [
+        self._host_state = host_state
+
+        self._lock = threading.Lock()
+        self._active = False
+
+        self._thread = threading.Thread(target=self._banner_grab_thread)
+        self._thread.daemon = True
+
+        self.banner_grab_send_message = [
             b"GET / HTTP/1.1\r\n\r\n",
             b"HELO example.com\r\n",
             b"USER username\r\n",
             b"SSH-2.0-OpenSSH_7.6p1 Ubuntu-4ubuntu0.1\r\n"
         ]
 
-        #存储结果
-        self.result_collect = []
-        self.last_fetch_index = 0
+    def start(self):
+
+        with self._lock:
+            self._active = True
+
+        utils.log('[Banner Grab] Starting.')
+        self._thread.start()
+
+    def _banner_grab_thread(self):
+
+        utils.restart_upon_crash(self._banner_grab_thread_helper)
+
+    def _banner_grab_thread_helper(self):
+
+        while True:
+
+            time.sleep(1)
+
+            if not self._host_state.is_inspecting():
+                continue
+
+            ip_port_info_list = self._host_state.received_ip_port_info 
+            target_ip_port_list = []
+            for entry in ip_port_info_list:
+                ip_port = str(entry['ip']) + "_" + str(entry['port'])
+                if ip_port in self._host_state.last_banner_grab_time:
+                    continue # no matter last attempt time, only grab once
+                target_ip_port_list.append(ip_port)
+
+            if(len(target_ip_port_list) == 0): # no new target to do banner grab
+                time.sleep(5)
+                continue
+
+            utils.log('[Banner Grab] Start Banner Grab on {}'.format(
+                ', '.join(target_ip_port_list)
+            ))
+            print('[Banner Grab] Start Banner Grab on {}'.format(
+                ', '.join(target_ip_port_list)
+            ))
+
+            self._banner_grab_process(target_ip_port_list)
+
+            print("Done Banner Grab")
+            for ip_port in target_ip_port_list:
+                self._host_state.last_banner_grab_time[ip_port] = datetime.now()
+            print("Banner Info Now = ", self._host_state.banner_grab_info)
 
 
-    #核心改了名和参数target，其他一点没动
-    async def async_banner_grab_task(self, target, loop, timeout=3.0):
+    async def banner_grab(self, ip, port, loop, timeout=3.0):
         banner_collect = []
-        ip, port = target
+
 
         # STEP 1  Build TCP Connection
         try:
@@ -83,7 +134,7 @@ class BannerGrab:
         # 多次发送会不会导致连接失败的可能性上升？
         # 现在似乎就是太频繁了，导致往往只有前一两个成功
 
-        grab_msg_list = [self.generate_random_string(2), self.generate_random_string(32), self.generate_random_string(128), self.generate_random_string(2048)] + self.banner_grab_task_send_message
+        grab_msg_list = [self.generate_random_string(2), self.generate_random_string(32), self.generate_random_string(128), self.generate_random_string(2048)] + self.banner_grab_send_message
         for i in range(0, len(grab_msg_list)):
             grab_msg = grab_msg_list[i]
             await asyncio.sleep(1.0)
@@ -106,14 +157,17 @@ class BannerGrab:
 
         sock.close()
         return {"ip":ip, "port":port, "serive":"null", "banner":banner_collect}
-    
 
-    async def async_banner_grab_tasks(self, target_list, loop=None):
+
+
+            
+
+    async def all_banner_grab(self, ip_list, port_list, loop=None):
 
         # Create a list of coroutines for banner grabbing from the given IP and Port lists
         coroutines = []
-        for i in range(0, len(target_list)): # here is one-to-one, not double loop!
-            coro = self.async_banner_grab_task(target_list[i], loop)
+        for i in range(0, len(ip_list)): # here is one-to-one, not double loop!
+            coro = self.banner_grab(ip_list[i], port_list[i], loop)
             coroutines.append(coro)
 
         if loop is None:
@@ -122,55 +176,51 @@ class BannerGrab:
         # Wait for all coroutines to complete and get the results
         results = await asyncio.gather(*coroutines, loop=loop)
 
-        # Update the banner grab info for each IP and Port into _host_state.banner_grab_task_info.append
-        self.result_collect += results
+         # Update the banner grab info for each IP and Port into _host_state.banner_grab_info.append
+        for result in results:
+            ip_port = str(result['ip']) + "_" + str(result['port'])
+            if ip_port in self._host_state.last_banner_grab_time: # second time get banner from it
+                for i in range(0, len(self._host_state.banner_grab_info)): # find its original entry in banner_grab_info
+                    if((self._host_state.banner_grab_info[i]['ip'] == result['ip']) and (self._host_state.banner_grab_info[i]['port'] == result['port'])):
+                        self._host_state.banner_grab_info[i] = result
+            else:
+                self._host_state.banner_grab_info.append(result)
                 
-       
+                
+
+    def _banner_grab_process(self, target_ip_port_list):
+        ip_list = []
+        port_list = []
+        for ip_port in target_ip_port_list:
+            ip, port = ip_port.split("_")
+            ip_list.append(ip)
+            port_list.append(int(port))
+
+        new_loop = asyncio.new_event_loop()
+        asyncio.set_event_loop(new_loop)
+
+        loop = asyncio.get_event_loop()
+        
+        loop.run_until_complete(self.all_banner_grab(ip_list, port_list, loop))
+
+        loop.close()
+
+
     def generate_random_string(self, length):
         letters = string.ascii_lowercase + string.ascii_uppercase + string.digits
         return ''.join(random.choice(letters) for _ in range(length)).encode()
 
+    def stop(self):
+
+        with self._lock:
+            self._active = False
+
+        self._thread.join()
+
+        utils.log('[Banner Grab] Stopped.')
 
 
-    def banner_grab(self, target_list):
 
-            if(len(target_list) == 0):
-                print("[Banner Grab] No target to grab")
-                utils.log("[Banner Grab] No target to grab")
-                return 
-
-            utils.log('[Banner Grab] Start Banner Grab on {} target {}'.format(
-                len(target_list), 
-                ', '.join(str(target) for target in target_list)
-            ))
-            print('[Banner Grab] Start Banner Grab on {} target {}'.format(
-                len(target_list), 
-                ', '.join(str(target) for target in target_list)
-            ))
-
-            new_loop = asyncio.new_event_loop()
-            asyncio.set_event_loop(new_loop)
-            loop = asyncio.get_event_loop()
-            
-            loop.run_until_complete(self.async_banner_grab_tasks(target_list, loop))
-
-            loop.close()
-
-            print(self.result_collect)
-
-            print("[Banner Grab] Done")
-            utils.log("[Banner Grab] Done")
-
-
-            #记录运行时间的被我给删了
-
-    def getResult(self):
-        self.last_fetch_index = len(self.result_collect) - 1
-        return self.result_collect[self.last_fetch_index:]
-            
-    def clearResult(self):
-        self.last_fetch_index = 0
-        self.result_collect = []
 
 if __name__ == "__main__":
 
@@ -239,8 +289,14 @@ if __name__ == "__main__":
         {'ip': '192.168.87.42', 'port': 6668, 'info': 'SYN Scan Response'}
     ]
 
-    target_list = [(item['ip'], item['port']) for item in ip_port_info_all]
+    host_state = HostState()
+    host_state.received_ip_port_info = ip_port_info_all
+    BannerGrabInst = BannerGrab(host_state)
+    BannerGrabInst.start()
 
-    BannerGrabInst = BannerGrab()
-    BannerGrabInst.banner_grab(target_list)
-
+    while True:
+        try:
+            time.sleep(2)
+        except KeyboardInterrupt:
+            print('')
+            break

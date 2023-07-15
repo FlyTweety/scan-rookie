@@ -16,7 +16,7 @@ from host_state import HostState
 from syn_scan_async_new import SynScan
 from packet_capture import PacketCapture
 from packet_processor import PacketProcessor
-from banner_grab import BannerGrab
+from banner_grab_old import BannerGrab
 import utils
 
 def scan():
