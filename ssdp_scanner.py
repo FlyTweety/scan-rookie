@@ -221,8 +221,11 @@ class SSDPScanner():
             if array[0].upper() == "SERVER" or array[0].upper() == "USER-AGENT":
                 return array[1]
 
-    def sniff(self): # 还没有真正用上这个，应该也不会用到
+    def sniff(self):
+        #要设置一个监听时长的选项！！！！！！！！！！！！！
+        #添加从监听解析位置的选项（记住有哪些位置）
         print("[SSDP Scanning] [sniffer mode] (stop by Ctrl-C)")
+        utils.log("[SSDP Scanning] [sniffer mode] start")
 
         sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
         sock.bind(("239.255.255.250", 1900))
@@ -239,7 +242,16 @@ class SSDPScanner():
                 break
             if resp:
                 data = self.get_serv_ua(resp.decode())
+                #print("\n")
+                #print("####RESP =", resp)
+                #print("####raddr =", raddr)
                 print("[SSDP Scanning] [sniffer find]", raddr[0], data)
+                print()
+                utils.log("[SSDP Scanning] [sniffer find]", raddr[0], data)
+        
+        sock.close()
+        print("[SSDP Scanning] [sniffer mode] exit")
+        utils.log("[SSDP Scanning] [sniffer mode] exit")
 
     def getResult(self):
         for ssdp_info in self.known_ssdp_info_list:
@@ -248,3 +260,4 @@ class SSDPScanner():
 if __name__ == "__main__":
     SSDPScannerInstance = SSDPScanner()
     SSDPScannerInstance.scan()
+    SSDPScannerInstance.sniff()
