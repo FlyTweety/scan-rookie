@@ -254,8 +254,10 @@ class SSDPScanner():
         utils.log("[SSDP Scanning] [sniffer mode] exit")
 
     def getResult(self):
-        for ssdp_info in self.known_ssdp_info_list:
-            print(ssdp_info.location)
+        return self.known_ssdp_info_list
+    
+    def clearResult(self):
+        self.known_ssdp_info_list = []
 
 if __name__ == "__main__":
     SSDPScannerInstance = SSDPScanner()

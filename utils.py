@@ -24,7 +24,9 @@ import traceback
 import uuid
 import webbrowser
 import ipaddress
+import xml.etree.ElementTree as ET
 
+#按照我的新版，只要留get_port_list和log和get_subnet_addresses和两个getIP就够了
 
 def get_port_list():
 
@@ -73,9 +75,6 @@ def get_port_list():
                     60179])
     return sorted(port_set)
 
-_lock = threading.Lock()
-
-
 def log(*args):
 
     log_str = '[%s] ' % datetime.datetime.today()
@@ -85,6 +84,92 @@ def log(*args):
 
     with open(log_file_path, 'a') as fp:
         fp.write(log_str + '\n')
+
+def get_subnet_addresses(ip_address, subnet_mask_length):
+    ip_parts = ip_address.split('.')
+    subnet_mask = ['0'] * 4
+    
+    # 将子网掩码转换为二进制字符串
+    for i in range(subnet_mask_length):
+        subnet_mask[i // 8] = str(int(subnet_mask[i // 8]) + 2 ** (7 - i % 8))
+    
+    network_address = []
+    
+    # 计算网络地址
+    for i in range(4):
+        network_address.append(str(int(ip_parts[i]) & int(subnet_mask[i])))
+
+    # 获得子网下的所有地址
+    addresses = []
+    for i in range(1, 2**(32-subnet_mask_length)-1):
+        address_parts = []
+        
+        # 计算每个地址的四个部分
+        for j in range(4):
+            address_parts.append(str((int(network_address[j]) & int(subnet_mask[j])) + ((i >> (3-j)*8) & 255)))
+        
+        addresses.append('.'.join(address_parts))
+    
+    return addresses
+"""
+# 示例用法
+ip = '192.168.0.0'  # 输入您的IPv4地址
+subnet_mask = 21  # 输入子网掩码长度
+
+addresses = get_subnet_addresses(ip, subnet_mask)
+print(addresses)
+"""
+
+def getNyuIPs():
+
+    IPs = []
+
+    tree = ET.parse('scan_results.xml')
+    root = tree.getroot()
+
+    # 遍历每个host元素
+    for host in root.findall('host'):
+        # 获取address元素中的addr属性值
+        address = host.find('address')
+        ip_address = address.get('addr')
+        
+        # 打印IP地址
+        IPs.append(ip_address)
+
+    return IPs
+
+def getDannyIPs():
+    danny_ip_list = [
+        '192.168.87.1',
+        '192.168.87.20',
+        '192.168.87.22',
+        '192.168.87.26',
+        '192.168.87.27',
+        '192.168.87.29',
+        '192.168.87.30',
+        '192.168.87.31',
+        '192.168.87.32',
+        '192.168.87.35',
+        '192.168.87.36',
+        '192.168.87.46',
+        '192.168.87.47',
+        '192.168.87.48',
+        '192.168.87.49',
+        '192.168.87.73',
+        '192.168.87.75',
+        '192.168.87.76'
+    ]
+    return danny_ip_list
+
+
+def split_array(array, chunk_size):
+    result = []
+    for i in range(0, len(array), chunk_size):
+        result.append(array[i:i+chunk_size])
+    return result
+
+_lock = threading.Lock()
+
 
 def get_gateway_ip(timeout=10):
     """Returns the IP address of the gateway."""

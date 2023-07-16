@@ -92,6 +92,12 @@ class DNSSDScanner():
 
     # end dnssd_scan()
 
+    def getResult(self):
+        return self.known_mdns_info_list
+    
+    def clearResult(self):
+        self.known_mdns_info_list = []
+
 def getIPs():
 
     IPs = []

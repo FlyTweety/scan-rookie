@@ -109,3 +109,17 @@ UnboundLocalError: local variable 'result' referenced before assignment
 [2023-07-10 14:38:55.968701] [Packet Capture] Starting.
 [2023-07-10 14:38:56.970458] [SYN Scanning] Start scanning 2 IPs: 192.168.0.14, 127.0.0.1
 [2023-07-10 14:38:56.970695] [SYN Scanning] Start scanning 329 popular ports on IP: 192.168.0.14
+[2023-07-16 19:47:11.867031] [TCP Scanning] Start scanning 1 IPs: 127.0.0.1
+[2023-07-16 19:47:11.867146] [TCP Scanning] Scan popular ports
+[2023-07-16 19:47:50.226398] [TCP Scanning] Start scanning 1 IPs: 127.0.0.1
+[2023-07-16 19:47:50.226546] [TCP Scanning] Scan popular ports
+[2023-07-16 19:48:27.316443] [TCP Scanning] Start scanning 1 IPs: 127.0.0.1
+[2023-07-16 19:48:27.316711] [TCP Scanning] Scan popular ports
+[2023-07-16 19:50:01.285958] [TCP Scanning] Start scanning 1 IPs: 127.0.0.1
+[2023-07-16 19:50:01.286075] [TCP Scanning] Scan popular ports
+[2023-07-16 19:51:33.294096] [TCP Scanning] Start scanning 1 IPs: 127.0.0.1
+[2023-07-16 19:51:33.294417] [TCP Scanning] Scan 65K ports
+[2023-07-16 19:51:47.156276] [TCP Scanning] Start scanning 1 IPs: 127.0.0.1
+[2023-07-16 19:51:47.156426] [TCP Scanning] Scan 65K ports
+[2023-07-16 19:52:11.835445] [TCP Scanning] Start scanning 1 IPs: 127.0.0.1
+[2023-07-16 19:52:11.835571] [TCP Scanning] Scan 65K ports

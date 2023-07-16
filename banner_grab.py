@@ -7,6 +7,7 @@ import asyncio
 from typing import List
 import random
 import string
+import sys
 
 import utils
 
@@ -108,7 +109,7 @@ class BannerGrab:
         return {"ip":ip, "port":port, "serive":"null", "banner":banner_collect}
     
 
-    async def async_banner_grab_tasks(self, target_list, loop=None):
+    async def async_banner_grab_tasks(self, target_list, loop):
 
         # Create a list of coroutines for banner grabbing from the given IP and Port lists
         coroutines = []
@@ -116,9 +117,6 @@ class BannerGrab:
             coro = self.async_banner_grab_task(target_list[i], loop)
             coroutines.append(coro)
 
-        if loop is None:
-            loop = asyncio.get_event_loop()
-       
         # Wait for all coroutines to complete and get the results
         results = await asyncio.gather(*coroutines, loop=loop)
 
@@ -130,7 +128,20 @@ class BannerGrab:
         letters = string.ascii_lowercase + string.ascii_uppercase + string.digits
         return ''.join(random.choice(letters) for _ in range(length)).encode()
 
+    @staticmethod
+    def get_event_loop():
+        """
+        判断不同平台使用不同的事件循环实现
 
+        :return:
+        """
+        if sys.platform == 'win32':
+            from asyncio import ProactorEventLoop
+            # 用 "I/O Completion Ports" (I O C P) 构建的专为Windows 的事件循环
+            return ProactorEventLoop()
+        else:
+            from asyncio import SelectorEventLoop
+            return SelectorEventLoop()
 
     def banner_grab(self, target_list):
 
@@ -148,9 +159,8 @@ class BannerGrab:
                 ', '.join(str(target) for target in target_list)
             ))
 
-            new_loop = asyncio.new_event_loop()
-            asyncio.set_event_loop(new_loop)
-            loop = asyncio.get_event_loop()
+            loop = self.get_event_loop()
+            asyncio.set_event_loop(loop)
             
             loop.run_until_complete(self.async_banner_grab_tasks(target_list, loop))
 
