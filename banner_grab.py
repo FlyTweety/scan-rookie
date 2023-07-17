@@ -13,7 +13,7 @@ import utils
 
 class BannerGrab:
 
-    def __init__(self):
+    def __init__(self, max_concurrency = 500):
 
         self.banner_grab_task_send_message = [
             self.generate_random_string(2), 
@@ -25,6 +25,8 @@ class BannerGrab:
             b"USER username\r\n",
             b"SSH-2.0-OpenSSH_7.6p1 Ubuntu-4ubuntu0.1\r\n"
         ]
+
+        self.max_concurrency = max_concurrency
 
         #存储结果
         self.result_collect = []
@@ -55,6 +57,7 @@ class BannerGrab:
             
 
         # STEP 2  Wait for server to send banner
+        # 诶，什么时候开始不给我报错说我异常没处理了
         try:     
             data = await asyncio.wait_for(
                 asyncio.gather(
@@ -63,11 +66,11 @@ class BannerGrab:
                     return_exceptions=False,
                 ), 
                 timeout=6.0)
-        except (asyncio.TimeoutError, asyncio.CancelledError) as e:  #seems to be useless……
-            print("[Banner Grab] fail to get inital data")
+        except (asyncio.TimeoutError, asyncio.CancelledError) as e:  
+            print("[Banner Grab] IP {ip}, Port {port}, fail to get inital data")
             banner_collect.append((-1, "Grab Initial Error"))
         except Exception as e:
-            print("[Banner Grab] gather error:", str(e))
+            print("[Banner Grab] Grab error:", str(e))
             banner_collect.append((-1, "Grab Initial Error"))
         else:
             if isinstance(data, List) and isinstance(data[1], bytes): # data[0]:result of asyncio.sleep(3)  data[1]:result of loop.sock_recv(sock, 1024)
@@ -77,8 +80,8 @@ class BannerGrab:
                 banner_collect.append((-1, initial_data.decode('utf-8', errors='ignore').strip()))
                 #return {"ip":ip, "port":port, "serive":"null", "banner":initial_data.decode('utf-8', errors='ignore').strip()} # No need for take initiative to send data
             else:
-                print("[Banner Grab] get wrong inital data = ", data)
-                banner_collect.append((-1, "Grab Initial Error"))
+                print("[Banner Grab] Get wrong inital data = ", data)
+                banner_collect.append((-1, "Get wrong inital data"))
 
 
         # STEP 3  Send different bytes to server
@@ -92,7 +95,7 @@ class BannerGrab:
             grab_msg = grab_msg_list[i]
             await asyncio.sleep(1.0)
             try:
-                #await asyncio.wait_for(loop.sock_connect(sock, (ip, port)), timeout=5) bad idea
+                #await asyncio.wait_for(loop.sock_connect(sock, (ip, port)), timeout=5) # bad idea, destory connections
                 await asyncio.wait_for(loop.sock_sendall(sock, grab_msg), timeout=5)  
                 banner = await asyncio.wait_for(loop.sock_recv(sock, 1024), timeout=5) 
                 utils.log(f"[Banner Grab] IP {ip}, Port {port}, Content:\n {banner.decode('utf-8', errors='ignore').strip()}")
@@ -107,7 +110,6 @@ class BannerGrab:
                 print(f"[Banner Grab] IP {ip}, Port {port},  Grab Error")
                 banner_collect.append((i, "Grab Error"))
             
-
         sock.close()
         return {"ip":ip, "port":port, "serive":"null", "banner":banner_collect}
     
@@ -153,6 +155,11 @@ class BannerGrab:
                 utils.log("[Banner Grab] No target to grab")
                 return 
 
+            if(len(target_list) > self.max_concurrency):
+                print("[Banner Grab] Too much target")
+                utils.log("[Banner Grab] Too much target")
+                return 
+
             utils.log('[Banner Grab] Start Banner Grab on {} target {}'.format(
                 len(target_list), 
                 ', '.join(str(target) for target in target_list)
@@ -162,7 +169,7 @@ class BannerGrab:
                 ', '.join(str(target) for target in target_list)
             ))
 
-            loop = self.get_event_loop()
+            loop = self.get_event_loop() #在banner里这个loop是每次运行才创建的…… 哦tcp扫描里是因为要用queue
             asyncio.set_event_loop(loop)
             
             loop.run_until_complete(self.async_banner_grab_tasks(target_list, loop))
@@ -187,5 +194,5 @@ if __name__ == "__main__":
 
     BannerGrabInst = BannerGrab()
     #BannerGrabInst.banner_grab(utils.getDannyIPandPorts())
-    BannerGrabInst.banner_grab(utils.getNyuIPandPorts()[:100])
+    BannerGrabInst.banner_grab(utils.getNyuIPandPorts()[:500])
 
