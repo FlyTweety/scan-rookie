@@ -1,0 +1,3224 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE nmaprun>
+<?xml-stylesheet href="file:///usr/bin/../share/nmap/nmap.xsl" type="text/xsl"?>
+<!-- Nmap 7.80 scan initiated Sat Jul  8 05:25:11 2023 as: nmap -sn -oX scan_results.xml 172.19.221.0/21 -->
+<nmaprun scanner="nmap" args="nmap -sn -oX scan_results.xml 172.19.221.0/21" start="1688808311" startstr="Sat Jul  8 05:25:11 2023" version="7.80" xmloutputversion="1.04">
+<verbose level="0"/>
+<debugging level="0"/>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.216.1" addrtype="ipv4"/>
+<address addr="00:00:5E:00:01:32" addrtype="mac" vendor="Icann, Iana Department"/>
+<hostnames>
+<hostname name="nyu-vl1544-gw.net.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="7714" rttvar="7714" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.216.2" addrtype="ipv4"/>
+<address addr="F0:4A:02:C4:C7:82" addrtype="mac"/>
+<hostnames>
+<hostname name="primaryrtr-vl1544.net.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="2793" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.216.3" addrtype="ipv4"/>
+<address addr="F0:4A:02:C4:B9:C2" addrtype="mac"/>
+<hostnames>
+<hostname name="secondaryrtr-vl1544.net.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="3946" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.216.7" addrtype="ipv4"/>
+<address addr="BC:33:29:47:14:B0" addrtype="mac"/>
+<hostnames>
+<hostname name="172-19-216-7.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="18909" rttvar="18909" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.216.9" addrtype="ipv4"/>
+<address addr="C8:3A:6B:96:E5:84" addrtype="mac" vendor="Roku"/>
+<hostnames>
+<hostname name="172-19-216-9.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="3846" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.216.11" addrtype="ipv4"/>
+<address addr="58:2F:40:C1:64:D4" addrtype="mac" vendor="Nintendo"/>
+<hostnames>
+<hostname name="172-19-216-11.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="3888" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.216.12" addrtype="ipv4"/>
+<address addr="20:DF:B9:B1:47:66" addrtype="mac" vendor="Google"/>
+<hostnames>
+<hostname name="172-19-216-12.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="10190" rttvar="10190" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.216.22" addrtype="ipv4"/>
+<address addr="5C:96:66:0E:67:2F" addrtype="mac"/>
+<hostnames>
+<hostname name="172-19-216-22.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="3683" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.216.24" addrtype="ipv4"/>
+<address addr="CC:F7:35:D0:08:BB" addrtype="mac" vendor="Amazon Technologies"/>
+<hostnames>
+<hostname name="172-19-216-24.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="2599" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.216.26" addrtype="ipv4"/>
+<address addr="80:60:B7:48:1F:6B" addrtype="mac" vendor="Cloud Network Technology Singapore PTE."/>
+<hostnames>
+<hostname name="172-19-216-26.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="2906" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.216.35" addrtype="ipv4"/>
+<address addr="AC:AE:19:FB:03:0E" addrtype="mac" vendor="Roku"/>
+<hostnames>
+<hostname name="172-19-216-35.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="4742" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.216.48" addrtype="ipv4"/>
+<address addr="C8:FF:77:32:31:47" addrtype="mac" vendor="Dyson Limited"/>
+<hostnames>
+<hostname name="172-19-216-48.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="3711" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.216.52" addrtype="ipv4"/>
+<address addr="A8:B5:7C:14:05:B8" addrtype="mac"/>
+<hostnames>
+<hostname name="172-19-216-52.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="3740" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.216.57" addrtype="ipv4"/>
+<address addr="F8:0F:F9:42:A2:F2" addrtype="mac" vendor="Google"/>
+<hostnames>
+<hostname name="172-19-216-57.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="3845" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.216.58" addrtype="ipv4"/>
+<address addr="C8:6C:3D:06:25:4E" addrtype="mac"/>
+<hostnames>
+<hostname name="172-19-216-58.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="4113" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.216.63" addrtype="ipv4"/>
+<address addr="08:05:81:CD:8A:29" addrtype="mac" vendor="Roku"/>
+<hostnames>
+<hostname name="172-19-216-63.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="4129" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.216.70" addrtype="ipv4"/>
+<address addr="2C:71:FF:3E:CF:93" addrtype="mac"/>
+<hostnames>
+<hostname name="172-19-216-70.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="2908" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.216.73" addrtype="ipv4"/>
+<address addr="50:D4:5C:12:31:BB" addrtype="mac"/>
+<hostnames>
+<hostname name="172-19-216-73.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="12217" rttvar="12217" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.216.76" addrtype="ipv4"/>
+<address addr="A4:0D:BC:01:B6:AD" addrtype="mac" vendor="Xiamen Intretech"/>
+<hostnames>
+<hostname name="172-19-216-76.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="2494" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.216.82" addrtype="ipv4"/>
+<address addr="20:1F:3B:0A:36:A4" addrtype="mac"/>
+<hostnames>
+<hostname name="172-19-216-82.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="7923" rttvar="7923" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.216.88" addrtype="ipv4"/>
+<address addr="C0:D2:F3:60:29:79" addrtype="mac" vendor="Hui Zhou Gaoshengda Technology"/>
+<hostnames>
+<hostname name="172-19-216-88.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="8449" rttvar="8449" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.216.96" addrtype="ipv4"/>
+<address addr="80:0C:F9:43:EC:CF" addrtype="mac"/>
+<hostnames>
+<hostname name="172-19-216-96.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="2180" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.216.100" addrtype="ipv4"/>
+<address addr="20:50:E7:C9:5A:E0" addrtype="mac" vendor="Ampak Technology"/>
+<hostnames>
+<hostname name="172-19-216-100.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="4935" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.216.111" addrtype="ipv4"/>
+<address addr="64:B5:C6:57:3C:8F" addrtype="mac" vendor="Nintendo"/>
+<hostnames>
+<hostname name="172-19-216-111.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="2773" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.216.117" addrtype="ipv4"/>
+<address addr="A8:16:9D:DD:FD:D3" addrtype="mac"/>
+<hostnames>
+<hostname name="172-19-216-117.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="4423" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.216.120" addrtype="ipv4"/>
+<address addr="4C:EF:C0:83:F8:3E" addrtype="mac" vendor="Amazon Technologies"/>
+<hostnames>
+<hostname name="172-19-216-120.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="3137" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.216.122" addrtype="ipv4"/>
+<address addr="50:32:37:C4:17:53" addrtype="mac" vendor="Apple"/>
+<hostnames>
+<hostname name="172-19-216-122.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="2088" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.216.125" addrtype="ipv4"/>
+<address addr="AC:AE:19:43:60:F0" addrtype="mac" vendor="Roku"/>
+<hostnames>
+<hostname name="172-19-216-125.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="9448" rttvar="9448" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.216.131" addrtype="ipv4"/>
+<address addr="F0:6E:0B:59:84:AA" addrtype="mac" vendor="Microsoft"/>
+<hostnames>
+<hostname name="172-19-216-131.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="3547" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.216.132" addrtype="ipv4"/>
+<address addr="90:11:95:4D:94:AA" addrtype="mac"/>
+<hostnames>
+<hostname name="172-19-216-132.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="2559" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.216.141" addrtype="ipv4"/>
+<address addr="C0:8D:51:3D:D0:EC" addrtype="mac"/>
+<hostnames>
+<hostname name="172-19-216-141.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="4094" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.216.153" addrtype="ipv4"/>
+<address addr="E8:CA:C8:41:F8:D9" addrtype="mac"/>
+<hostnames>
+<hostname name="172-19-216-153.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="1964" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.216.162" addrtype="ipv4"/>
+<address addr="BC:D7:D4:F5:D9:AB" addrtype="mac"/>
+<hostnames>
+<hostname name="172-19-216-162.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="2760" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.216.173" addrtype="ipv4"/>
+<address addr="74:EC:B2:AA:D2:70" addrtype="mac"/>
+<hostnames>
+<hostname name="172-19-216-173.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="2799" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.216.175" addrtype="ipv4"/>
+<address addr="98:B6:E9:E4:F7:17" addrtype="mac" vendor="Nintendo"/>
+<hostnames>
+<hostname name="172-19-216-175.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="3396" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.216.183" addrtype="ipv4"/>
+<address addr="FC:A1:83:34:02:F1" addrtype="mac" vendor="Amazon Technologies"/>
+<hostnames>
+<hostname name="172-19-216-183.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="2122" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.216.185" addrtype="ipv4"/>
+<address addr="EC:A1:38:C9:9F:8D" addrtype="mac"/>
+<hostnames>
+<hostname name="172-19-216-185.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="4165" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.216.188" addrtype="ipv4"/>
+<address addr="A8:8C:3E:A6:94:9A" addrtype="mac"/>
+<hostnames>
+<hostname name="172-19-216-188.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="3685" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.216.189" addrtype="ipv4"/>
+<address addr="1C:4D:66:B8:C7:70" addrtype="mac" vendor="Amazon Technologies"/>
+<hostnames>
+<hostname name="172-19-216-189.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="3263" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.216.193" addrtype="ipv4"/>
+<address addr="EC:0D:E4:4B:6B:F6" addrtype="mac"/>
+<hostnames>
+<hostname name="172-19-216-193.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="2629" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.216.198" addrtype="ipv4"/>
+<address addr="D4:AB:CD:B8:9A:59" addrtype="mac" vendor="Hui Zhou Gaoshengda Technology"/>
+<hostnames>
+<hostname name="172-19-216-198.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="7542" rttvar="7542" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.216.199" addrtype="ipv4"/>
+<address addr="A4:08:01:6E:52:5A" addrtype="mac" vendor="Amazon Technologies"/>
+<hostnames>
+<hostname name="172-19-216-199.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="2717" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.216.216" addrtype="ipv4"/>
+<address addr="68:9A:87:59:7B:D9" addrtype="mac" vendor="Amazon Technologies"/>
+<hostnames>
+<hostname name="172-19-216-216.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="15275" rttvar="15275" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.216.217" addrtype="ipv4"/>
+<address addr="70:48:F7:8A:CA:48" addrtype="mac" vendor="Nintendo"/>
+<hostnames>
+<hostname name="172-19-216-217.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="2599" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.216.236" addrtype="ipv4"/>
+<address addr="6C:99:9D:FF:E1:C5" addrtype="mac"/>
+<hostnames>
+<hostname name="172-19-216-236.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="2947" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.216.241" addrtype="ipv4"/>
+<address addr="08:7C:39:42:3B:82" addrtype="mac" vendor="Amazon Technologies"/>
+<hostnames>
+<hostname name="172-19-216-241.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="68419" rttvar="68419" to="342095"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.216.242" addrtype="ipv4"/>
+<address addr="08:84:9D:5B:0E:32" addrtype="mac" vendor="Amazon Technologies"/>
+<hostnames>
+<hostname name="172-19-216-242.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="82355" rttvar="82355" to="411775"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.216.248" addrtype="ipv4"/>
+<address addr="38:E7:C0:14:6B:E1" addrtype="mac"/>
+<hostnames>
+<hostname name="172-19-216-248.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="2786" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.216.250" addrtype="ipv4"/>
+<address addr="34:D2:70:19:6B:82" addrtype="mac" vendor="Amazon Technologies"/>
+<hostnames>
+<hostname name="172-19-216-250.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="2284" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.216.251" addrtype="ipv4"/>
+<address addr="E0:F6:B5:EA:0E:76" addrtype="mac" vendor="Nintendo"/>
+<hostnames>
+<hostname name="172-19-216-251.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="3552" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.217.16" addrtype="ipv4"/>
+<address addr="5C:E9:1E:AC:76:D7" addrtype="mac"/>
+<hostnames>
+<hostname name="172-19-217-16.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="3816" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.217.21" addrtype="ipv4"/>
+<address addr="28:AD:18:E3:10:CB" addrtype="mac"/>
+<hostnames>
+<hostname name="172-19-217-21.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="2081" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.217.28" addrtype="ipv4"/>
+<address addr="98:29:A6:E9:9D:2A" addrtype="mac" vendor="Compal Information (kunshan)"/>
+<hostnames>
+<hostname name="172-19-217-28.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="3016" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.217.46" addrtype="ipv4"/>
+<address addr="C8:3A:6B:69:C4:84" addrtype="mac" vendor="Roku"/>
+<hostnames>
+<hostname name="172-19-217-46.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="3444" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.217.48" addrtype="ipv4"/>
+<address addr="C8:3A:6B:96:E7:17" addrtype="mac" vendor="Roku"/>
+<hostnames>
+<hostname name="172-19-217-48.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="3843" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.217.54" addrtype="ipv4"/>
+<address addr="04:03:D6:29:A5:A0" addrtype="mac" vendor="Nintendo"/>
+<hostnames>
+<hostname name="172-19-217-54.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="3575" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.217.57" addrtype="ipv4"/>
+<address addr="B0:F7:C4:56:27:74" addrtype="mac"/>
+<hostnames>
+<hostname name="172-19-217-57.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="4007" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.217.59" addrtype="ipv4"/>
+<address addr="AC:04:0B:3E:CE:30" addrtype="mac" vendor="Peloton Interactive"/>
+<hostnames>
+<hostname name="172-19-217-59.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="4204" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.217.63" addrtype="ipv4"/>
+<address addr="84:EA:ED:7D:8F:D3" addrtype="mac" vendor="Roku"/>
+<hostnames>
+<hostname name="172-19-217-63.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="4245" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.217.71" addrtype="ipv4"/>
+<address addr="A8:B5:7C:22:86:45" addrtype="mac"/>
+<hostnames>
+<hostname name="172-19-217-71.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="2951" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.217.81" addrtype="ipv4"/>
+<address addr="00:E4:21:90:8D:36" addrtype="mac"/>
+<hostnames>
+<hostname name="172-19-217-81.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="3972" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.217.92" addrtype="ipv4"/>
+<address addr="2C:59:E5:F2:B8:99" addrtype="mac" vendor="Hewlett Packard"/>
+<hostnames>
+<hostname name="172-19-217-92.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="2258" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.217.95" addrtype="ipv4"/>
+<address addr="B0:73:9C:0F:DF:DE" addrtype="mac"/>
+<hostnames>
+<hostname name="172-19-217-95.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="1770" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.217.97" addrtype="ipv4"/>
+<address addr="70:48:F7:2D:4F:AB" addrtype="mac" vendor="Nintendo"/>
+<hostnames>
+<hostname name="172-19-217-97.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="2360" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.217.105" addrtype="ipv4"/>
+<address addr="7C:27:BC:27:89:48" addrtype="mac"/>
+<hostnames>
+<hostname name="172-19-217-105.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="3631" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.217.112" addrtype="ipv4"/>
+<address addr="F0:6E:0B:53:19:53" addrtype="mac" vendor="Microsoft"/>
+<hostnames>
+<hostname name="172-19-217-112.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="2165" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.217.114" addrtype="ipv4"/>
+<address addr="80:60:B7:9B:6E:DA" addrtype="mac" vendor="Cloud Network Technology Singapore PTE."/>
+<hostnames>
+<hostname name="172-19-217-114.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="2662" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.217.115" addrtype="ipv4"/>
+<address addr="F4:F5:D8:C7:AC:9A" addrtype="mac" vendor="Google"/>
+<hostnames>
+<hostname name="172-19-217-115.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="2276" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.217.126" addrtype="ipv4"/>
+<address addr="A0:85:FC:E9:60:FD" addrtype="mac" vendor="Microsoft"/>
+<hostnames>
+<hostname name="172-19-217-126.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="2773" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.217.133" addrtype="ipv4"/>
+<address addr="1C:98:C1:62:78:EC" addrtype="mac" vendor="Cloud Network Technology Singapore PTE."/>
+<hostnames>
+<hostname name="172-19-217-133.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="2781" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.217.145" addrtype="ipv4"/>
+<address addr="C0:D2:F3:20:A7:24" addrtype="mac" vendor="Hui Zhou Gaoshengda Technology"/>
+<hostnames>
+<hostname name="172-19-217-145.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="3251" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.217.147" addrtype="ipv4"/>
+<address addr="00:E4:21:EC:FC:82" addrtype="mac"/>
+<hostnames>
+<hostname name="172-19-217-147.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="2515" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.217.161" addrtype="ipv4"/>
+<address addr="08:7C:39:39:4D:5B" addrtype="mac" vendor="Amazon Technologies"/>
+<hostnames>
+<hostname name="172-19-217-161.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="8782" rttvar="8782" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.217.163" addrtype="ipv4"/>
+<address addr="1C:98:C1:82:37:DF" addrtype="mac" vendor="Cloud Network Technology Singapore PTE."/>
+<hostnames>
+<hostname name="172-19-217-163.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="4197" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.217.165" addrtype="ipv4"/>
+<address addr="14:0A:C5:10:5E:BC" addrtype="mac" vendor="Amazon Technologies"/>
+<hostnames>
+<hostname name="172-19-217-165.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="4079" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.217.181" addrtype="ipv4"/>
+<address addr="DC:97:58:65:CC:84" addrtype="mac"/>
+<hostnames>
+<hostname name="172-19-217-181.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="5559" rttvar="5559" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.217.183" addrtype="ipv4"/>
+<address addr="DC:E5:5B:44:9B:BF" addrtype="mac"/>
+<hostnames>
+<hostname name="172-19-217-183.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="3635" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.217.184" addrtype="ipv4"/>
+<address addr="10:59:32:0E:AA:76" addrtype="mac" vendor="Roku"/>
+<hostnames>
+<hostname name="172-19-217-184.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="6958" rttvar="6958" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.217.185" addrtype="ipv4"/>
+<address addr="7C:27:BC:81:8B:B7" addrtype="mac"/>
+<hostnames>
+<hostname name="172-19-217-185.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="2593" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.217.188" addrtype="ipv4"/>
+<address addr="90:11:95:B4:06:D7" addrtype="mac"/>
+<hostnames>
+<hostname name="172-19-217-188.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="2038" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.217.191" addrtype="ipv4"/>
+<address addr="18:EF:3A:79:4F:66" addrtype="mac"/>
+<hostnames>
+<hostname name="172-19-217-191.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="1821" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.217.194" addrtype="ipv4"/>
+<address addr="40:A2:DB:7E:6E:35" addrtype="mac" vendor="Amazon Technologies"/>
+<hostnames>
+<hostname name="172-19-217-194.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="2809" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.217.200" addrtype="ipv4"/>
+<address addr="4C:B9:EA:00:54:B7" addrtype="mac"/>
+<hostnames>
+<hostname name="172-19-217-200.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="3903" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.217.202" addrtype="ipv4"/>
+<address addr="F0:B3:EC:44:34:7C" addrtype="mac"/>
+<hostnames>
+<hostname name="172-19-217-202.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="1917" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.217.211" addrtype="ipv4"/>
+<address addr="D8:13:99:92:43:53" addrtype="mac" vendor="Hui Zhou Gaoshengda Technology"/>
+<hostnames>
+<hostname name="172-19-217-211.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="2292" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.217.213" addrtype="ipv4"/>
+<address addr="18:65:71:72:46:A9" addrtype="mac" vendor="Top Victory Electronics (Taiwan)"/>
+<hostnames>
+<hostname name="172-19-217-213.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="16070" rttvar="16070" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.217.224" addrtype="ipv4"/>
+<address addr="50:1A:C5:C9:D6:70" addrtype="mac" vendor="Microsoft"/>
+<hostnames>
+<hostname name="172-19-217-224.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="2300" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.217.227" addrtype="ipv4"/>
+<address addr="90:6A:EB:8E:26:E1" addrtype="mac"/>
+<hostnames>
+<hostname name="172-19-217-227.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="3457" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.217.229" addrtype="ipv4"/>
+<address addr="D4:F0:57:30:70:E3" addrtype="mac" vendor="Nintendo"/>
+<hostnames>
+<hostname name="172-19-217-229.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="101613" rttvar="101613" to="508065"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.217.250" addrtype="ipv4"/>
+<address addr="84:EA:ED:1C:4D:1B" addrtype="mac" vendor="Roku"/>
+<hostnames>
+<hostname name="172-19-217-250.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="2288" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.217.254" addrtype="ipv4"/>
+<address addr="BC:D7:D4:CC:3C:3F" addrtype="mac"/>
+<hostnames>
+<hostname name="172-19-217-254.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="4137" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.218.3" addrtype="ipv4"/>
+<address addr="50:DC:E7:25:4C:57" addrtype="mac" vendor="Amazon Technologies"/>
+<hostnames>
+<hostname name="172-19-218-3.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="56237" rttvar="56237" to="281185"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.218.6" addrtype="ipv4"/>
+<address addr="A8:4A:63:6E:AB:B7" addrtype="mac"/>
+<hostnames>
+<hostname name="172-19-218-6.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="2618" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.218.14" addrtype="ipv4"/>
+<address addr="C8:3A:6B:11:65:34" addrtype="mac" vendor="Roku"/>
+<hostnames>
+<hostname name="172-19-218-14.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="2961" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.218.21" addrtype="ipv4"/>
+<address addr="44:00:49:FE:AA:D3" addrtype="mac" vendor="Amazon Technologies"/>
+<hostnames>
+<hostname name="172-19-218-21.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="3773" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.218.28" addrtype="ipv4"/>
+<address addr="48:A5:E7:06:ED:45" addrtype="mac" vendor="Nintendo"/>
+<hostnames>
+<hostname name="172-19-218-28.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="3087" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.218.33" addrtype="ipv4"/>
+<address addr="88:DE:A9:B0:90:A1" addrtype="mac" vendor="Roku"/>
+<hostnames>
+<hostname name="172-19-218-33.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="3618" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.218.37" addrtype="ipv4"/>
+<address addr="EC:0D:E4:30:D6:93" addrtype="mac"/>
+<hostnames>
+<hostname name="172-19-218-37.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="2862" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.218.51" addrtype="ipv4"/>
+<address addr="7C:61:66:E2:29:DE" addrtype="mac" vendor="Amazon Technologies"/>
+<hostnames>
+<hostname name="172-19-218-51.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="3229" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.218.54" addrtype="ipv4"/>
+<address addr="D0:C2:4E:B0:98:27" addrtype="mac"/>
+<hostnames>
+<hostname name="172-19-218-54.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="3932" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.218.64" addrtype="ipv4"/>
+<address addr="00:F3:61:38:C7:8F" addrtype="mac"/>
+<hostnames>
+<hostname name="172-19-218-64.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="2596" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.218.67" addrtype="ipv4"/>
+<address addr="00:BF:AF:48:B4:05" addrtype="mac"/>
+<hostnames>
+<hostname name="172-19-218-67.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="7955" rttvar="7955" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.218.77" addrtype="ipv4"/>
+<address addr="24:CE:33:B5:5B:AA" addrtype="mac"/>
+<hostnames>
+<hostname name="172-19-218-77.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="101754" rttvar="101754" to="508770"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.218.79" addrtype="ipv4"/>
+<address addr="08:7C:39:6B:11:67" addrtype="mac" vendor="Amazon Technologies"/>
+<hostnames>
+<hostname name="172-19-218-79.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="2488" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.218.85" addrtype="ipv4"/>
+<address addr="48:31:77:07:23:9F" addrtype="mac"/>
+<hostnames>
+<hostname name="172-19-218-85.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="109547" rttvar="109547" to="547735"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.218.86" addrtype="ipv4"/>
+<address addr="F8:A2:D6:0D:8D:C8" addrtype="mac" vendor="Liteon Technology"/>
+<hostnames>
+<hostname name="172-19-218-86.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="3310" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.218.90" addrtype="ipv4"/>
+<address addr="F8:DA:0C:B8:EE:89" addrtype="mac" vendor="Hon Hai Precision Ind."/>
+<hostnames>
+<hostname name="172-19-218-90.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="7796" rttvar="7796" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.218.92" addrtype="ipv4"/>
+<address addr="5C:96:56:F1:24:FB" addrtype="mac" vendor="AzureWave Technology"/>
+<hostnames>
+<hostname name="172-19-218-92.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="2295" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.218.96" addrtype="ipv4"/>
+<address addr="FC:E9:D8:D7:ED:DD" addrtype="mac"/>
+<hostnames>
+<hostname name="172-19-218-96.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="7144" rttvar="7144" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.218.105" addrtype="ipv4"/>
+<address addr="34:AF:B3:64:BB:95" addrtype="mac"/>
+<hostnames>
+<hostname name="172-19-218-105.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="3776" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.218.106" addrtype="ipv4"/>
+<address addr="4C:3B:DF:5C:80:8B" addrtype="mac" vendor="Microsoft"/>
+<hostnames>
+<hostname name="172-19-218-106.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="3821" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.218.113" addrtype="ipv4"/>
+<address addr="BC:CE:25:22:0B:CD" addrtype="mac"/>
+<hostnames>
+<hostname name="172-19-218-113.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="3268" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.218.118" addrtype="ipv4"/>
+<address addr="B8:78:26:3C:DA:53" addrtype="mac" vendor="Nintendo"/>
+<hostnames>
+<hostname name="172-19-218-118.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="4716" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.218.120" addrtype="ipv4"/>
+<address addr="C8:3A:6B:97:55:8D" addrtype="mac" vendor="Roku"/>
+<hostnames>
+<hostname name="172-19-218-120.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="2843" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.218.128" addrtype="ipv4"/>
+<address addr="3C:22:FB:F0:28:D8" addrtype="mac" vendor="Apple"/>
+<hostnames>
+<hostname name="172-19-218-128.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="2505" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.218.132" addrtype="ipv4"/>
+<address addr="0C:EE:99:15:09:86" addrtype="mac" vendor="Amazon Technologies"/>
+<hostnames>
+<hostname name="172-19-218-132.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="2577" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.218.135" addrtype="ipv4"/>
+<address addr="5C:84:3C:13:67:1C" addrtype="mac"/>
+<hostnames>
+<hostname name="172-19-218-135.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="33565" rttvar="33565" to="167825"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.218.148" addrtype="ipv4"/>
+<address addr="3C:22:FB:6E:D7:3A" addrtype="mac" vendor="Apple"/>
+<hostnames>
+<hostname name="172-19-218-148.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="94397" rttvar="94397" to="471985"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.218.163" addrtype="ipv4"/>
+<address addr="F0:EF:86:11:0F:C1" addrtype="mac" vendor="Google"/>
+<hostnames>
+<hostname name="172-19-218-163.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="4336" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.218.170" addrtype="ipv4"/>
+<address addr="A8:47:4A:E7:75:11" addrtype="mac" vendor="Hon Hai Precision Ind."/>
+<hostnames>
+<hostname name="172-19-218-170.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="2538" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.218.178" addrtype="ipv4"/>
+<address addr="48:B4:23:EE:E9:0B" addrtype="mac"/>
+<hostnames>
+<hostname name="172-19-218-178.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="4898" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.218.179" addrtype="ipv4"/>
+<address addr="34:D2:70:DB:10:6B" addrtype="mac" vendor="Amazon Technologies"/>
+<hostnames>
+<hostname name="172-19-218-179.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="6082" rttvar="6082" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.218.180" addrtype="ipv4"/>
+<address addr="90:6A:EB:87:70:41" addrtype="mac"/>
+<hostnames>
+<hostname name="172-19-218-180.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="6160" rttvar="6160" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.218.182" addrtype="ipv4"/>
+<address addr="90:6A:EB:B5:35:F6" addrtype="mac"/>
+<hostnames>
+<hostname name="172-19-218-182.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="3185" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.218.185" addrtype="ipv4"/>
+<address addr="BC:9E:BB:3F:91:B0" addrtype="mac"/>
+<hostnames>
+<hostname name="172-19-218-185.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="97630" rttvar="97630" to="488150"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.218.201" addrtype="ipv4"/>
+<address addr="E8:DA:20:37:67:3A" addrtype="mac" vendor="Nintendo"/>
+<hostnames>
+<hostname name="172-19-218-201.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="2266" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.218.203" addrtype="ipv4"/>
+<address addr="BC:D7:D4:6D:65:B5" addrtype="mac"/>
+<hostnames>
+<hostname name="172-19-218-203.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="3087" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.218.207" addrtype="ipv4"/>
+<address addr="0C:62:A6:AF:C0:C1" addrtype="mac" vendor="Hui Zhou Gaoshengda Technology"/>
+<hostnames>
+<hostname name="172-19-218-207.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="4494" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.218.220" addrtype="ipv4"/>
+<address addr="BC:9E:BB:7E:73:F8" addrtype="mac"/>
+<hostnames>
+<hostname name="172-19-218-220.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="3098" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.218.226" addrtype="ipv4"/>
+<address addr="C4:9D:ED:7A:70:E3" addrtype="mac" vendor="Microsoft"/>
+<hostnames>
+<hostname name="172-19-218-226.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="2044" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.218.227" addrtype="ipv4"/>
+<address addr="68:F6:3B:66:D4:73" addrtype="mac"/>
+<hostnames>
+<hostname name="172-19-218-227.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="2120" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.218.229" addrtype="ipv4"/>
+<address addr="8C:49:62:3C:F9:BE" addrtype="mac" vendor="Roku"/>
+<hostnames>
+<hostname name="172-19-218-229.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="2599" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.218.231" addrtype="ipv4"/>
+<address addr="A8:4A:63:5F:F2:E0" addrtype="mac"/>
+<hostnames>
+<hostname name="172-19-218-231.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="4431" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.218.232" addrtype="ipv4"/>
+<address addr="68:9A:87:B6:14:1B" addrtype="mac" vendor="Amazon Technologies"/>
+<hostnames>
+<hostname name="172-19-218-232.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="3937" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.218.235" addrtype="ipv4"/>
+<address addr="8C:0D:76:E8:56:D6" addrtype="mac" vendor="Huawei Technologies"/>
+<hostnames>
+<hostname name="172-19-218-235.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="36921" rttvar="36921" to="184605"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.218.237" addrtype="ipv4"/>
+<address addr="70:70:AA:4D:2E:A3" addrtype="mac"/>
+<hostnames>
+<hostname name="172-19-218-237.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="2402" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.218.243" addrtype="ipv4"/>
+<address addr="D8:31:34:33:0B:6C" addrtype="mac" vendor="Roku"/>
+<hostnames>
+<hostname name="172-19-218-243.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="48431" rttvar="48431" to="242155"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.218.244" addrtype="ipv4"/>
+<address addr="B8:A1:75:37:12:71" addrtype="mac" vendor="Roku"/>
+<hostnames>
+<hostname name="172-19-218-244.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="3187" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.218.245" addrtype="ipv4"/>
+<address addr="64:B5:C6:BE:34:76" addrtype="mac" vendor="Nintendo"/>
+<hostnames>
+<hostname name="172-19-218-245.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="2007" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.218.249" addrtype="ipv4"/>
+<address addr="F0:EF:86:7C:51:34" addrtype="mac" vendor="Google"/>
+<hostnames>
+<hostname name="172-19-218-249.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="2817" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.218.254" addrtype="ipv4"/>
+<address addr="BC:45:5B:B0:FB:5E" addrtype="mac"/>
+<hostnames>
+<hostname name="172-19-218-254.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="2623" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.218.255" addrtype="ipv4"/>
+<address addr="2C:9E:00:BB:25:58" addrtype="mac"/>
+<hostnames>
+<hostname name="172-19-218-255.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="78481" rttvar="78481" to="392405"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.219.0" addrtype="ipv4"/>
+<address addr="10:B2:32:E5:42:A1" addrtype="mac"/>
+<hostnames>
+<hostname name="172-19-219-0.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="7797" rttvar="7797" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.219.14" addrtype="ipv4"/>
+<address addr="F0:F0:A4:13:41:C2" addrtype="mac" vendor="Amazon Technologies"/>
+<hostnames>
+<hostname name="172-19-219-14.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="3314" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.219.24" addrtype="ipv4"/>
+<address addr="D8:FB:D6:BA:06:69" addrtype="mac"/>
+<hostnames>
+<hostname name="172-19-219-24.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="2543" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.219.27" addrtype="ipv4"/>
+<address addr="AC:CC:FC:38:84:39" addrtype="mac"/>
+<hostnames>
+<hostname name="172-19-219-27.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="4600" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.219.32" addrtype="ipv4"/>
+<address addr="E4:7D:BD:2A:D1:43" addrtype="mac" vendor="Samsung Electronics"/>
+<hostnames>
+<hostname name="172-19-219-32.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="2470" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.219.33" addrtype="ipv4"/>
+<address addr="B0:4A:39:4C:63:35" addrtype="mac" vendor="Beijing Roborock Technology"/>
+<hostnames>
+<hostname name="172-19-219-33.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="4156" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.219.34" addrtype="ipv4"/>
+<address addr="D8:31:34:34:73:40" addrtype="mac" vendor="Roku"/>
+<hostnames>
+<hostname name="172-19-219-34.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="4325" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.219.36" addrtype="ipv4"/>
+<address addr="08:6A:E5:E8:4C:5E" addrtype="mac"/>
+<hostnames>
+<hostname name="172-19-219-36.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="3154" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.219.49" addrtype="ipv4"/>
+<address addr="1C:45:86:4C:00:D4" addrtype="mac"/>
+<hostnames>
+<hostname name="172-19-219-49.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="25407" rttvar="25407" to="127035"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.219.50" addrtype="ipv4"/>
+<address addr="B8:5F:98:CC:5B:6D" addrtype="mac" vendor="Amazon Technologies"/>
+<hostnames>
+<hostname name="172-19-219-50.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="3202" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.219.52" addrtype="ipv4"/>
+<address addr="DC:3A:5E:4D:E5:41" addrtype="mac" vendor="Roku"/>
+<hostnames>
+<hostname name="172-19-219-52.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="2153" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.219.54" addrtype="ipv4"/>
+<address addr="C8:3A:6B:D7:C4:8C" addrtype="mac" vendor="Roku"/>
+<hostnames>
+<hostname name="172-19-219-54.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="4047" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.219.59" addrtype="ipv4"/>
+<address addr="70:48:F7:8C:99:F2" addrtype="mac" vendor="Nintendo"/>
+<hostnames>
+<hostname name="172-19-219-59.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="2698" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.219.63" addrtype="ipv4"/>
+<address addr="28:CF:51:1B:03:3C" addrtype="mac"/>
+<hostnames>
+<hostname name="172-19-219-63.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="4307" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.219.76" addrtype="ipv4"/>
+<address addr="38:E7:C0:DD:B9:09" addrtype="mac"/>
+<hostnames>
+<hostname name="172-19-219-76.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="2422" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.219.84" addrtype="ipv4"/>
+<address addr="D4:91:0F:65:0B:CC" addrtype="mac" vendor="Amazon Technologies"/>
+<hostnames>
+<hostname name="172-19-219-84.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="2009" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.219.85" addrtype="ipv4"/>
+<address addr="38:64:07:4B:E4:C0" addrtype="mac"/>
+<hostnames>
+<hostname name="172-19-219-85.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="3018" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.219.86" addrtype="ipv4"/>
+<address addr="B0:CF:CB:61:F9:DE" addrtype="mac"/>
+<hostnames>
+<hostname name="172-19-219-86.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="3333" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.219.88" addrtype="ipv4"/>
+<address addr="EC:8A:C4:35:FC:7C" addrtype="mac"/>
+<hostnames>
+<hostname name="172-19-219-88.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="2018" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.219.93" addrtype="ipv4"/>
+<address addr="E8:A0:CD:E4:A3:55" addrtype="mac"/>
+<hostnames>
+<hostname name="172-19-219-93.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="64739" rttvar="64739" to="323695"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.219.97" addrtype="ipv4"/>
+<address addr="C8:3A:6B:97:FE:94" addrtype="mac" vendor="Roku"/>
+<hostnames>
+<hostname name="172-19-219-97.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="2445" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.219.99" addrtype="ipv4"/>
+<address addr="7C:61:66:D5:70:B3" addrtype="mac" vendor="Amazon Technologies"/>
+<hostnames>
+<hostname name="172-19-219-99.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="3795" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.219.106" addrtype="ipv4"/>
+<address addr="FC:E9:D8:4B:1A:9E" addrtype="mac"/>
+<hostnames>
+<hostname name="172-19-219-106.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="3940" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.219.107" addrtype="ipv4"/>
+<address addr="58:82:A8:78:CC:8D" addrtype="mac" vendor="Microsoft"/>
+<hostnames>
+<hostname name="172-19-219-107.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="2624" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.219.108" addrtype="ipv4"/>
+<address addr="A8:51:AB:A2:66:5E" addrtype="mac"/>
+<hostnames>
+<hostname name="172-19-219-108.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="2303" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.219.109" addrtype="ipv4"/>
+<address addr="E8:DA:20:DA:CB:5D" addrtype="mac" vendor="Nintendo"/>
+<hostnames>
+<hostname name="172-19-219-109.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="1988" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.219.116" addrtype="ipv4"/>
+<address addr="6C:99:9D:77:AE:C6" addrtype="mac"/>
+<hostnames>
+<hostname name="172-19-219-116.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="3416" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.219.122" addrtype="ipv4"/>
+<address addr="64:E0:03:A4:4E:3F" addrtype="mac"/>
+<hostnames>
+<hostname name="172-19-219-122.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="2511" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.219.123" addrtype="ipv4"/>
+<address addr="F8:DA:0C:B8:E8:C7" addrtype="mac" vendor="Hon Hai Precision Ind."/>
+<hostnames>
+<hostname name="172-19-219-123.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="50054" rttvar="50054" to="250270"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.219.126" addrtype="ipv4"/>
+<address addr="C8:69:CD:5B:1A:B3" addrtype="mac" vendor="Apple"/>
+<hostnames>
+<hostname name="172-19-219-126.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="2876" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.219.129" addrtype="ipv4"/>
+<address addr="DC:97:58:70:ED:9F" addrtype="mac"/>
+<hostnames>
+<hostname name="172-19-219-129.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="2883" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.219.134" addrtype="ipv4"/>
+<address addr="B0:05:94:0B:91:33" addrtype="mac" vendor="Liteon Technology"/>
+<hostnames>
+<hostname name="172-19-219-134.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="2466" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.219.140" addrtype="ipv4"/>
+<address addr="FC:03:9F:D9:A0:5E" addrtype="mac" vendor="Samsung Electronics"/>
+<hostnames>
+<hostname name="172-19-219-140.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="84050" rttvar="84050" to="420250"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.219.145" addrtype="ipv4"/>
+<address addr="40:A2:DB:64:32:BB" addrtype="mac" vendor="Amazon Technologies"/>
+<hostnames>
+<hostname name="172-19-219-145.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="137428" rttvar="137428" to="687140"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.219.148" addrtype="ipv4"/>
+<address addr="10:09:F9:DA:13:DF" addrtype="mac"/>
+<hostnames>
+<hostname name="172-19-219-148.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="3986" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.219.152" addrtype="ipv4"/>
+<address addr="C0:95:6D:4C:1F:6A" addrtype="mac"/>
+<hostnames>
+<hostname name="172-19-219-152.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="2243" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.219.170" addrtype="ipv4"/>
+<address addr="74:58:F3:DB:07:12" addrtype="mac" vendor="Amazon Technologies"/>
+<hostnames>
+<hostname name="172-19-219-170.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="1723" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.219.179" addrtype="ipv4"/>
+<address addr="98:5F:D3:FA:C5:33" addrtype="mac" vendor="Microsoft"/>
+<hostnames>
+<hostname name="172-19-219-179.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="6206" rttvar="6206" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.219.180" addrtype="ipv4"/>
+<address addr="20:EF:BD:7A:12:EE" addrtype="mac"/>
+<hostnames>
+<hostname name="172-19-219-180.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="6193" rttvar="6193" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.219.183" addrtype="ipv4"/>
+<address addr="10:59:32:74:73:6E" addrtype="mac" vendor="Roku"/>
+<hostnames>
+<hostname name="172-19-219-183.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="2358" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.219.188" addrtype="ipv4"/>
+<address addr="74:D6:37:DA:01:39" addrtype="mac" vendor="Amazon Technologies"/>
+<hostnames>
+<hostname name="172-19-219-188.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="3775" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.219.201" addrtype="ipv4"/>
+<address addr="54:67:E6:61:9A:B3" addrtype="mac"/>
+<hostnames>
+<hostname name="172-19-219-201.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="2666" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.219.215" addrtype="ipv4"/>
+<address addr="A8:16:9D:FA:44:13" addrtype="mac"/>
+<hostnames>
+<hostname name="172-19-219-215.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="2247" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.219.218" addrtype="ipv4"/>
+<address addr="74:84:69:5A:5E:0D" addrtype="mac"/>
+<hostnames>
+<hostname name="172-19-219-218.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="95338" rttvar="95338" to="476690"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.219.219" addrtype="ipv4"/>
+<address addr="5C:52:1E:60:C5:89" addrtype="mac" vendor="Nintendo"/>
+<hostnames>
+<hostname name="172-19-219-219.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="2615" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.219.221" addrtype="ipv4"/>
+<address addr="5C:0C:E6:F1:EB:4C" addrtype="mac"/>
+<hostnames>
+<hostname name="172-19-219-221.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="18501" rttvar="18501" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.219.232" addrtype="ipv4"/>
+<address addr="1C:12:B0:E0:BF:79" addrtype="mac" vendor="Amazon Technologies"/>
+<hostnames>
+<hostname name="172-19-219-232.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="2886" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.219.233" addrtype="ipv4"/>
+<address addr="1C:98:C1:4D:01:80" addrtype="mac" vendor="Cloud Network Technology Singapore PTE."/>
+<hostnames>
+<hostname name="172-19-219-233.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="2822" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.219.242" addrtype="ipv4"/>
+<address addr="10:B2:32:22:CB:19" addrtype="mac"/>
+<hostnames>
+<hostname name="172-19-219-242.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="53162" rttvar="53162" to="265810"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.219.244" addrtype="ipv4"/>
+<address addr="BC:D7:D4:5B:BB:13" addrtype="mac"/>
+<hostnames>
+<hostname name="172-19-219-244.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="3284" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.219.245" addrtype="ipv4"/>
+<address addr="C0:EE:40:8E:BD:60" addrtype="mac" vendor="Laird Technologies"/>
+<hostnames>
+<hostname name="172-19-219-245.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="2622" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.219.249" addrtype="ipv4"/>
+<address addr="08:A6:BC:42:14:28" addrtype="mac" vendor="Amazon Technologies"/>
+<hostnames>
+<hostname name="172-19-219-249.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="2944" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.219.254" addrtype="ipv4"/>
+<address addr="00:60:21:ED:4B:98" addrtype="mac" vendor="DSC"/>
+<hostnames>
+<hostname name="172-19-219-254.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="1965" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.220.6" addrtype="ipv4"/>
+<address addr="DC:98:40:E0:ED:03" addrtype="mac" vendor="Microsoft"/>
+<hostnames>
+<hostname name="172-19-220-6.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="2855" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.220.7" addrtype="ipv4"/>
+<address addr="D8:E7:43:25:AF:31" addrtype="mac" vendor="Wush"/>
+<hostnames>
+<hostname name="172-19-220-7.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="2856" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.220.10" addrtype="ipv4"/>
+<address addr="F8:54:B8:24:1A:C0" addrtype="mac" vendor="Amazon Technologies"/>
+<hostnames>
+<hostname name="172-19-220-10.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="3619" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.220.13" addrtype="ipv4"/>
+<address addr="A8:B5:7C:E4:C8:18" addrtype="mac"/>
+<hostnames>
+<hostname name="172-19-220-13.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="3258" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.220.15" addrtype="ipv4"/>
+<address addr="4C:17:44:9D:63:BC" addrtype="mac" vendor="Amazon Technologies"/>
+<hostnames>
+<hostname name="172-19-220-15.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="3484" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.220.20" addrtype="ipv4"/>
+<address addr="2C:54:91:8D:B0:A2" addrtype="mac" vendor="Microsoft"/>
+<hostnames>
+<hostname name="172-19-220-20.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="3319" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.220.22" addrtype="ipv4"/>
+<address addr="A8:51:AB:CD:9A:17" addrtype="mac"/>
+<hostnames>
+<hostname name="172-19-220-22.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="1940" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.220.27" addrtype="ipv4"/>
+<address addr="E8:D8:7E:29:E4:E5" addrtype="mac"/>
+<hostnames>
+<hostname name="172-19-220-27.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="4716" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.220.28" addrtype="ipv4"/>
+<address addr="58:2F:40:C0:7B:24" addrtype="mac" vendor="Nintendo"/>
+<hostnames>
+<hostname name="172-19-220-28.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="2751" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.220.34" addrtype="ipv4"/>
+<address addr="18:48:BE:AB:B8:39" addrtype="mac"/>
+<hostnames>
+<hostname name="172-19-220-34.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="4419" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.220.39" addrtype="ipv4"/>
+<address addr="BC:D7:D4:74:85:24" addrtype="mac"/>
+<hostnames>
+<hostname name="172-19-220-39.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="2571" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.220.44" addrtype="ipv4"/>
+<address addr="34:2F:BD:90:B4:D7" addrtype="mac" vendor="Nintendo"/>
+<hostnames>
+<hostname name="172-19-220-44.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="2425" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.220.46" addrtype="ipv4"/>
+<address addr="D8:8C:79:1B:93:64" addrtype="mac" vendor="Google"/>
+<hostnames>
+<hostname name="172-19-220-46.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="2361" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.220.52" addrtype="ipv4"/>
+<address addr="4C:3B:DF:55:F7:C2" addrtype="mac" vendor="Microsoft"/>
+<hostnames>
+<hostname name="172-19-220-52.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="2355" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.220.55" addrtype="ipv4"/>
+<address addr="34:60:F9:CB:30:BC" addrtype="mac"/>
+<hostnames>
+<hostname name="172-19-220-55.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="2213" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.220.59" addrtype="ipv4"/>
+<address addr="7C:63:05:A3:04:A9" addrtype="mac"/>
+<hostnames>
+<hostname name="172-19-220-59.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="3259" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.220.61" addrtype="ipv4"/>
+<address addr="4C:0B:BE:32:D6:9F" addrtype="mac" vendor="Microsoft"/>
+<hostnames>
+<hostname name="172-19-220-61.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="3621" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.220.64" addrtype="ipv4"/>
+<address addr="2C:54:91:CB:C8:7B" addrtype="mac" vendor="Microsoft"/>
+<hostnames>
+<hostname name="172-19-220-64.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="4341" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.220.66" addrtype="ipv4"/>
+<address addr="A8:51:AB:A8:E3:86" addrtype="mac"/>
+<hostnames>
+<hostname name="172-19-220-66.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="2153" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.220.82" addrtype="ipv4"/>
+<address addr="24:1B:7A:8A:8F:F7" addrtype="mac" vendor="Apple"/>
+<hostnames>
+<hostname name="172-19-220-82.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="2466" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.220.93" addrtype="ipv4"/>
+<address addr="80:6D:71:C0:1F:BD" addrtype="mac"/>
+<hostnames>
+<hostname name="172-19-220-93.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="1729" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.220.95" addrtype="ipv4"/>
+<address addr="74:AB:93:C9:47:EE" addrtype="mac" vendor="Blink by Amazon"/>
+<hostnames>
+<hostname name="172-19-220-95.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="86164" rttvar="86164" to="430820"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.220.105" addrtype="ipv4"/>
+<address addr="34:2F:BD:90:F8:4A" addrtype="mac" vendor="Nintendo"/>
+<hostnames>
+<hostname name="172-19-220-105.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="3626" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.220.115" addrtype="ipv4"/>
+<address addr="74:84:69:E6:73:32" addrtype="mac"/>
+<hostnames>
+<hostname name="172-19-220-115.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="2858" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.220.121" addrtype="ipv4"/>
+<address addr="04:03:D6:29:BE:B2" addrtype="mac" vendor="Nintendo"/>
+<hostnames>
+<hostname name="172-19-220-121.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="258686" rttvar="258686" to="1293430"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.220.132" addrtype="ipv4"/>
+<address addr="1C:98:C1:54:93:EC" addrtype="mac" vendor="Cloud Network Technology Singapore PTE."/>
+<hostnames>
+<hostname name="172-19-220-132.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="77120" rttvar="77120" to="385600"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.220.134" addrtype="ipv4"/>
+<address addr="00:D2:B1:9E:F2:8E" addrtype="mac" vendor="TPV Display Technology (Xiamen)"/>
+<hostnames>
+<hostname name="172-19-220-134.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="2611" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.220.138" addrtype="ipv4"/>
+<address addr="58:2F:40:18:0F:C9" addrtype="mac" vendor="Nintendo"/>
+<hostnames>
+<hostname name="172-19-220-138.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="3621" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.220.139" addrtype="ipv4"/>
+<address addr="50:DC:E7:9B:1D:B0" addrtype="mac" vendor="Amazon Technologies"/>
+<hostnames>
+<hostname name="172-19-220-139.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="2065" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.220.153" addrtype="ipv4"/>
+<address addr="D8:E7:43:24:C4:72" addrtype="mac" vendor="Wush"/>
+<hostnames>
+<hostname name="172-19-220-153.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="5115" rttvar="5115" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.220.155" addrtype="ipv4"/>
+<address addr="68:6C:E6:04:B9:00" addrtype="mac"/>
+<hostnames>
+<hostname name="172-19-220-155.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="51254" rttvar="51254" to="256270"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.220.158" addrtype="ipv4"/>
+<address addr="10:96:93:42:2E:7A" addrtype="mac"/>
+<hostnames>
+<hostname name="172-19-220-158.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="2821" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.220.159" addrtype="ipv4"/>
+<address addr="10:BF:67:34:09:AE" addrtype="mac"/>
+<hostnames>
+<hostname name="172-19-220-159.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="3545" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.220.167" addrtype="ipv4"/>
+<address addr="18:65:71:9E:BF:1E" addrtype="mac" vendor="Top Victory Electronics (Taiwan)"/>
+<hostnames>
+<hostname name="172-19-220-167.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="2058" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.220.170" addrtype="ipv4"/>
+<address addr="D8:13:99:80:79:33" addrtype="mac" vendor="Hui Zhou Gaoshengda Technology"/>
+<hostnames>
+<hostname name="172-19-220-170.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="2586" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.220.176" addrtype="ipv4"/>
+<address addr="08:A6:BC:95:D8:9C" addrtype="mac" vendor="Amazon Technologies"/>
+<hostnames>
+<hostname name="172-19-220-176.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="2225" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.220.180" addrtype="ipv4"/>
+<address addr="C6:03:20:5A:87:DF" addrtype="mac"/>
+<hostnames>
+<hostname name="172-19-220-180.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="6251" rttvar="6251" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.220.181" addrtype="ipv4"/>
+<address addr="D0:03:4B:38:8E:12" addrtype="mac" vendor="Apple"/>
+<hostnames>
+<hostname name="172-19-220-181.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="3183" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.220.185" addrtype="ipv4"/>
+<address addr="1C:98:C1:B6:D5:96" addrtype="mac" vendor="Cloud Network Technology Singapore PTE."/>
+<hostnames>
+<hostname name="172-19-220-185.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="97302" rttvar="97302" to="486510"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.220.186" addrtype="ipv4"/>
+<address addr="10:3D:0A:D2:BE:39" addrtype="mac" vendor="Hui Zhou Gaoshengda Technology"/>
+<hostnames>
+<hostname name="172-19-220-186.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="1877" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.220.197" addrtype="ipv4"/>
+<address addr="4C:53:FD:0D:5E:32" addrtype="mac"/>
+<hostnames>
+<hostname name="172-19-220-197.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="2806" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.220.203" addrtype="ipv4"/>
+<address addr="10:96:93:53:B4:40" addrtype="mac"/>
+<hostnames>
+<hostname name="172-19-220-203.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="2788" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.220.205" addrtype="ipv4"/>
+<address addr="B0:A7:37:1D:B4:BB" addrtype="mac" vendor="Roku"/>
+<hostnames>
+<hostname name="172-19-220-205.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="2031" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.220.207" addrtype="ipv4"/>
+<address addr="68:37:E9:11:B0:07" addrtype="mac" vendor="Amazon Technologies"/>
+<hostnames>
+<hostname name="172-19-220-207.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="12821" rttvar="12821" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.220.209" addrtype="ipv4"/>
+<address addr="68:B6:91:7A:2D:5E" addrtype="mac"/>
+<hostnames>
+<hostname name="172-19-220-209.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="5380" rttvar="5380" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.220.212" addrtype="ipv4"/>
+<address addr="E4:7D:BD:D6:BA:3E" addrtype="mac" vendor="Samsung Electronics"/>
+<hostnames>
+<hostname name="172-19-220-212.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="4794" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.220.216" addrtype="ipv4"/>
+<address addr="0C:EE:99:54:54:AC" addrtype="mac" vendor="Amazon Technologies"/>
+<hostnames>
+<hostname name="172-19-220-216.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="15213" rttvar="15213" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.220.229" addrtype="ipv4"/>
+<address addr="00:D2:B1:C3:50:AC" addrtype="mac" vendor="TPV Display Technology (Xiamen)"/>
+<hostnames>
+<hostname name="172-19-220-229.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="3848" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.220.230" addrtype="ipv4"/>
+<address addr="14:91:38:73:EA:31" addrtype="mac" vendor="Amazon Technologies"/>
+<hostnames>
+<hostname name="172-19-220-230.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="4259" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.220.233" addrtype="ipv4"/>
+<address addr="7C:63:05:29:DF:9B" addrtype="mac"/>
+<hostnames>
+<hostname name="172-19-220-233.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="3453" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.220.236" addrtype="ipv4"/>
+<address addr="50:32:37:AF:9D:D1" addrtype="mac" vendor="Apple"/>
+<hostnames>
+<hostname name="172-19-220-236.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="2607" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.220.240" addrtype="ipv4"/>
+<address addr="B4:B7:42:7E:88:3B" addrtype="mac"/>
+<hostnames>
+<hostname name="172-19-220-240.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="8575" rttvar="8575" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.220.241" addrtype="ipv4"/>
+<address addr="D0:88:0C:64:32:2A" addrtype="mac"/>
+<hostnames>
+<hostname name="172-19-220-241.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="63743" rttvar="63743" to="318715"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.220.248" addrtype="ipv4"/>
+<address addr="14:0A:C5:0A:87:7C" addrtype="mac" vendor="Amazon Technologies"/>
+<hostnames>
+<hostname name="172-19-220-248.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="2109" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.221.11" addrtype="ipv4"/>
+<address addr="10:3D:0A:88:4F:74" addrtype="mac" vendor="Hui Zhou Gaoshengda Technology"/>
+<hostnames>
+<hostname name="172-19-221-11.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="3868" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.221.12" addrtype="ipv4"/>
+<address addr="38:E7:C0:38:0D:D3" addrtype="mac"/>
+<hostnames>
+<hostname name="172-19-221-12.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="2764" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.221.14" addrtype="ipv4"/>
+<address addr="08:3A:F2:79:86:C4" addrtype="mac" vendor="Espressif"/>
+<hostnames>
+<hostname name="172-19-221-14.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="3399" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.221.16" addrtype="ipv4"/>
+<address addr="A0:D2:B1:95:7E:FC" addrtype="mac"/>
+<hostnames>
+<hostname name="172-19-221-16.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="3717" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.221.18" addrtype="ipv4"/>
+<address addr="7C:BB:8A:B4:F1:2C" addrtype="mac" vendor="Nintendo"/>
+<hostnames>
+<hostname name="172-19-221-18.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="69867" rttvar="69867" to="349335"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.221.34" addrtype="ipv4"/>
+<address addr="D0:BF:9C:A4:0B:99" addrtype="mac" vendor="Hewlett Packard"/>
+<hostnames>
+<hostname name="172-19-221-34.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="4560" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.221.38" addrtype="ipv4"/>
+<address addr="08:12:A5:B4:D3:C2" addrtype="mac" vendor="Amazon Technologies"/>
+<hostnames>
+<hostname name="172-19-221-38.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="5356" rttvar="5356" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.221.42" addrtype="ipv4"/>
+<address addr="E0:F7:28:53:AF:CB" addrtype="mac"/>
+<hostnames>
+<hostname name="172-19-221-42.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="3385" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.221.48" addrtype="ipv4"/>
+<address addr="CC:F7:35:67:64:B1" addrtype="mac" vendor="Amazon Technologies"/>
+<hostnames>
+<hostname name="172-19-221-48.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="2842" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.221.57" addrtype="ipv4"/>
+<address addr="08:16:D5:61:C3:FE" addrtype="mac"/>
+<hostnames>
+<hostname name="172-19-221-57.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="2628" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.221.58" addrtype="ipv4"/>
+<address addr="78:20:A5:6F:48:DC" addrtype="mac"/>
+<hostnames>
+<hostname name="172-19-221-58.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="3212" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.221.59" addrtype="ipv4"/>
+<address addr="1C:98:C1:D2:C7:40" addrtype="mac" vendor="Cloud Network Technology Singapore PTE."/>
+<hostnames>
+<hostname name="172-19-221-59.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="3392" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.221.71" addrtype="ipv4"/>
+<address addr="7C:2E:BD:5A:46:14" addrtype="mac" vendor="Google"/>
+<hostnames>
+<hostname name="172-19-221-71.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="3007" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.221.73" addrtype="ipv4"/>
+<address addr="C8:3A:6B:95:83:5D" addrtype="mac" vendor="Roku"/>
+<hostnames>
+<hostname name="172-19-221-73.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="2548" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.221.77" addrtype="ipv4"/>
+<address addr="0C:62:A6:38:69:EF" addrtype="mac" vendor="Hui Zhou Gaoshengda Technology"/>
+<hostnames>
+<hostname name="172-19-221-77.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="2073" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.221.80" addrtype="ipv4"/>
+<address addr="44:6D:7F:C6:7B:98" addrtype="mac"/>
+<hostnames>
+<hostname name="172-19-221-80.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="2604" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.221.98" addrtype="ipv4"/>
+<address addr="AC:AE:19:42:8C:A3" addrtype="mac" vendor="Roku"/>
+<hostnames>
+<hostname name="172-19-221-98.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="2609" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.221.101" addrtype="ipv4"/>
+<address addr="B0:73:9C:D8:4D:C5" addrtype="mac"/>
+<hostnames>
+<hostname name="172-19-221-101.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="5891" rttvar="5891" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.221.103" addrtype="ipv4"/>
+<address addr="0C:E4:41:EE:08:D4" addrtype="mac"/>
+<hostnames>
+<hostname name="172-19-221-103.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="84449" rttvar="84449" to="422245"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.221.104" addrtype="ipv4"/>
+<address addr="74:A7:EA:7E:1D:F8" addrtype="mac" vendor="Amazon Technologies"/>
+<hostnames>
+<hostname name="172-19-221-104.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="2524" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.221.108" addrtype="ipv4"/>
+<address addr="08:84:9D:43:7B:73" addrtype="mac" vendor="Amazon Technologies"/>
+<hostnames>
+<hostname name="172-19-221-108.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="2901" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.221.115" addrtype="ipv4"/>
+<address addr="8C:49:62:78:74:B0" addrtype="mac" vendor="Roku"/>
+<hostnames>
+<hostname name="172-19-221-115.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="3512" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.221.120" addrtype="ipv4"/>
+<address addr="28:66:E3:2A:3B:29" addrtype="mac" vendor="AzureWave Technology"/>
+<hostnames>
+<hostname name="172-19-221-120.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="2329" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.221.121" addrtype="ipv4"/>
+<address addr="5C:0C:E6:F3:4A:E1" addrtype="mac"/>
+<hostnames>
+<hostname name="172-19-221-121.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="5004" rttvar="5004" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.221.130" addrtype="ipv4"/>
+<address addr="70:70:AA:68:A5:90" addrtype="mac"/>
+<hostnames>
+<hostname name="172-19-221-130.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="3545" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.221.135" addrtype="ipv4"/>
+<address addr="68:FF:7B:CD:0B:BA" addrtype="mac" vendor="Tp-link Technologies"/>
+<hostnames>
+<hostname name="172-19-221-135.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="1945" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.221.136" addrtype="ipv4"/>
+<address addr="D4:AB:CD:B8:68:24" addrtype="mac" vendor="Hui Zhou Gaoshengda Technology"/>
+<hostnames>
+<hostname name="172-19-221-136.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="4015" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.221.137" addrtype="ipv4"/>
+<address addr="A4:38:CC:2C:DE:D5" addrtype="mac" vendor="Nintendo"/>
+<hostnames>
+<hostname name="172-19-221-137.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="5179" rttvar="5179" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.221.142" addrtype="ipv4"/>
+<address addr="C4:9D:ED:C4:62:5B" addrtype="mac" vendor="Microsoft"/>
+<hostnames>
+<hostname name="172-19-221-142.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="2950" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.221.144" addrtype="ipv4"/>
+<address addr="5C:52:1E:9B:12:94" addrtype="mac" vendor="Nintendo"/>
+<hostnames>
+<hostname name="172-19-221-144.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="3143" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.221.145" addrtype="ipv4"/>
+<address addr="08:7C:39:E3:D8:DA" addrtype="mac" vendor="Amazon Technologies"/>
+<hostnames>
+<hostname name="172-19-221-145.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="3660" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.221.154" addrtype="ipv4"/>
+<address addr="98:B6:E9:66:67:DB" addrtype="mac" vendor="Nintendo"/>
+<hostnames>
+<hostname name="172-19-221-154.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="3036" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.221.155" addrtype="ipv4"/>
+<address addr="08:57:FB:77:C4:C8" addrtype="mac"/>
+<hostnames>
+<hostname name="172-19-221-155.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="57098" rttvar="57098" to="285490"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.221.156" addrtype="ipv4"/>
+<address addr="B8:5F:98:02:73:D5" addrtype="mac" vendor="Amazon Technologies"/>
+<hostnames>
+<hostname name="172-19-221-156.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="2619" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.221.157" addrtype="ipv4"/>
+<address addr="DC:98:40:E8:7D:5A" addrtype="mac" vendor="Microsoft"/>
+<hostnames>
+<hostname name="172-19-221-157.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="3960" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.221.159" addrtype="ipv4"/>
+<address addr="88:71:E5:1B:7D:3B" addrtype="mac" vendor="Amazon Technologies"/>
+<hostnames>
+<hostname name="172-19-221-159.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="3657" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.221.169" addrtype="ipv4"/>
+<address addr="FC:A6:67:35:56:E2" addrtype="mac" vendor="Amazon Technologies"/>
+<hostnames>
+<hostname name="172-19-221-169.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="2198" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.221.170" addrtype="ipv4"/>
+<address addr="4C:3B:DF:07:AC:EA" addrtype="mac" vendor="Microsoft"/>
+<hostnames>
+<hostname name="172-19-221-170.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="2218" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.221.176" addrtype="ipv4"/>
+<address addr="7C:27:BC:FB:24:57" addrtype="mac"/>
+<hostnames>
+<hostname name="172-19-221-176.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="2684" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.221.177" addrtype="ipv4"/>
+<address addr="BC:9E:BB:EB:13:23" addrtype="mac"/>
+<hostnames>
+<hostname name="172-19-221-177.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="2184" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.221.178" addrtype="ipv4"/>
+<address addr="D0:81:7A:A3:80:22" addrtype="mac" vendor="Apple"/>
+<hostnames>
+<hostname name="172-19-221-178.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="4974" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.221.185" addrtype="ipv4"/>
+<address addr="FC:A1:83:1E:22:32" addrtype="mac" vendor="Amazon Technologies"/>
+<hostnames>
+<hostname name="172-19-221-185.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="2745" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.221.194" addrtype="ipv4"/>
+<address addr="20:2B:20:6D:63:63" addrtype="mac"/>
+<hostnames>
+<hostname name="172-19-221-194.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="1982" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.221.197" addrtype="ipv4"/>
+<address addr="BC:9E:BB:BF:54:D5" addrtype="mac"/>
+<hostnames>
+<hostname name="172-19-221-197.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="68940" rttvar="68940" to="344700"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.221.202" addrtype="ipv4"/>
+<address addr="BC:CE:25:1E:76:7D" addrtype="mac"/>
+<hostnames>
+<hostname name="172-19-221-202.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="2787" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.221.203" addrtype="ipv4"/>
+<address addr="AC:BC:32:7E:05:19" addrtype="mac" vendor="Apple"/>
+<hostnames>
+<hostname name="172-19-221-203.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="3054" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.221.212" addrtype="ipv4"/>
+<address addr="20:0B:CF:95:A7:DA" addrtype="mac"/>
+<hostnames>
+<hostname name="172-19-221-212.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="11553" rttvar="11553" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.221.220" addrtype="ipv4"/>
+<address addr="D4:F0:57:1E:F0:EA" addrtype="mac" vendor="Nintendo"/>
+<hostnames>
+<hostname name="172-19-221-220.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="2424" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.221.221" addrtype="ipv4"/>
+<address addr="28:66:E3:C2:1B:61" addrtype="mac" vendor="AzureWave Technology"/>
+<hostnames>
+<hostname name="172-19-221-221.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="3013" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.221.226" addrtype="ipv4"/>
+<address addr="98:B6:E9:01:08:F2" addrtype="mac" vendor="Nintendo"/>
+<hostnames>
+<hostname name="172-19-221-226.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="4578" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.221.229" addrtype="ipv4"/>
+<address addr="D4:AB:CD:39:61:2C" addrtype="mac" vendor="Hui Zhou Gaoshengda Technology"/>
+<hostnames>
+<hostname name="172-19-221-229.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="2234" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.221.232" addrtype="ipv4"/>
+<address addr="C4:9D:ED:72:AF:79" addrtype="mac" vendor="Microsoft"/>
+<hostnames>
+<hostname name="172-19-221-232.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="1989" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.221.241" addrtype="ipv4"/>
+<address addr="E0:89:7E:85:CD:CC" addrtype="mac" vendor="Apple"/>
+<hostnames>
+<hostname name="172-19-221-241.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="63848" rttvar="63848" to="319240"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.221.254" addrtype="ipv4"/>
+<address addr="74:AB:93:DB:BF:4D" addrtype="mac" vendor="Blink by Amazon"/>
+<hostnames>
+<hostname name="172-19-221-254.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="2897" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.222.0" addrtype="ipv4"/>
+<address addr="90:A8:22:6A:A1:75" addrtype="mac"/>
+<hostnames>
+<hostname name="172-19-222-0.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="41125" rttvar="41125" to="205625"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.222.6" addrtype="ipv4"/>
+<address addr="70:2A:D5:8E:5C:D4" addrtype="mac" vendor="Samsung Electronics"/>
+<hostnames>
+<hostname name="172-19-222-6.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="2773" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.222.8" addrtype="ipv4"/>
+<address addr="84:EA:ED:0A:3B:60" addrtype="mac" vendor="Roku"/>
+<hostnames>
+<hostname name="172-19-222-8.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="3780" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.222.23" addrtype="ipv4"/>
+<address addr="68:9A:87:51:97:66" addrtype="mac" vendor="Amazon Technologies"/>
+<hostnames>
+<hostname name="172-19-222-23.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="3296" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.222.24" addrtype="ipv4"/>
+<address addr="CC:D2:81:5D:E6:A6" addrtype="mac" vendor="Apple"/>
+<hostnames>
+<hostname name="172-19-222-24.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="2843" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.222.26" addrtype="ipv4"/>
+<address addr="74:F9:CA:EC:34:34" addrtype="mac" vendor="Nintendo"/>
+<hostnames>
+<hostname name="172-19-222-26.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="3788" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.222.29" addrtype="ipv4"/>
+<address addr="68:14:01:64:AA:95" addrtype="mac" vendor="Hon Hai Precision Ind."/>
+<hostnames>
+<hostname name="172-19-222-29.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="3666" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.222.30" addrtype="ipv4"/>
+<address addr="80:60:B7:50:CC:D2" addrtype="mac" vendor="Cloud Network Technology Singapore PTE."/>
+<hostnames>
+<hostname name="172-19-222-30.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="2420" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.222.34" addrtype="ipv4"/>
+<address addr="AC:AE:19:42:62:AB" addrtype="mac" vendor="Roku"/>
+<hostnames>
+<hostname name="172-19-222-34.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="4690" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.222.35" addrtype="ipv4"/>
+<address addr="9C:3E:53:07:5C:33" addrtype="mac"/>
+<hostnames>
+<hostname name="172-19-222-35.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="2733" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.222.36" addrtype="ipv4"/>
+<address addr="68:9A:87:FE:44:15" addrtype="mac" vendor="Amazon Technologies"/>
+<hostnames>
+<hostname name="172-19-222-36.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="2800" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.222.38" addrtype="ipv4"/>
+<address addr="B8:AB:62:F3:34:30" addrtype="mac"/>
+<hostnames>
+<hostname name="172-19-222-38.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="3012" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.222.39" addrtype="ipv4"/>
+<address addr="84:EA:ED:80:F1:78" addrtype="mac" vendor="Roku"/>
+<hostnames>
+<hostname name="172-19-222-39.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="3072" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.222.48" addrtype="ipv4"/>
+<address addr="38:C8:04:70:31:1A" addrtype="mac"/>
+<hostnames>
+<hostname name="172-19-222-48.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="3328" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.222.51" addrtype="ipv4"/>
+<address addr="70:48:F7:0A:6C:18" addrtype="mac" vendor="Nintendo"/>
+<hostnames>
+<hostname name="172-19-222-51.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="3660" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.222.62" addrtype="ipv4"/>
+<address addr="C8:3A:6B:59:86:07" addrtype="mac" vendor="Roku"/>
+<hostnames>
+<hostname name="172-19-222-62.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="4073" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.222.70" addrtype="ipv4"/>
+<address addr="DC:56:E7:42:E8:08" addrtype="mac" vendor="Apple"/>
+<hostnames>
+<hostname name="172-19-222-70.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="2951" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.222.78" addrtype="ipv4"/>
+<address addr="AC:BC:32:67:30:11" addrtype="mac" vendor="Apple"/>
+<hostnames>
+<hostname name="172-19-222-78.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="2518" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.222.79" addrtype="ipv4"/>
+<address addr="FC:A1:83:34:93:95" addrtype="mac" vendor="Amazon Technologies"/>
+<hostnames>
+<hostname name="172-19-222-79.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="2663" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.222.80" addrtype="ipv4"/>
+<address addr="DC:68:EB:06:11:10" addrtype="mac" vendor="Nintendo"/>
+<hostnames>
+<hostname name="172-19-222-80.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="2858" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.222.84" addrtype="ipv4"/>
+<address addr="64:E0:03:87:F5:E0" addrtype="mac"/>
+<hostnames>
+<hostname name="172-19-222-84.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="2465" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.222.89" addrtype="ipv4"/>
+<address addr="D4:AB:CD:9B:78:F7" addrtype="mac" vendor="Hui Zhou Gaoshengda Technology"/>
+<hostnames>
+<hostname name="172-19-222-89.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="1838" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.222.91" addrtype="ipv4"/>
+<address addr="80:0C:F9:E4:B8:56" addrtype="mac"/>
+<hostnames>
+<hostname name="172-19-222-91.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="1639" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.222.102" addrtype="ipv4"/>
+<address addr="D0:88:0C:6F:A5:8F" addrtype="mac"/>
+<hostnames>
+<hostname name="172-19-222-102.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="2946" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.222.116" addrtype="ipv4"/>
+<address addr="A8:16:9D:15:11:D8" addrtype="mac"/>
+<hostnames>
+<hostname name="172-19-222-116.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="2571" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.222.120" addrtype="ipv4"/>
+<address addr="7C:BB:8A:AE:31:DF" addrtype="mac" vendor="Nintendo"/>
+<hostnames>
+<hostname name="172-19-222-120.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="1888" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.222.125" addrtype="ipv4"/>
+<address addr="BC:9E:BB:E4:8E:B8" addrtype="mac"/>
+<hostnames>
+<hostname name="172-19-222-125.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="98806" rttvar="98806" to="494030"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.222.127" addrtype="ipv4"/>
+<address addr="DC:68:EB:0A:EF:4D" addrtype="mac" vendor="Nintendo"/>
+<hostnames>
+<hostname name="172-19-222-127.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="2149" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.222.138" addrtype="ipv4"/>
+<address addr="A8:47:4A:1E:AE:7B" addrtype="mac" vendor="Hon Hai Precision Ind."/>
+<hostnames>
+<hostname name="172-19-222-138.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="5839" rttvar="5839" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.222.151" addrtype="ipv4"/>
+<address addr="AC:04:0B:77:49:6E" addrtype="mac" vendor="Peloton Interactive"/>
+<hostnames>
+<hostname name="172-19-222-151.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="2610" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.222.154" addrtype="ipv4"/>
+<address addr="54:8C:A0:03:99:F0" addrtype="mac" vendor="Liteon Technology"/>
+<hostnames>
+<hostname name="172-19-222-154.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="3115" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.222.155" addrtype="ipv4"/>
+<address addr="B0:F7:C4:64:D2:79" addrtype="mac"/>
+<hostnames>
+<hostname name="172-19-222-155.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="2856" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.222.160" addrtype="ipv4"/>
+<address addr="7C:63:05:F9:0C:82" addrtype="mac"/>
+<hostnames>
+<hostname name="172-19-222-160.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="2166" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.222.161" addrtype="ipv4"/>
+<address addr="14:91:38:C5:E5:E8" addrtype="mac" vendor="Amazon Technologies"/>
+<hostnames>
+<hostname name="172-19-222-161.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="1782" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.222.167" addrtype="ipv4"/>
+<address addr="28:EA:0B:95:B4:36" addrtype="mac"/>
+<hostnames>
+<hostname name="172-19-222-167.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="2279" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.222.173" addrtype="ipv4"/>
+<address addr="FC:A6:67:D4:44:01" addrtype="mac" vendor="Amazon Technologies"/>
+<hostnames>
+<hostname name="172-19-222-173.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="3262" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.222.183" addrtype="ipv4"/>
+<address addr="90:11:95:B5:DE:89" addrtype="mac"/>
+<hostnames>
+<hostname name="172-19-222-183.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="14025" rttvar="14025" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.222.184" addrtype="ipv4"/>
+<address addr="78:20:A5:6E:73:C4" addrtype="mac"/>
+<hostnames>
+<hostname name="172-19-222-184.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="2292" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.222.185" addrtype="ipv4"/>
+<address addr="38:C8:04:2B:BD:B3" addrtype="mac"/>
+<hostnames>
+<hostname name="172-19-222-185.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="2807" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.222.188" addrtype="ipv4"/>
+<address addr="08:62:66:0A:91:6C" addrtype="mac" vendor="Asustek Computer"/>
+<hostnames>
+<hostname name="172-19-222-188.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="3172" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.222.202" addrtype="ipv4"/>
+<address addr="F0:B3:EC:27:C9:A2" addrtype="mac"/>
+<hostnames>
+<hostname name="172-19-222-202.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="2718" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.222.205" addrtype="ipv4"/>
+<address addr="8C:49:62:DA:7D:28" addrtype="mac" vendor="Roku"/>
+<hostnames>
+<hostname name="172-19-222-205.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="2909" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.222.208" addrtype="ipv4"/>
+<address addr="D4:AB:CD:C0:58:6C" addrtype="mac" vendor="Hui Zhou Gaoshengda Technology"/>
+<hostnames>
+<hostname name="172-19-222-208.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="5008" rttvar="5008" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.222.209" addrtype="ipv4"/>
+<address addr="60:5B:B4:D0:24:71" addrtype="mac" vendor="AzureWave Technology"/>
+<hostnames>
+<hostname name="172-19-222-209.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="6581" rttvar="6581" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.222.215" addrtype="ipv4"/>
+<address addr="EC:C4:0D:40:4B:63" addrtype="mac" vendor="Nintendo"/>
+<hostnames>
+<hostname name="172-19-222-215.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="3179" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.222.216" addrtype="ipv4"/>
+<address addr="28:0D:FC:B3:D2:54" addrtype="mac" vendor="Sony Interactive Entertainment"/>
+<hostnames>
+<hostname name="172-19-222-216.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="15350" rttvar="15350" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.222.225" addrtype="ipv4"/>
+<address addr="9C:3E:53:92:CA:25" addrtype="mac"/>
+<hostnames>
+<hostname name="172-19-222-225.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="3334" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.222.228" addrtype="ipv4"/>
+<address addr="DC:E5:5B:53:11:72" addrtype="mac"/>
+<hostnames>
+<hostname name="172-19-222-228.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="3917" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.222.244" addrtype="ipv4"/>
+<address addr="7C:27:BC:E4:5C:EA" addrtype="mac"/>
+<hostnames>
+<hostname name="172-19-222-244.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="3314" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.222.248" addrtype="ipv4"/>
+<address addr="5C:52:1E:60:48:E8" addrtype="mac" vendor="Nintendo"/>
+<hostnames>
+<hostname name="172-19-222-248.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="2899" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.222.252" addrtype="ipv4"/>
+<address addr="24:CE:33:1A:C7:88" addrtype="mac"/>
+<hostnames>
+<hostname name="172-19-222-252.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="112200" rttvar="112200" to="561000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.222.253" addrtype="ipv4"/>
+<address addr="AC:04:0B:6A:28:D6" addrtype="mac" vendor="Peloton Interactive"/>
+<hostnames>
+<hostname name="172-19-222-253.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="3046" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.223.2" addrtype="ipv4"/>
+<address addr="D8:13:99:12:D4:82" addrtype="mac" vendor="Hui Zhou Gaoshengda Technology"/>
+<hostnames>
+<hostname name="172-19-223-2.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="3001" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.223.12" addrtype="ipv4"/>
+<address addr="2C:54:91:A1:19:76" addrtype="mac" vendor="Microsoft"/>
+<hostnames>
+<hostname name="172-19-223-12.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="2862" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.223.14" addrtype="ipv4"/>
+<address addr="C8:4A:A0:24:A0:79" addrtype="mac"/>
+<hostnames>
+<hostname name="172-19-223-14.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="3590" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.223.22" addrtype="ipv4"/>
+<address addr="DC:97:58:23:11:D5" addrtype="mac"/>
+<hostnames>
+<hostname name="172-19-223-22.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="2540" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.223.23" addrtype="ipv4"/>
+<address addr="CC:6B:1E:A5:BF:EB" addrtype="mac"/>
+<hostnames>
+<hostname name="172-19-223-23.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="96069" rttvar="96069" to="480345"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.223.24" addrtype="ipv4"/>
+<address addr="4C:3B:DF:7F:B4:99" addrtype="mac" vendor="Microsoft"/>
+<hostnames>
+<hostname name="172-19-223-24.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="18389" rttvar="18389" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.223.25" addrtype="ipv4"/>
+<address addr="4C:EF:C0:C5:E4:E7" addrtype="mac" vendor="Amazon Technologies"/>
+<hostnames>
+<hostname name="172-19-223-25.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="6545" rttvar="6545" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.223.29" addrtype="ipv4"/>
+<address addr="58:B0:3E:B9:5F:38" addrtype="mac"/>
+<hostnames>
+<hostname name="172-19-223-29.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="3804" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.223.31" addrtype="ipv4"/>
+<address addr="08:A6:BC:96:C2:A1" addrtype="mac" vendor="Amazon Technologies"/>
+<hostnames>
+<hostname name="172-19-223-31.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="6916" rttvar="6916" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.223.40" addrtype="ipv4"/>
+<address addr="1C:12:B0:6D:79:D2" addrtype="mac" vendor="Amazon Technologies"/>
+<hostnames>
+<hostname name="172-19-223-40.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="2775" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.223.44" addrtype="ipv4"/>
+<address addr="9C:3E:53:0A:AD:B2" addrtype="mac"/>
+<hostnames>
+<hostname name="172-19-223-44.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="3434" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.223.55" addrtype="ipv4"/>
+<address addr="38:C8:04:E1:EC:0C" addrtype="mac"/>
+<hostnames>
+<hostname name="172-19-223-55.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="2704" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.223.60" addrtype="ipv4"/>
+<address addr="D4:AB:CD:17:AC:51" addrtype="mac" vendor="Hui Zhou Gaoshengda Technology"/>
+<hostnames>
+<hostname name="172-19-223-60.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="4279" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.223.61" addrtype="ipv4"/>
+<address addr="7C:61:66:E7:C9:AD" addrtype="mac" vendor="Amazon Technologies"/>
+<hostnames>
+<hostname name="172-19-223-61.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="3905" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.223.63" addrtype="ipv4"/>
+<address addr="34:25:BE:79:D2:BB" addrtype="mac"/>
+<hostnames>
+<hostname name="172-19-223-63.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="2579" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.223.64" addrtype="ipv4"/>
+<address addr="A4:08:01:D2:68:43" addrtype="mac" vendor="Amazon Technologies"/>
+<hostnames>
+<hostname name="172-19-223-64.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="3639" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.223.65" addrtype="ipv4"/>
+<address addr="54:67:E6:46:0C:08" addrtype="mac"/>
+<hostnames>
+<hostname name="172-19-223-65.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="3459" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.223.67" addrtype="ipv4"/>
+<address addr="08:84:9D:34:D3:7A" addrtype="mac" vendor="Amazon Technologies"/>
+<hostnames>
+<hostname name="172-19-223-67.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="3248" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.223.78" addrtype="ipv4"/>
+<address addr="E8:CA:C8:1A:E7:A1" addrtype="mac"/>
+<hostnames>
+<hostname name="172-19-223-78.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="2125" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.223.84" addrtype="ipv4"/>
+<address addr="08:12:A5:9B:5D:17" addrtype="mac" vendor="Amazon Technologies"/>
+<hostnames>
+<hostname name="172-19-223-84.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="2882" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.223.86" addrtype="ipv4"/>
+<address addr="B4:B7:42:D5:BE:74" addrtype="mac"/>
+<hostnames>
+<hostname name="172-19-223-86.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="3318" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.223.90" addrtype="ipv4"/>
+<address addr="74:58:F3:EA:02:1D" addrtype="mac" vendor="Amazon Technologies"/>
+<hostnames>
+<hostname name="172-19-223-90.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="1827" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.223.92" addrtype="ipv4"/>
+<address addr="E8:CA:C8:6F:50:8F" addrtype="mac"/>
+<hostnames>
+<hostname name="172-19-223-92.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="3141" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.223.99" addrtype="ipv4"/>
+<address addr="D0:88:0C:B0:CE:B6" addrtype="mac"/>
+<hostnames>
+<hostname name="172-19-223-99.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="4843" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.223.104" addrtype="ipv4"/>
+<address addr="D4:AB:CD:3B:F1:99" addrtype="mac" vendor="Hui Zhou Gaoshengda Technology"/>
+<hostnames>
+<hostname name="172-19-223-104.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="3605" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.223.105" addrtype="ipv4"/>
+<address addr="50:DC:E7:6C:71:BA" addrtype="mac" vendor="Amazon Technologies"/>
+<hostnames>
+<hostname name="172-19-223-105.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="3500" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.223.106" addrtype="ipv4"/>
+<address addr="A4:FC:77:86:B5:9B" addrtype="mac" vendor="Mega Well Limited"/>
+<hostnames>
+<hostname name="172-19-223-106.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="3047" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.223.107" addrtype="ipv4"/>
+<address addr="1C:4D:66:C7:D5:6E" addrtype="mac" vendor="Amazon Technologies"/>
+<hostnames>
+<hostname name="172-19-223-107.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="2823" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.223.112" addrtype="ipv4"/>
+<address addr="C8:3A:6B:D7:DD:39" addrtype="mac" vendor="Roku"/>
+<hostnames>
+<hostname name="172-19-223-112.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="2746" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.223.126" addrtype="ipv4"/>
+<address addr="1C:98:C1:EF:D9:F5" addrtype="mac" vendor="Cloud Network Technology Singapore PTE."/>
+<hostnames>
+<hostname name="172-19-223-126.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="3880" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.223.144" addrtype="ipv4"/>
+<address addr="C8:3A:6B:96:08:C5" addrtype="mac" vendor="Roku"/>
+<hostnames>
+<hostname name="172-19-223-144.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="3157" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.223.150" addrtype="ipv4"/>
+<address addr="58:2F:40:16:B0:97" addrtype="mac" vendor="Nintendo"/>
+<hostnames>
+<hostname name="172-19-223-150.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="2119" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.223.152" addrtype="ipv4"/>
+<address addr="BC:9E:BB:D5:BD:4E" addrtype="mac"/>
+<hostnames>
+<hostname name="172-19-223-152.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="2611" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.223.160" addrtype="ipv4"/>
+<address addr="F8:4F:AD:BA:F4:CF" addrtype="mac" vendor="Hui Zhou Gaoshengda Technology"/>
+<hostnames>
+<hostname name="172-19-223-160.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="2387" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.223.178" addrtype="ipv4"/>
+<address addr="28:66:E3:73:3D:0F" addrtype="mac" vendor="AzureWave Technology"/>
+<hostnames>
+<hostname name="172-19-223-178.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="5620" rttvar="5620" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.223.179" addrtype="ipv4"/>
+<address addr="D8:13:99:69:72:08" addrtype="mac" vendor="Hui Zhou Gaoshengda Technology"/>
+<hostnames>
+<hostname name="172-19-223-179.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="6152" rttvar="6152" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.223.180" addrtype="ipv4"/>
+<address addr="08:3A:8D:86:A7:9C" addrtype="mac"/>
+<hostnames>
+<hostname name="172-19-223-180.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="6205" rttvar="6205" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.223.191" addrtype="ipv4"/>
+<address addr="4C:0B:BE:9D:86:0A" addrtype="mac" vendor="Microsoft"/>
+<hostnames>
+<hostname name="172-19-223-191.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="2239" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.223.196" addrtype="ipv4"/>
+<address addr="F8:54:B8:B4:29:5E" addrtype="mac" vendor="Amazon Technologies"/>
+<hostnames>
+<hostname name="172-19-223-196.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="2447" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.223.197" addrtype="ipv4"/>
+<address addr="AC:AE:19:A5:2C:71" addrtype="mac" vendor="Roku"/>
+<hostnames>
+<hostname name="172-19-223-197.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="2303" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.223.199" addrtype="ipv4"/>
+<address addr="04:0E:3C:7B:43:CB" addrtype="mac" vendor="HP"/>
+<hostnames>
+<hostname name="172-19-223-199.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="3727" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.223.204" addrtype="ipv4"/>
+<address addr="04:27:28:EA:48:FD" addrtype="mac"/>
+<hostnames>
+<hostname name="172-19-223-204.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="2335" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.223.219" addrtype="ipv4"/>
+<address addr="B8:78:26:35:1A:5B" addrtype="mac" vendor="Nintendo"/>
+<hostnames>
+<hostname name="172-19-223-219.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="3048" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.223.223" addrtype="ipv4"/>
+<address addr="28:CF:51:42:DA:26" addrtype="mac"/>
+<hostnames>
+<hostname name="172-19-223-223.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="52252" rttvar="52252" to="261260"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.223.235" addrtype="ipv4"/>
+<address addr="CC:D4:2E:A0:5A:CD" addrtype="mac" vendor="Arcadyan"/>
+<hostnames>
+<hostname name="172-19-223-235.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="56172" rttvar="56172" to="280860"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.19.223.253" addrtype="ipv4"/>
+<address addr="84:3D:C6:10:28:41" addrtype="mac" vendor="Cisco Systems"/>
+<hostnames>
+<hostname name="172-19-223-253.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+<times srtt="3793" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="localhost-response" reason_ttl="0"/>
+<address addr="172.19.221.117" addrtype="ipv4"/>
+<hostnames>
+<hostname name="172-19-221-117.dynapool.nyu.edu" type="PTR"/>
+</hostnames>
+</host>
+<runstats><finished time="1688808320" timestr="Sat Jul  8 05:25:20 2023" elapsed="9.71" summary="Nmap done at Sat Jul  8 05:25:20 2023; 2048 IP addresses (402 hosts up) scanned in 9.71 seconds" exit="success"/><hosts up="402" down="1646" total="2048"/>
+</runstats>
+</nmaprun>

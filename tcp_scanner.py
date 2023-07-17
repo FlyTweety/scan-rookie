@@ -161,4 +161,4 @@ class TCPScanner():
 if __name__ == '__main__':
     TCPScannerInstance = TCPScanner()
     TCPScannerInstance.scan(["127.0.0.1"], scanAll = True)
-    TCPScannerInstance.scan(utils.getDannyIPs(), scanAll = True)
+    #TCPScannerInstance.scan(utils.getDannyIPs(), scanAll = True)
