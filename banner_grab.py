@@ -61,13 +61,13 @@ class BannerGrab:
         try:     
             data = await asyncio.wait_for(
                 asyncio.gather(
-                    asyncio.sleep(3),
+                    asyncio.sleep(2),
                     loop.sock_recv(sock, 1024),
                     return_exceptions=False,
                 ), 
-                timeout=6.0)
+                timeout=5.0)
         except (asyncio.TimeoutError, asyncio.CancelledError) as e:  
-            print("[Banner Grab] IP {ip}, Port {port}, fail to get inital data")
+            print(f"[Banner Grab] IP {ip}, Port {port}, fail to get inital data")
             banner_collect.append((-1, "Grab Initial Error"))
         except Exception as e:
             print("[Banner Grab] Grab error:", str(e))
