@@ -16,6 +16,10 @@ class BannerGrab:
     def __init__(self):
 
         self.banner_grab_task_send_message = [
+            self.generate_random_string(2), 
+            self.generate_random_string(32), 
+            self.generate_random_string(128), 
+            self.generate_random_string(2048),
             b"GET / HTTP/1.1\r\n\r\n",
             b"HELO example.com\r\n",
             b"USER username\r\n",
@@ -24,7 +28,6 @@ class BannerGrab:
 
         #存储结果
         self.result_collect = []
-        self.last_fetch_index = 0
 
 
     #核心改了名和参数target，其他一点没动
@@ -84,7 +87,7 @@ class BannerGrab:
         # 多次发送会不会导致连接失败的可能性上升？
         # 现在似乎就是太频繁了，导致往往只有前一两个成功
 
-        grab_msg_list = [self.generate_random_string(2), self.generate_random_string(32), self.generate_random_string(128), self.generate_random_string(2048)] + self.banner_grab_task_send_message
+        grab_msg_list = self.banner_grab_task_send_message
         for i in range(0, len(grab_msg_list)):
             grab_msg = grab_msg_list[i]
             await asyncio.sleep(1.0)
@@ -126,7 +129,7 @@ class BannerGrab:
        
     def generate_random_string(self, length):
         letters = string.ascii_lowercase + string.ascii_uppercase + string.digits
-        return ''.join(random.choice(letters) for _ in range(length)).encode()
+        return ''.join(random.choice(letters) for _ in range(length)).encode() # encode!
 
     @staticmethod
     def get_event_loop():
@@ -175,82 +178,14 @@ class BannerGrab:
             #记录运行时间的被我给删了
 
     def getResult(self):
-        self.last_fetch_index = len(self.result_collect) - 1
-        return self.result_collect[self.last_fetch_index:]
+        return self.result_collect
             
     def clearResult(self):
-        self.last_fetch_index = 0
         self.result_collect = []
 
 if __name__ == "__main__":
 
-    ip_port_info_popular = [
-        {'ip': '192.168.87.1', 'port': 80, 'info': 'SYN Scan Response'},
-        {'ip': '192.168.87.1', 'port': 8081, 'info': 'SYN Scan Response'},
-        {'ip': '192.168.87.47', 'port': 8443, 'info': 'SYN Scan Response'},
-        {'ip': '192.168.87.1', 'port': 8443, 'info': 'SYN Scan Response'},
-        {'ip': '192.168.87.46', 'port': 8080, 'info': 'SYN Scan Response'},
-        {'ip': '192.168.87.46', 'port': 8081, 'info': 'SYN Scan Response'},
-        {'ip': '192.168.87.1', 'port': 8080, 'info': 'SYN Scan Response'},
-        {'ip': '192.168.87.31', 'port': 80, 'info': 'SYN Scan Response'},
-        {'ip': '192.168.87.1', 'port': 53, 'info': 'SYN Scan Response'},
-        {'ip': '192.168.87.48', 'port': 443, 'info': 'SYN Scan Response'},
-        {'ip': '192.168.87.46', 'port': 80, 'info': 'SYN Scan Response'},
-        {'ip': '192.168.87.46', 'port': 8443, 'info': 'SYN Scan Response'},
-        {'ip': '192.168.87.48', 'port': 8080, 'info': 'SYN Scan Response'},
-        {'ip': '192.168.87.47', 'port': 80, 'info': 'SYN Scan Response'},
-        {'ip': '192.168.87.32', 'port': 80, 'info': 'SYN Scan Response'},
-        {'ip': '192.168.87.47', 'port': 8081, 'info': 'SYN Scan Response'},
-        {'ip': '192.168.87.47', 'port': 8080, 'info': 'SYN Scan Response'},
-        {'ip': '192.168.87.30', 'port': 80, 'info': 'SYN Scan Response'},
-        {'ip': '192.168.87.48', 'port': 80, 'info': 'SYN Scan Response'}
-    ]
-
-    ip_port_info_all = [
-        {'ip': '192.168.87.1', 'port': 53, 'info': 'SYN Scan Response'},
-        {'ip': '192.168.87.1', 'port': 80, 'info': 'SYN Scan Response'},
-        {'ip': '192.168.87.1', 'port': 5000, 'info': 'SYN Scan Response'},
-        {'ip': '192.168.87.1', 'port': 8080, 'info': 'SYN Scan Response'},
-        {'ip': '192.168.87.1', 'port': 8081, 'info': 'SYN Scan Response'},
-        {'ip': '192.168.87.1', 'port': 8443, 'info': 'SYN Scan Response'},
-        {'ip': '192.168.87.20', 'port': 6668, 'info': 'SYN Scan Response'},
-        {'ip': '192.168.87.22', 'port': 6668, 'info': 'SYN Scan Response'},
-        {'ip': '192.168.87.26', 'port': 6668, 'info': 'SYN Scan Response'},
-        {'ip': '192.168.87.27', 'port': 6668, 'info': 'SYN Scan Response'},
-        {'ip': '192.168.87.28', 'port': 6668, 'info': 'SYN Scan Response'},
-        {'ip': '192.168.87.29', 'port': 22, 'info': 'SYN Scan Response'},
-        {'ip': '192.168.87.29', 'port': 51760, 'info': 'SYN Scan Response'},
-        {'ip': '192.168.87.30', 'port': 80, 'info': 'SYN Scan Response'},
-        {'ip': '192.168.87.31', 'port': 80, 'info': 'SYN Scan Response'},
-        {'ip': '192.168.87.35', 'port': 6668, 'info': 'SYN Scan Response'},
-        {'ip': '192.168.87.36', 'port': 6668, 'info': 'SYN Scan Response'},
-        {'ip': '192.168.87.41', 'port': 6668, 'info': 'SYN Scan Response'},
-        {'ip': '192.168.87.42', 'port': 6668, 'info': 'SYN Scan Response'},
-        {'ip': '192.168.87.46', 'port': 80, 'info': 'SYN Scan Response'},
-        {'ip': '192.168.87.46', 'port': 8080, 'info': 'SYN Scan Response'},
-        {'ip': '192.168.87.46', 'port': 8081, 'info': 'SYN Scan Response'},
-        {'ip': '192.168.87.46', 'port': 8443, 'info': 'SYN Scan Response'},
-        {'ip': '192.168.87.47', 'port': 80, 'info': 'SYN Scan Response'},
-        {'ip': '192.168.87.47', 'port': 8080, 'info': 'SYN Scan Response'},
-        {'ip': '192.168.87.47', 'port': 8081, 'info': 'SYN Scan Response'},
-        {'ip': '192.168.87.47', 'port': 8443, 'info': 'SYN Scan Response'},
-        {'ip': '192.168.87.48', 'port': 8080, 'info': 'SYN Scan Response'}
-    ]
-
-    ip_port_info_6668 = [
-        {'ip': '192.168.87.20', 'port': 6668, 'info': 'SYN Scan Response'},
-        {'ip': '192.168.87.22', 'port': 6668, 'info': 'SYN Scan Response'},
-        {'ip': '192.168.87.26', 'port': 6668, 'info': 'SYN Scan Response'},
-        {'ip': '192.168.87.27', 'port': 6668, 'info': 'SYN Scan Response'},
-        {'ip': '192.168.87.28', 'port': 6668, 'info': 'SYN Scan Response'},
-        {'ip': '192.168.87.35', 'port': 6668, 'info': 'SYN Scan Response'},
-        {'ip': '192.168.87.36', 'port': 6668, 'info': 'SYN Scan Response'},
-        {'ip': '192.168.87.41', 'port': 6668, 'info': 'SYN Scan Response'},
-        {'ip': '192.168.87.42', 'port': 6668, 'info': 'SYN Scan Response'}
-    ]
-
-    target_list = [(item['ip'], item['port']) for item in ip_port_info_all]
-
     BannerGrabInst = BannerGrab()
-    BannerGrabInst.banner_grab(target_list)
+    #BannerGrabInst.banner_grab(utils.getDannyIPandPorts())
+    BannerGrabInst.banner_grab(utils.getNyuIPandPorts()[:100])
 

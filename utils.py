@@ -1,4 +1,3 @@
-# Original Copy; See Change in things_I_modified.txt
 
 """
 Misc functions.
@@ -25,6 +24,7 @@ import uuid
 import webbrowser
 import ipaddress
 import xml.etree.ElementTree as ET
+import pandas
 
 #按照我的新版，只要留get_port_list和log和get_subnet_addresses和两个getIP就够了
 
@@ -120,24 +120,6 @@ addresses = get_subnet_addresses(ip, subnet_mask)
 print(addresses)
 """
 
-def getNyuIPs():
-
-    IPs = []
-
-    tree = ET.parse('scan_results.xml')
-    root = tree.getroot()
-
-    # 遍历每个host元素
-    for host in root.findall('host'):
-        # 获取address元素中的addr属性值
-        address = host.find('address')
-        ip_address = address.get('addr')
-        
-        # 打印IP地址
-        IPs.append(ip_address)
-
-    return IPs
-
 def getDannyIPs():
     danny_ip_list = [
         '192.168.87.1',
@@ -161,6 +143,59 @@ def getDannyIPs():
     ]
     return danny_ip_list
 
+
+def getDannyIPandPorts():
+    DannyIPandPorts = [
+        ('192.168.87.1', 53), 
+        ('192.168.87.1', 80), 
+        ('192.168.87.1', 5000), 
+        ('192.168.87.1', 8080), 
+        ('192.168.87.1', 8081), 
+        ('192.168.87.1', 8443), 
+        ('192.168.87.20', 6668), 
+        ('192.168.87.22', 6668), 
+        ('192.168.87.26', 6668), 
+        ('192.168.87.27', 6668), 
+        ('192.168.87.28', 6668), 
+        ('192.168.87.29', 22), 
+        ('192.168.87.29', 51760), 
+        ('192.168.87.30', 80), 
+        ('192.168.87.31', 80), 
+        ('192.168.87.35', 6668), 
+        ('192.168.87.36', 6668), 
+        ('192.168.87.41', 6668), 
+        ('192.168.87.42', 6668), 
+        ('192.168.87.46', 80), 
+        ('192.168.87.46', 8080), 
+        ('192.168.87.46', 8081), 
+        ('192.168.87.46', 8443), 
+        ('192.168.87.47', 80), 
+        ('192.168.87.47', 8080), 
+        ('192.168.87.47', 8081), 
+        ('192.168.87.47', 8443), 
+        ('192.168.87.48', 8080)]
+    return DannyIPandPorts
+
+def getNyuIPs():
+
+    IPs = []
+
+    tree = ET.parse('scan_results.xml')
+    root = tree.getroot()
+
+    for host in root.findall('host'):
+
+        address = host.find('address')
+        ip_address = address.get('addr')
+        
+        IPs.append(ip_address)
+
+    return IPs
+
+def getNyuIPandPorts():
+    data = pandas.read_excel('logNyuDorm0-300.xlsx')
+    result = [tuple(x) for x in data.values]  
+    return result
 
 def split_array(array, chunk_size):
     result = []

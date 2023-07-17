@@ -23,6 +23,11 @@ class TCPScanner():
         self.timeout = time_out
         # 并发数
         self.concurrency = concurrency
+        
+        #存储结果
+        self.result_collect = []
+        self.last_fetch_index = 0
+        
     
     def __del__(self):
         self.loop.close()
@@ -58,7 +63,7 @@ class TCPScanner():
                     t2 = time.time()
                     # 所以这里直接直接判断sock
                     if sock:
-                        self.result.append((ip, port))
+                        self.result_collect.append((ip, port))
                         print(time.strftime('%Y-%m-%d %H:%M:%S'), ip, port, 'open', round(t2 - t1, 2))
             # we have to deal with the exception, otherwise it will stopp
             except:
@@ -145,7 +150,13 @@ class TCPScanner():
                 print("本批最后一个是", ip, str(batch_port_list[-1]))
                 print(f'本批扫描所用时间为：{time.time() - start_time:.2f}')
 
-
+    def getResult(self):
+        self.last_fetch_index = len(self.result_collect)
+        return self.result_collect[self.last_fetch_index:]
+            
+    def clearResult(self):
+        self.last_fetch_index = 0
+        self.result_collect = []
 
 if __name__ == '__main__':
     TCPScannerInstance = TCPScanner()

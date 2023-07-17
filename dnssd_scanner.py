@@ -12,7 +12,7 @@ import xml.etree.ElementTree as ET
 class DNSSDScanner():
 
     def __init__(self):
-        self.known_mdns_info_list = []
+        self.result_collect = []
 
     def get_service_info(self, sock, target_ip, resp):
         service = (resp.an.rdata).decode()
@@ -26,7 +26,7 @@ class DNSSDScanner():
             data, _ = sock.recvfrom(1024)
             resp = DNS(data)
         except:
-            self.known_mdns_info_list.append({"ip":target_ip, "scan_time":time.time(), "status":True, "services":['error']})
+            self.result_collect.append({"ip":target_ip, "scan_time":time.time(), "status":True, "services":['error']})
             return
         #resp.show()
 
@@ -50,7 +50,7 @@ class DNSSDScanner():
                 print(" "*4, rrname)
             services.append(rrname)
             
-        self.known_mdns_info_list.append({"ip":target_ip, "scan_time":time.time(), "status":True, "services":services})
+        self.result_collect.append({"ip":target_ip, "scan_time":time.time(), "status":True, "services":services})
     # end get_service_info()
 
     # 这个就先不搞异步并发了
@@ -85,7 +85,7 @@ class DNSSDScanner():
             except:
                 print("[DNS-SD Scanning] No.%d %s OFFLINE" % (i, target_ip))
                 utils.log("[DNS-SD Scanning] No.%d %s OFFLINE" % (i, target_ip))
-                self.known_mdns_info_list.append({"ip":target_ip, "scan_time":time.time(), "status":False, "services":[]})
+                self.result_collect.append({"ip":target_ip, "scan_time":time.time(), "status":False, "services":[]})
 
         print('[DNS-SD Scanning] Finish')
         utils.log('[DNS-SD Scanning] Finish')
@@ -93,43 +93,14 @@ class DNSSDScanner():
     # end dnssd_scan()
 
     def getResult(self):
-        return self.known_mdns_info_list
+        return self.result_collect
     
     def clearResult(self):
-        self.known_mdns_info_list = []
+        self.result_collect = []
 
-def getIPs():
-
-    IPs = []
-
-    tree = ET.parse('scan_results.xml')
-    root = tree.getroot()
-
-    # 遍历每个host元素
-    for host in root.findall('host'):
-        # 获取address元素中的addr属性值
-        address = host.find('address')
-        ip_address = address.get('addr')
-        
-        # 打印IP地址
-        IPs.append(ip_address)
-
-    print(len(IPs))
-
-    return IPs
-
-def genIPs(IP):
-
-    IPs = []
-    base = IP.rstrip("0")
-
-    for i in range(1,256):
-        IPs.append(base+str(i))
-
-    return IPs
 
 if __name__ == "__main__":
     DNSSDScannerInstance = DNSSDScanner()
-    target_ip_list = getIPs()
+    target_ip_list = utils.getDannyIPs()
     DNSSDScannerInstance.scan(target_ip_list)
 # end main()

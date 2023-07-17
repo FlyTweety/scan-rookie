@@ -41,7 +41,7 @@ class SSDPInfo():
 class SSDPScanner():
 
     def __init__(self):
-        self.known_ssdp_info_list = []
+        self.result_collect = []
         #要把ip-port-具体服务串起来 要把这个代码给我列出的各种属性都放一起
         #具体的服务就不管了
         #find-mapping这个就不管了
@@ -203,7 +203,7 @@ class SSDPScanner():
                 except requests.exceptions.ReadTimeout:
                     print('[SSDP Scanning] Timeout reading from %s' % location)
 
-                self.known_ssdp_info_list.append(ssdp_info) #应该就是一堆字符串，不会占太多空间吧
+                self.result_collect.append(ssdp_info) #应该就是一堆字符串，不会占太多空间吧
             print("[SSDP Scanning] Done Parsing")
             utils.log("[SSDP Scanning] Done Parsing")
         return
@@ -254,10 +254,10 @@ class SSDPScanner():
         utils.log("[SSDP Scanning] [sniffer mode] exit")
 
     def getResult(self):
-        return self.known_ssdp_info_list
+        return self.result_collect
     
     def clearResult(self):
-        self.known_ssdp_info_list = []
+        self.result_collect = []
 
 if __name__ == "__main__":
     SSDPScannerInstance = SSDPScanner()
