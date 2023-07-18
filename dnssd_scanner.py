@@ -1,6 +1,3 @@
-#/usr/bin/python3
-#!coding=utf-8
-
 import socket
 import sys
 from scapy.all import raw, DNS, DNSQR

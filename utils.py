@@ -1,28 +1,5 @@
-
-"""
-Misc functions.
-
-"""
-import ipaddress
-
 import datetime
-import hashlib
-import json
-import netaddr
-import netifaces
-import os
-import re
-import requests
 import scapy.all as sc
-import socket
-import subprocess
-import sys
-import threading
-import time
-import traceback
-import uuid
-import webbrowser
-import ipaddress
 import xml.etree.ElementTree as ET
 import pandas
 
@@ -120,6 +97,13 @@ addresses = get_subnet_addresses(ip, subnet_mask)
 print(addresses)
 """
 
+def split_array(array, chunk_size):
+    result = []
+    for i in range(0, len(array), chunk_size):
+        result.append(array[i:i+chunk_size])
+    return result
+
+
 def getDannyIPs():
     danny_ip_list = [
         '192.168.87.1',
@@ -197,9 +181,5 @@ def getNyuIPandPorts():
     result = [tuple(x) for x in data.values]  
     return result
 
-def split_array(array, chunk_size):
-    result = []
-    for i in range(0, len(array), chunk_size):
-        result.append(array[i:i+chunk_size])
-    return result
+
 

@@ -26,7 +26,6 @@ class TCPScanner():
         
         #存储结果
         self.result_collect = []
-        self.last_fetch_index = 0
         
     
     def __del__(self):
@@ -73,21 +72,6 @@ class TCPScanner():
             sock.close()
             self.queue.task_done()
             #print("done")
-
-    """ 
-    #没试过，不知道现在还能不能用
-    async def scan_task_by_send(self):
-        while True:
-            ip_port = await self.queue.get()
-            ip, port = ip_port
-            SYN_SCAN_SOURCE_PORT = 44444
-            SYN_SCAN_SEQ_NUM = 44444
-            host_ip = "192.168.38.129"
-            syn_pkt = sc.IP(src=host_ip, dst=ip) / \
-                sc.TCP(dport=port, sport=SYN_SCAN_SOURCE_PORT, flags="S", seq=SYN_SCAN_SEQ_NUM)
-            sc.send(syn_pkt, iface=sc.conf.iface, verbose=0)
-            self.queue.task_done()
-    """
 
     async def async_scan_tasks(self, target_ip, target_port_list):
 
@@ -142,7 +126,7 @@ class TCPScanner():
         for ip in target_ip_list:
             print("[TCP Scanning] Start scan on ip =", ip)
             
-            
+    
             for batch_port_list in split_ip_port_list:
 
                 start_time = time.time()
@@ -151,11 +135,9 @@ class TCPScanner():
                 print(f'本批扫描所用时间为：{time.time() - start_time:.2f}')
 
     def getResult(self):
-        self.last_fetch_index = len(self.result_collect)
-        return self.result_collect[self.last_fetch_index:]
+        return self.result_collect
             
     def clearResult(self):
-        self.last_fetch_index = 0
         self.result_collect = []
 
 if __name__ == '__main__':
