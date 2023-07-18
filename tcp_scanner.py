@@ -53,7 +53,7 @@ class TCPScanner():
             ip, port = ip_port
             #print(ip, port)
             sock = socket(AF_INET, SOCK_STREAM)
-            #sock.setblocking(False)
+            sock.setblocking(False)
             try:
                 with timeout(self.timeout):
                     # 这里windows和Linux返回值不一样
