@@ -234,6 +234,7 @@ class SSDPScanner():
         utils.log("[SSDP Scanning] [sniffer mode] start")
 
         sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+        sock.settimeout(5)
 
         try:
             #现在windows这里会报错，可能是windows只能绑本机的，或者没开多播，或者防火墙
@@ -267,11 +268,11 @@ class SSDPScanner():
                 #print("\n")
                 #print("####RESP =", resp)
                 #print("####raddr =", raddr)
-                print("[SSDP Scanning] [sniffer find]", raddr[0], data)
+                print("[SSDP Scanning] [sniffer find]", raddr[0], resp)
                 print()
-                utils.log("[SSDP Scanning] [sniffer find]", raddr[0], data)
+                utils.log("[SSDP Scanning] [sniffer find]", raddr[0], resp)
 
-                location_result = location_regex.search(data.decode('ASCII'))
+                location_result = location_regex.search(resp.decode('ASCII'))
                 if location_result and (location_result.group(1) in locations) == False:
                     locations.add(location_result.group(1))
                     match = re.search(ip_port_regex, location_result.group(1))

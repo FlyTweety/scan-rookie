@@ -98,6 +98,5 @@ class DNSSDScanner():
 
 if __name__ == "__main__":
     DNSSDScannerInstance = DNSSDScanner()
-    target_ip_list = utils.getDannyIPs()
-    DNSSDScannerInstance.scan(target_ip_list)
+    DNSSDScannerInstance.scan(utils.getDannyIPs())
 # end main()

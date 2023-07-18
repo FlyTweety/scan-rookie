@@ -53,7 +53,7 @@ class TCPScanner():
             ip, port = ip_port
             #print(ip, port)
             sock = socket(AF_INET, SOCK_STREAM)
-            sock.setblocking(False) #这个好像没啥区别，反正都是坐等超时 欸不对怎么速度飞涨  我擦嘞 那完整跑一遍和原来对一下
+            sock.setblocking(False) #有时能大幅加速，有时不能
             try:
                 if sys.version_info.major == 3 and sys.version_info.minor >= 7:
                     async with timeout(self.timeout):

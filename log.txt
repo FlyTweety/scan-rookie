@@ -15,3 +15,47 @@
 [2023-07-18 20:29:16.987478] [SSDP Scanning] No location to parse
 [2023-07-18 20:29:16.987558] [SSDP Scanning] [sniffer mode] start
 [2023-07-18 20:30:35.026925] [SSDP Scanning] [sniffer find] 192.168.38.1  Google Chrome/114.0.5735.199 Windows
+[2023-07-18 21:14:08.446528] [TCP Scanning] Start scanning 1 IPs: 192.168.87.48
+[2023-07-18 21:14:08.446706] [TCP Scanning] Scan 65K ports
+[2023-07-18 21:15:09.667591] [TCP Scanning] Start scanning 1 IPs: 192.168.87.48
+[2023-07-18 21:15:09.668018] [TCP Scanning] Scan popular ports
+[2023-07-18 21:16:16.886079] [TCP Scanning] Start scanning 1 IPs: 192.168.38.129
+[2023-07-18 21:16:16.886504] [TCP Scanning] Scan popular ports
+[2023-07-18 21:17:09.884144] [TCP Scanning] Start scanning 1 IPs: 192.168.38.129
+[2023-07-18 21:17:09.884268] [TCP Scanning] Scan popular ports
+[2023-07-18 21:17:09.964105] [Banner Grab] Start Banner Grab on 1 target ('127.0.0.1', 80)
+[2023-07-18 21:17:09.964731] [Banner Grab] IP 127.0.0.1, Port 80,  Connection refused
+[2023-07-18 21:17:09.965069] [Banner Grab] Done
+[2023-07-18 21:19:01.264440] [TCP Scanning] Start scanning 1 IPs: 192.168.38.129
+[2023-07-18 21:19:01.264566] [TCP Scanning] Scan popular ports
+[2023-07-18 21:19:01.353200] [Banner Grab] Start Banner Grab on 1 target ('192.168.38.129', 80)
+[2023-07-18 21:19:01.353886] [Banner Grab] IP 192.168.38.129, Port 80,  Connection refused
+[2023-07-18 21:19:01.354119] [Banner Grab] Done
+[2023-07-18 21:19:01.354204] [SSDP Scanning] Discovering UPnP locations
+[2023-07-18 21:19:06.360502] [SSDP Scanning] 0 locations found:
+[2023-07-18 21:19:06.360655] [SSDP Scanning] No location to parse
+[2023-07-18 21:19:06.360706] [SSDP Scanning] [sniffer mode] start
+[2023-07-18 21:20:35.211213] [SSDP Scanning] [sniffer find] 192.168.38.1  Google Chrome/114.0.5735.199 Windows
+[2023-07-18 21:22:26.475210] [SSDP Scanning] Discovering UPnP locations
+[2023-07-18 21:22:31.481058] [SSDP Scanning] 0 locations found:
+[2023-07-18 21:22:31.481257] [SSDP Scanning] No location to parse
+[2023-07-18 21:22:31.481471] [SSDP Scanning] [sniffer mode] start
+[2023-07-18 21:22:35.216233] [SSDP Scanning] [sniffer find] 192.168.38.1 b'M-SEARCH * HTTP/1.1\r\nHOST: 239.255.255.250:1900\r\nMAN: "ssdp:discover"\r\nMX: 1\r\nST: urn:dial-multiscreen-org:service:dial:1\r\nUSER-AGENT: Google Chrome/114.0.5735.199 Windows\r\n\r\n'
+[2023-07-18 21:22:36.219946] [SSDP Scanning] [sniffer find] 192.168.38.1 b'M-SEARCH * HTTP/1.1\r\nHOST: 239.255.255.250:1900\r\nMAN: "ssdp:discover"\r\nMX: 1\r\nST: urn:dial-multiscreen-org:service:dial:1\r\nUSER-AGENT: Google Chrome/114.0.5735.199 Windows\r\n\r\n'
+[2023-07-18 21:22:37.228318] [SSDP Scanning] [sniffer find] 192.168.38.1 b'M-SEARCH * HTTP/1.1\r\nHOST: 239.255.255.250:1900\r\nMAN: "ssdp:discover"\r\nMX: 1\r\nST: urn:dial-multiscreen-org:service:dial:1\r\nUSER-AGENT: Google Chrome/114.0.5735.199 Windows\r\n\r\n'
+[2023-07-18 21:22:38.243779] [SSDP Scanning] [sniffer find] 192.168.38.1 b'M-SEARCH * HTTP/1.1\r\nHOST: 239.255.255.250:1900\r\nMAN: "ssdp:discover"\r\nMX: 1\r\nST: urn:dial-multiscreen-org:service:dial:1\r\nUSER-AGENT: Google Chrome/114.0.5735.199 Windows\r\n\r\n'
+[2023-07-18 21:22:43.452189] [SSDP Scanning] [sniffer mode] exit
+[2023-07-18 21:23:12.830937] [TCP Scanning] Start scanning 1 IPs: 192.168.38.129
+[2023-07-18 21:23:12.831293] [TCP Scanning] Scan popular ports
+[2023-07-18 21:23:12.928435] [Banner Grab] Start Banner Grab on 1 target ('192.168.38.129', 80)
+[2023-07-18 21:23:12.929127] [Banner Grab] IP 192.168.38.129, Port 80,  Connection refused
+[2023-07-18 21:23:12.929338] [Banner Grab] Done
+[2023-07-18 21:23:12.929498] [SSDP Scanning] Discovering UPnP locations
+[2023-07-18 21:23:17.935877] [SSDP Scanning] 0 locations found:
+[2023-07-18 21:23:17.936066] [SSDP Scanning] No location to parse
+[2023-07-18 21:23:17.936116] [SSDP Scanning] [sniffer mode] start
+[2023-07-18 21:23:23.346848] [SSDP Scanning] [sniffer mode] exit
+[2023-07-18 21:23:23.347195] [DNS-SD Scanning] Start
+[2023-07-18 21:23:23.347271] [DNS-SD Scanning] Scanning 1 locations: ['192.168.38.129']
+[2023-07-18 21:23:28.351483] [DNS-SD Scanning] No.0 192.168.38.129 OFFLINE
+[2023-07-18 21:23:28.351762] [DNS-SD Scanning] Finish
