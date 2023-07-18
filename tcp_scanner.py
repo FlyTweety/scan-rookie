@@ -135,7 +135,7 @@ class TCPScanner():
                 
                 start_time = time.time()
                 
-                if sys.version_info.major == 3 and sys.version_info.minor >= 7:
+                if (sys.version_info.major == 3 and sys.version_info.minor >= 7) or (sys.version_info.major > 3):
                     asyncio.run(self.async_scan_tasks(ip, batch_port_list))
                 else:
                     asyncio.get_event_loop().run_until_complete(self.async_scan_tasks(ip, batch_port_list))
