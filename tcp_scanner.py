@@ -55,15 +55,23 @@ class TCPScanner():
             sock = socket(AF_INET, SOCK_STREAM)
             sock.setblocking(False) #这个好像没啥区别，反正都是坐等超时 欸不对怎么速度飞涨  我擦嘞 那完整跑一遍和原来对一下
             try:
-                with timeout(self.timeout):
-                    # 这里windows和Linux返回值不一样
-                    # windows返回sock对象，Linux返回None
-                    await asyncio.get_event_loop().sock_connect(sock, (ip, port))
-                    t2 = time.time()
-                    # 所以这里直接直接判断sock
-                    if sock:
-                        self.result_collect.append((ip, port))
-                        print(time.strftime('%Y-%m-%d %H:%M:%S'), ip, port, 'open', round(t2 - t1, 2))
+                if sys.version_info.major == 3 and sys.version_info.minor >= 7:
+                    async with timeout(self.timeout):
+                        # 这里windows和Linux返回值不一样
+                        # windows返回sock对象，Linux返回None
+                        await asyncio.get_event_loop().sock_connect(sock, (ip, port))
+                        t2 = time.time()
+                        # 所以这里直接直接判断sock
+                        if sock:
+                            self.result_collect.append((ip, port))
+                            print(time.strftime('%Y-%m-%d %H:%M:%S'), ip, port, 'open', round(t2 - t1, 2))
+                else:
+                    with timeout(self.timeout):
+                        await asyncio.get_event_loop().sock_connect(sock, (ip, port))
+                        t2 = time.time()
+                        if sock:
+                            self.result_collect.append((ip, port))
+                            print(time.strftime('%Y-%m-%d %H:%M:%S'), ip, port, 'open', round(t2 - t1, 2))
             # we have to deal with the exception, otherwise it will stopp
             except:
                 #self.error.append((ip, port))
@@ -134,8 +142,8 @@ class TCPScanner():
             for batch_port_list in split_ip_port_list:
                 
                 start_time = time.time()
-                
-                if (sys.version_info.major == 3 and sys.version_info.minor >= 7) or (sys.version_info.major > 3):
+
+                if sys.version_info.major == 3 and sys.version_info.minor >= 7:
                     asyncio.run(self.async_scan_tasks(ip, batch_port_list))
                 else:
                     asyncio.get_event_loop().run_until_complete(self.async_scan_tasks(ip, batch_port_list))
