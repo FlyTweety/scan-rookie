@@ -24,7 +24,6 @@ class BannerGrab:
 
         #存储结果
         self.result_collect = []
-        self.last_fetch_index = 0
 
 
     #核心改了名和参数target，其他一点没动
@@ -175,11 +174,9 @@ class BannerGrab:
             #记录运行时间的被我给删了
 
     def getResult(self):
-        self.last_fetch_index = len(self.result_collect) - 1
-        return self.result_collect[self.last_fetch_index:]
+        return self.result_collect
             
     def clearResult(self):
-        self.last_fetch_index = 0
         self.result_collect = []
 
 if __name__ == "__main__":
