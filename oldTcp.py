@@ -14,12 +14,12 @@ import utils
 
 class TCPScanner():
 
-    def __init__(self, time_out = 0.1, concurrency = 500):
-        #self.loop = self.get_event_loop()
+    def __init__(self, time_out = 5.0, concurrency = 500):
+        self.loop = self.get_event_loop()
         self.result = []
         self.error = []
         # 队列的事件循环需要用同一个，如果不用同一个会报错，这里还有一点不明白
-        #self.queue = Queue()
+        self.queue = Queue(loop=self.loop)
         self.timeout = time_out
         # 并发数
         self.concurrency = concurrency
@@ -28,8 +28,8 @@ class TCPScanner():
         self.result_collect = []
         
     
-    #def __del__(self):
-        #self.loop.close()
+    def __del__(self):
+        self.loop.close()
 
     @staticmethod
     def get_event_loop():
@@ -58,7 +58,7 @@ class TCPScanner():
                 with timeout(self.timeout):
                     # 这里windows和Linux返回值不一样
                     # windows返回sock对象，Linux返回None
-                    await asyncio.get_event_loop().sock_connect(sock, (ip, port))
+                    await self.loop.sock_connect(sock, (ip, port))
                     t2 = time.time()
                     # 所以这里直接直接判断sock
                     if sock:
@@ -77,14 +77,10 @@ class TCPScanner():
 
         #start = time.time()
         # Add target to queue
-
-        self.queue = Queue()
-        #print("new queue")
-
         for port in target_port_list:
             self.queue.put_nowait((target_ip, port))
 
-        tasks = [asyncio.get_event_loop().create_task(self.scan_task()) for _ in range(self.concurrency)]
+        tasks = [self.loop.create_task(self.scan_task()) for _ in range(self.concurrency)]
         # If the queue is not empty, it will always block here
         await self.queue.join()
         # Exit one by one
@@ -132,9 +128,9 @@ class TCPScanner():
             
     
             for batch_port_list in split_ip_port_list:
-                
+
                 start_time = time.time()
-                asyncio.get_event_loop().run_until_complete(self.async_scan_tasks(ip, batch_port_list))
+                self.loop.run_until_complete(self.async_scan_tasks(ip, batch_port_list))
                 print("本批最后一个是", ip, str(batch_port_list[-1]))
                 print(f'本批扫描所用时间为：{time.time() - start_time:.2f}')
 
@@ -146,5 +142,5 @@ class TCPScanner():
 
 if __name__ == '__main__':
     TCPScannerInstance = TCPScanner()
-    #TCPScannerInstance.scan(["192.168.87.48"], scanAll = True)
-    TCPScannerInstance.scan(utils.getDannyIPs(), scanAll = True)
+    TCPScannerInstance.scan(["127.0.0.1"], scanAll = True)
+    #TCPScannerInstance.scan(utils.getDannyIPs(), scanAll = True)
