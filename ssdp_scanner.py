@@ -57,7 +57,7 @@ class SSDPScanner():
     def discover_pnp_locations(self):
         print('[SSDP Scanning] Discovering UPnP locations')
         utils.log('[SSDP Scanning] Discovering UPnP locations')
-        locations = set() # 自动避免了重复
+        locations = set() 
         ip_ports = set()
         location_regex = re.compile("location:[ ]*(.+)\r\n", re.IGNORECASE)
         ip_port_regex = r"http://(\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}):(\d+)"
@@ -221,20 +221,42 @@ class SSDPScanner():
             if array[0].upper() == "SERVER" or array[0].upper() == "USER-AGENT":
                 return array[1]
 
-    def sniff(self):
-        #要设置一个监听时长的选项！！！！！！！！！！！！！
+    def alreadyKnownThisLocation(self, location):
+        for known_location_info in self.result_collect:
+            if known_location_info.location == location:
+                return True
+        return False
+
+    def sniff(self, sniff_time = 10): #和scan同时运行可能会出错
+
         #添加从监听解析位置的选项（记住有哪些位置）
-        print("[SSDP Scanning] [sniffer mode] (stop by Ctrl-C)")
+        print("[SSDP Scanning] [sniffer mode] Max sniff time =", str(sniff_time))
         utils.log("[SSDP Scanning] [sniffer mode] start")
 
         sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
-        sock.bind(("239.255.255.250", 1900))
 
+        try:
+            #现在windows这里会报错，可能是windows只能绑本机的，或者没开多播，或者防火墙
+            sock.bind(("239.255.255.250", 1900)) 
+        except:
+            print("[SSDP Scanning] System does not support SSDP sniff")
+            utils.log("[SSDP Scanning] System does not support SSDP sniff")
+            sock.close()
+            return
+        
         # join the multicast group
         maddr = struct.pack("4sl", socket.inet_aton("239.255.255.250"), socket.INADDR_ANY)
         sock.setsockopt(socket.IPPROTO_IP, socket.IP_ADD_MEMBERSHIP, maddr)
 
         # receive and print
+
+        location_regex = re.compile("location:[ ]*(.+)\r\n", re.IGNORECASE)
+        ip_port_regex = r"http://(\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}):(\d+)"
+        locations = set() 
+        ip_ports = set()
+
+        start_time = time.time()
+
         while True:
             try:
                 resp, raddr = sock.recvfrom(1024)
@@ -248,8 +270,42 @@ class SSDPScanner():
                 print("[SSDP Scanning] [sniffer find]", raddr[0], data)
                 print()
                 utils.log("[SSDP Scanning] [sniffer find]", raddr[0], data)
-        
+
+                location_result = location_regex.search(data.decode('ASCII'))
+                if location_result and (location_result.group(1) in locations) == False:
+                    locations.add(location_result.group(1))
+                    match = re.search(ip_port_regex, location_result.group(1))
+                    ip = match.group(1)
+                    port = match.group(2)       
+                    ip_port = ip + "_" + port
+                    ip_ports.add(ip_port)
+
+                current_time = time.time()
+                elapsed_time = current_time - start_time
+                if elapsed_time > sniff_time:
+                    break
+                        
         sock.close()
+
+        if len(locations) > 0:
+
+            new_locations = []
+
+            for location in locations:
+
+                if self.alreadyKnownThisLocation(location) == False:
+                    print('[SSDP Scanning] Sniffer new location\t%s' % location)
+                    utils.log('[SSDP Scanning] Sniffer new location\t%s' % location)
+                    new_locations.append(location)
+                else:
+                    print('[SSDP Scanning] Sniffer known location\t%s' % location)
+                    utils.log('[SSDP Scanning] Sniffer known location\t%s' % location)
+
+            #要先判断每个location是不是已经在self.result_collect里面了
+
+            if len(new_locations) > 0:
+                self.parse_locations(new_locations)
+
         print("[SSDP Scanning] [sniffer mode] exit")
         utils.log("[SSDP Scanning] [sniffer mode] exit")
 
@@ -257,7 +313,7 @@ class SSDPScanner():
         return self.result_collect
     
     def clearResult(self):
-        self.result_collect = []
+        self.result_collect = [] 
 
 if __name__ == "__main__":
     SSDPScannerInstance = SSDPScanner()
