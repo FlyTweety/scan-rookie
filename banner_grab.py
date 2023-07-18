@@ -43,11 +43,11 @@ class BannerGrab:
         except asyncio.TimeoutError:
             utils.log(f"[Banner Grab] IP {ip}, Port {port},  Timeout")
             print(f"[Banner Grab] IP {ip}, Port {port},  Timeout")
-            return {"ip":ip, "port":port, "serive":"null", "banner":["connection build timeout"]}
+            return {"ip":ip, "port":port, "serive":"null", "banner":[(-2, "connection build timeout")]}
         except OSError:
             utils.log(f"[Banner Grab] IP {ip}, Port {port},  Connection refused")
             print(f"[Banner Grab] IP {ip}, Port {port},  Connection refused")
-            return {"ip":ip, "port":port, "serive":"null", "banner":["connection build refuse"]}
+            return {"ip":ip, "port":port, "serive":"null", "banner":[(-2, "connection build refuse")]}
             
 
         # STEP 2  Wait for server to send banner
