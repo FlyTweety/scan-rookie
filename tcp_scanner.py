@@ -14,7 +14,7 @@ import utils
 
 class TCPScanner():
 
-    def __init__(self, time_out = 0.1, concurrency = 500):
+    def __init__(self, time_out = 5.0, concurrency = 500):
         #self.loop = self.get_event_loop()
         self.result = []
         self.error = []
@@ -53,7 +53,7 @@ class TCPScanner():
             ip, port = ip_port
             #print(ip, port)
             sock = socket(AF_INET, SOCK_STREAM)
-            sock.setblocking(False)
+            sock.setblocking(False) #这个好像没啥区别，反正都是坐等超时 欸不对怎么速度飞涨  我擦嘞 那完整跑一遍和原来对一下
             try:
                 with timeout(self.timeout):
                     # 这里windows和Linux返回值不一样
@@ -134,7 +134,12 @@ class TCPScanner():
             for batch_port_list in split_ip_port_list:
                 
                 start_time = time.time()
-                asyncio.get_event_loop().run_until_complete(self.async_scan_tasks(ip, batch_port_list))
+                
+                if sys.version_info.major == 3 and sys.version_info.minor >= 7:
+                    asyncio.run(self.async_scan_tasks(ip, batch_port_list))
+                else:
+                    asyncio.get_event_loop().run_until_complete(self.async_scan_tasks(ip, batch_port_list))
+                
                 print("本批最后一个是", ip, str(batch_port_list[-1]))
                 print(f'本批扫描所用时间为：{time.time() - start_time:.2f}')
 
