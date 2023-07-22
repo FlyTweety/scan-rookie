@@ -30,7 +30,7 @@ class TCPScanner():
             ip, port = ip_port
             #print(ip, port)
             sock = socket(AF_INET, SOCK_STREAM)
-            sock.setblocking(False) #有时能大幅加速，有时不能
+            #sock.setblocking(False) #有时能大幅加速，有时不能
             try:
                 if sys.version_info.major == 3 and sys.version_info.minor >= 7:
                     async with timeout(self.timeout):
