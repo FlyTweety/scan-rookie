@@ -69,7 +69,7 @@ class SSDPScanner():
                         '\r\n')
 
         sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
-        #sock.setblocking(False) #似乎没什么区别
+        #sock.setblocking(False) #这里没做并发，所以没什么区别
         sock.sendto(ssdpDiscover.encode('ASCII'), ("239.255.255.250", 1900))
         sock.settimeout(5)
         try:

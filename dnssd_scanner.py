@@ -62,7 +62,7 @@ class DNSSDScanner():
             sock.settimeout(5)
 
             # query all service name
-            req = DNS(id=0x0001, rd=1, qd=DNSQR(qtype="PTR", qname="_services._dns-sd._udp.local")) #这里有效性可能待检验
+            req = DNS(id=0x0001, rd=1, qd=DNSQR(qtype="PTR", qname="_services._dns-sd._udp.local")) # 这里是关键
             #req.show()
 
             try:

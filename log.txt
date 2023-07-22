@@ -59,3 +59,6 @@
 [2023-07-18 21:23:23.347271] [DNS-SD Scanning] Scanning 1 locations: ['192.168.38.129']
 [2023-07-18 21:23:28.351483] [DNS-SD Scanning] No.0 192.168.38.129 OFFLINE
 [2023-07-18 21:23:28.351762] [DNS-SD Scanning] Finish
+[2023-07-22 14:51:27.538584] [Banner Grab] Start Banner Grab on 1 target ('127.0.0.1', 80)
+[2023-07-22 14:51:27.539850] [Banner Grab] IP 127.0.0.1, Port 80,  Connection refused
+[2023-07-22 14:51:27.540473] [Banner Grab] Done

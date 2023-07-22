@@ -22,11 +22,8 @@ class BannerGrab:
             b"SSH-2.0-OpenSSH_7.6p1 Ubuntu-4ubuntu0.1\r\n"
         ]
 
-        #存储结果
         self.result_collect = []
 
-
-    #核心改了名和参数target，其他一点没动
     async def async_banner_grab_task(self, target, timeout=3.0):
         banner_collect = []
         ip, port = target
@@ -79,9 +76,7 @@ class BannerGrab:
 
         # STEP 3  Send different bytes to server
 
-        # 0704改动 原先只发一个HTTP GET，现在发多个。原先banner是一个字符串，现在改成返回列表。
-        # 多次发送会不会导致连接失败的可能性上升？
-        # 现在似乎就是太频繁了，导致往往只有前一两个成功
+        # 多次频繁发送容易导致失败
 
         grab_msg_list = [self.generate_random_string(2), self.generate_random_string(32), self.generate_random_string(128), self.generate_random_string(2048)] + self.banner_grab_task_send_message
         for i in range(0, len(grab_msg_list)):
@@ -121,26 +116,12 @@ class BannerGrab:
 
         # Update the banner grab info for each IP and Port into _host_state.banner_grab_task_info.append
         self.result_collect += results
-                
-       
+
+
     def generate_random_string(self, length):
         letters = string.ascii_lowercase + string.ascii_uppercase + string.digits
         return ''.join(random.choice(letters) for _ in range(length)).encode()
 
-    @staticmethod
-    def get_event_loop():
-        """
-        判断不同平台使用不同的事件循环实现
-
-        :return:
-        """
-        if sys.platform == 'win32':
-            from asyncio import ProactorEventLoop
-            # 用 "I/O Completion Ports" (I O C P) 构建的专为Windows 的事件循环
-            return ProactorEventLoop()
-        else:
-            from asyncio import SelectorEventLoop
-            return SelectorEventLoop()
 
     def banner_grab(self, target_list):
 
@@ -158,7 +139,7 @@ class BannerGrab:
                 ', '.join(str(target) for target in target_list)
             ))
 
-            loop = self.get_event_loop()
+            loop = asyncio.get_event_loop()
             asyncio.set_event_loop(loop)
             
             asyncio.get_event_loop().run_until_complete(self.async_banner_grab_tasks(target_list))
@@ -170,8 +151,6 @@ class BannerGrab:
             print("[Banner Grab] Done")
             utils.log("[Banner Grab] Done")
 
-
-            #记录运行时间的被我给删了
 
     def getResult(self):
         return self.result_collect

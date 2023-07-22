@@ -15,36 +15,14 @@ import utils
 class TCPScanner():
 
     def __init__(self, time_out = 5.0, concurrency = 500):
-        #self.loop = self.get_event_loop()
+
         self.result = []
         self.error = []
-        # 队列的事件循环需要用同一个，如果不用同一个会报错，这里还有一点不明白
-        #self.queue = Queue()
+
         self.timeout = time_out
-        # 并发数
         self.concurrency = concurrency
         
-        #存储结果
         self.result_collect = []
-        
-    
-    #def __del__(self):
-        #self.loop.close()
-
-    @staticmethod
-    def get_event_loop():
-        """
-        判断不同平台使用不同的事件循环实现
-
-        :return:
-        """
-        if sys.platform == 'win32':
-            from asyncio import ProactorEventLoop
-            # 用 "I/O Completion Ports" (I O C P) 构建的专为Windows 的事件循环
-            return ProactorEventLoop()
-        else:
-            from asyncio import SelectorEventLoop
-            return SelectorEventLoop()
 
     async def scan_task(self):
         while True:
@@ -83,9 +61,6 @@ class TCPScanner():
 
     async def async_scan_tasks(self, target_ip, target_port_list):
 
-        #start = time.time()
-        # Add target to queue
-
         self.queue = Queue()
         #print("new queue")
 
@@ -100,7 +75,6 @@ class TCPScanner():
             task.cancel()
         # Wait until all worker tasks are cancelled.
         await gather(*tasks, return_exceptions=True)
-        #print(f'扫描所用时间为：{time.time() - start:.2f}')
 
     def scan(self, target_ip_list, scanAll = False):
         
@@ -126,9 +100,6 @@ class TCPScanner():
             print("[TCP Scanning] Scan popular ports")
             utils.log("[TCP Scanning] Scan popular ports")
 
-        #一下把所有ip传进去感觉有点难控制，要不逐个ip来操作
-        #那现在怎么做到5000输出以下
-
         if scanAll == True:
             all_port_list = [i for i in range(1, 65536)]
             split_ip_port_list = utils.split_array(all_port_list, 5000) #python垃圾回收机制会自动处理all_port_list？
@@ -148,8 +119,8 @@ class TCPScanner():
                 else:
                     asyncio.get_event_loop().run_until_complete(self.async_scan_tasks(ip, batch_port_list))
                 
-                print("本批最后一个是", ip, str(batch_port_list[-1]))
-                print(f'本批扫描所用时间为：{time.time() - start_time:.2f}')
+                print("Last one of this batch:", ip, str(batch_port_list[-1]))
+                print(f'Time for this batch: {time.time() - start_time:.2f}')
 
     def getResult(self):
         return self.result_collect
