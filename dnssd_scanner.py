@@ -98,5 +98,5 @@ class DNSSDScanner():
 
 if __name__ == "__main__":
     DNSSDScannerInstance = DNSSDScanner()
-    DNSSDScannerInstance.scan(utils.getDannyIPs())
+    DNSSDScannerInstance.scan("127.0.0.1")
 # end main()

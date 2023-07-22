@@ -1,4 +1,3 @@
-import scapy.all as sc
 import threading
 import time
 from datetime import datetime

@@ -1,4 +1,3 @@
-
 import sys
 from socket import socket, AF_INET, SOCK_STREAM
 import time
@@ -130,5 +129,4 @@ class TCPScanner():
 
 if __name__ == '__main__':
     TCPScannerInstance = TCPScanner()
-    #TCPScannerInstance.scan(["192.168.87.48"], scanAll = True)
-    TCPScannerInstance.scan(utils.getDannyIPs(), scanAll = True)
+    TCPScannerInstance.scan("127.0.0.1", scanAll = True)
