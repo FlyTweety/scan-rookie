@@ -94,11 +94,11 @@ class BannerGrab:
         except asyncio.TimeoutError:
             utils.log(f"[Banner Grab] IP {ip}, Port {port},  Timeout")
             print(f"[Banner Grab] IP {ip}, Port {port},  Timeout")
-            return {"ip":ip, "port":port, "serive":"null", "banner":["connection build timeout"]}
+            return {"ip":ip, "port":port, "service":"null", "banner":["connection build timeout"]}
         except OSError:
             utils.log(f"[Banner Grab] IP {ip}, Port {port},  Connection refused")
             print(f"[Banner Grab] IP {ip}, Port {port},  Connection refused")
-            return {"ip":ip, "port":port, "serive":"null", "banner":["connection build refuse"]}
+            return {"ip":ip, "port":port, "service":"null", "banner":["connection build refuse"]}
             
 
         # STEP 2  Wait for server to send banner
@@ -122,7 +122,7 @@ class BannerGrab:
                 utils.log(f"[Banner Grab] IP {ip}, Port {port}, Get Initial Data:\n {initial_data.decode('utf-8', errors='ignore').strip()}")
                 print(f"[Banner Grab] IP {ip}, Port {port}, Get Initial Data:\n {initial_data.decode('utf-8', errors='ignore').strip()}")
                 banner_collect.append((-1, initial_data.decode('utf-8', errors='ignore').strip()))
-                #return {"ip":ip, "port":port, "serive":"null", "banner":initial_data.decode('utf-8', errors='ignore').strip()} # No need for take initiative to send data
+                #return {"ip":ip, "port":port, "service":"null", "banner":initial_data.decode('utf-8', errors='ignore').strip()} # No need for take initiative to send data
             else:
                 print("[Banner Grab] get wrong inital data = ", data)
                 banner_collect.append((-1, "Grab Initial Error"))
@@ -156,7 +156,7 @@ class BannerGrab:
             
 
         sock.close()
-        return {"ip":ip, "port":port, "serive":"null", "banner":banner_collect}
+        return {"ip":ip, "port":port, "service":"null", "banner":banner_collect}
 
 
 

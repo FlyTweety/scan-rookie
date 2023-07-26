@@ -20,7 +20,7 @@ class HostState:
         ##### These are new
         self.received_ip_port_info = [] # info received from syn scan. Every entry is {ip:xx, port:xx, info:xx} info is useless for now
         self.last_syn_scan_time = {} # ip->time
-        self.banner_grab_info = [] # every entry is {ip:xx, port:xx, serive:xx, banner:xx}  banner_info is the banner we get
+        self.banner_grab_info = [] # every entry is {ip:xx, port:xx, service:xx, banner:xx}  banner_info is the banner we get
         self.last_banner_grab_time = {} # ip_port->time
         self.known_ip_list = [
             '192.168.87.1',

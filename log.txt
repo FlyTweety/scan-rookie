@@ -62,3 +62,15 @@
 [2023-07-22 14:51:27.538584] [Banner Grab] Start Banner Grab on 1 target ('127.0.0.1', 80)
 [2023-07-22 14:51:27.539850] [Banner Grab] IP 127.0.0.1, Port 80,  Connection refused
 [2023-07-22 14:51:27.540473] [Banner Grab] Done
+[2023-07-26 17:03:24.620095] [Banner Grab] Start Banner Grab on 1 target ('127.0.0.1', 80)
+[2023-07-26 17:03:41.505819] [Banner Grab] Start Banner Grab on 1 target ('127.0.0.1', 80)
+[2023-07-26 21:12:46.216916] [Banner Grab] Start Banner Grab on 1 target ('127.0.0.1', 80)
+[2023-07-26 21:12:46.218498] [Banner Grab] Done
+[2023-07-26 21:13:06.035152] [Banner Grab] Start Banner Grab on 1 target ('127.0.0.1', 80)
+[2023-07-26 21:13:06.037467] [Banner Grab] Done
+[2023-07-26 22:14:29.840441] [Banner Grab] Start Banner Grab on 1 target ('127.0.0.1', 80)
+[2023-07-26 22:14:29.841044] [Banner Grab] IP 127.0.0.1, Port 80,  Connection refused
+[2023-07-26 22:14:29.841283] [Banner Grab] Done
+[2023-07-26 22:23:22.660748] [Banner Grab] Start Banner Grab on 1 target ('127.0.0.1', 80)
+[2023-07-26 22:23:22.661359] [Banner Grab] IP 127.0.0.1, Port 80: ConnectionRefusedError - [Errno 111] Connect call failed ('127.0.0.1', 80)
+[2023-07-26 22:23:22.661578] [Banner Grab] Done

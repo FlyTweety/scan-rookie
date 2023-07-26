@@ -262,7 +262,7 @@ class SSDPScanner():
             try:
                 resp, raddr = sock.recvfrom(1024)
             except:
-                break
+                pass
             if resp:
                 data = self.get_serv_ua(resp.decode())
                 #print("\n")

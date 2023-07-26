@@ -110,7 +110,7 @@ Fetch the result from the previous banner grab
 | Return Values       |                                                                           |                                                                                                                               |
 | ------------------- | ------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------- |
 | name                | type                                                                      | example                                                                                                                       |
-| self.result_collect | list[dict{'ip': str, 'port': int, 'serive': str, 'banner': [(int, str)]}] | [{'ip': '192.168.38.129', 'port': 80, 'serive': 'null', 'banner': [(-1, “error”), (0, “bad request”), (1, “timeout”)]}] |
+| self.result_collect | list[dict{'ip': str, 'port': int, 'service': str, 'banner': [(int, str)]}] | [{'ip': '192.168.38.129', 'port': 80, 'service': 'null', 'banner': [(-1, “error”), (0, “bad request”), (1, “timeout”)]}] |
 
 - clearResult
 

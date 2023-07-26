@@ -36,46 +36,37 @@ class BannerGrab:
                 asyncio.get_running_loop().sock_connect(sock, (ip, port)), 
                 timeout=3.0
             )
-        except asyncio.TimeoutError:
-            utils.log(f"[Banner Grab] IP {ip}, Port {port},  Timeout")
-            print(f"[Banner Grab] IP {ip}, Port {port},  Timeout")
-            return {"ip":ip, "port":port, "serive":"null", "banner":[(-2, "connection build timeout")]}
-        except OSError:
-            utils.log(f"[Banner Grab] IP {ip}, Port {port},  Connection refused")
-            print(f"[Banner Grab] IP {ip}, Port {port},  Connection refused")
-            return {"ip":ip, "port":port, "serive":"null", "banner":[(-2, "connection build refuse")]}
-            
+        except Exception as e:
+            print(f"[Banner Grab] IP {ip}, Port {port}: {type(e).__name__} - {str(e)}")
+            utils.log(f"[Banner Grab] IP {ip}, Port {port}: {type(e).__name__} - {str(e)}")
+            return {"ip":ip, "port":port, "serive":"null", "banner":[(-2, f"{type(e).__name__}")]}
+
 
         # STEP 2  Wait for server to send banner
         try:     
             data = await asyncio.wait_for(
-                asyncio.gather(
-                    asyncio.sleep(3),
-                    asyncio.get_running_loop().sock_recv(sock, 1024),
-                    return_exceptions=False,
-                ), 
-                timeout=6.0)
-        except (asyncio.TimeoutError, asyncio.CancelledError) as e:  #seems to be useless……
-            print("[Banner Grab] fail to get inital data")
-            banner_collect.append((-1, "Grab Initial Error"))
+                asyncio.get_running_loop().sock_recv(sock, 1024), 
+                timeout=5.0
+            )
         except Exception as e:
-            print("[Banner Grab] gather error:", str(e))
-            banner_collect.append((-1, "Grab Initial Error"))
+            print(f"[Banner Grab] IP {ip}, Port {port}: {type(e).__name__} - {str(e)}")
+            utils.log(f"[Banner Grab] IP {ip}, Port {port}: {type(e).__name__} - {str(e)}")
+            banner_collect.append((-1, f"{type(e).__name__}"))
         else:
             if isinstance(data, List) and isinstance(data[1], bytes): # data[0]:result of asyncio.sleep(3)  data[1]:result of loop.sock_recv(sock, 1024)
                 initial_data = data[1]
-                utils.log(f"[Banner Grab] IP {ip}, Port {port}, Get Initial Data:\n {initial_data.decode('utf-8', errors='ignore').strip()}")
-                print(f"[Banner Grab] IP {ip}, Port {port}, Get Initial Data:\n {initial_data.decode('utf-8', errors='ignore').strip()}")
-                banner_collect.append((-1, initial_data.decode('utf-8', errors='ignore').strip()))
-                #return {"ip":ip, "port":port, "serive":"null", "banner":initial_data.decode('utf-8', errors='ignore').strip()} # No need for take initiative to send data
+                utils.log(f"[Banner Grab] IP {ip}, Port {port}, Get Initial Data:\n {initial_data.decode('utf-8', errors='ignore') }")
+                print(f"[Banner Grab] IP {ip}, Port {port}, Get Initial Data:\n {initial_data.decode('utf-8', errors='ignore') }")
+                banner_collect.append((-1, initial_data.decode('utf-8', errors='ignore') ))
+                #return {"ip":ip, "port":port, "serive":"null", "banner":initial_data.decode('utf-8', errors='ignore') } # No need for take initiative to send data
             else:
                 print("[Banner Grab] get wrong inital data = ", data)
-                banner_collect.append((-1, "Grab Initial Error"))
+                banner_collect.append((-1, "Wrong Initial Data"))
 
 
         # STEP 3  Send different bytes to server
 
-        # 多次频繁发送容易导致失败
+        # 多次频繁发送容易导致失败, 现在加个asyncio.sleep看看
 
         grab_msg_list = [self.generate_random_string(2), self.generate_random_string(32), self.generate_random_string(128), self.generate_random_string(2048)] + self.banner_grab_task_send_message
         for i in range(0, len(grab_msg_list)):
@@ -85,19 +76,14 @@ class BannerGrab:
                 #await asyncio.wait_for(loop.sock_connect(sock, (ip, port)), timeout=5) bad idea
                 await asyncio.wait_for(asyncio.get_running_loop().sock_sendall(sock, grab_msg), timeout=5)  
                 banner = await asyncio.wait_for(asyncio.get_running_loop().sock_recv(sock, 1024), timeout=5) 
-                utils.log(f"[Banner Grab] IP {ip}, Port {port}, Content:\n {banner.decode('utf-8', errors='ignore').strip()}")
-                print(f"[Banner Grab] IP {ip}, Port {port}, Content:\n {banner.decode('utf-8', errors='ignore').strip()}")
-                banner_collect.append((i, banner.decode('utf-8', errors='ignore').strip()))
-            except asyncio.TimeoutError:
-                utils.log(f"[Banner Grab] IP {ip}, Port {port}, Timeout Error")
-                print(f"[Banner Grab] IP {ip}, Port {port}, Timeout Error")
-                banner_collect.append((i, "Timeout Error"))
-            except:
-                utils.log(f"[Banner Grab] IP {ip}, Port {port},  Grab Error")
-                print(f"[Banner Grab] IP {ip}, Port {port},  Grab Error")
-                banner_collect.append((i, "Grab Error"))
+                utils.log(f"[Banner Grab] IP {ip}, Port {port}, Content:\n {banner.decode('utf-8', errors='ignore') }")
+                print(f"[Banner Grab] IP {ip}, Port {port}, Content:\n {banner.decode('utf-8', errors='ignore') }")
+                banner_collect.append((i, banner.decode('utf-8', errors='ignore') ))
+            except Exception as e:
+                print(f"[Banner Grab] IP {ip}, Port {port}: {type(e).__name__} - {str(e)}")
+                utils.log(f"[Banner Grab] IP {ip}, Port {port}: {type(e).__name__} - {str(e)}")
+                banner_collect.append((i, f"{type(e).__name__}"))
             
-
         sock.close()
         return {"ip":ip, "port":port, "serive":"null", "banner":banner_collect}
     
@@ -138,14 +124,13 @@ class BannerGrab:
                 ', '.join(str(target) for target in target_list)
             ))
 
-            loop = asyncio.get_event_loop()
-            asyncio.set_event_loop(loop)
-            
-            asyncio.get_event_loop().run_until_complete(self.async_banner_grab_tasks(target_list))
-
-            loop.close()
-            
-            print(self.result_collect)
+            if sys.version_info.major == 3 and sys.version_info.minor >= 7:
+                asyncio.run(self.async_banner_grab_tasks(target_list))
+            else:
+                loop = asyncio.get_event_loop()
+                asyncio.set_event_loop(loop)
+                asyncio.get_event_loop().run_until_complete(self.async_banner_grab_tasks(target_list))
+                loop.close()
 
             print("[Banner Grab] Done")
             utils.log("[Banner Grab] Done")
@@ -160,5 +145,6 @@ class BannerGrab:
 if __name__ == "__main__":
 
     BannerGrabInst = BannerGrab()
-    BannerGrabInst.banner_grab([("127.0.0.1", 80)])
+    BannerGrabInst.banner_grab(utils.getDannyIPandPorts())
+    print(BannerGrabInst.getResult())
 

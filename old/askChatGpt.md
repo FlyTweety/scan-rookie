@@ -26,18 +26,18 @@ async def banner_grab(self, ip, port, loop, timeout=3.0):
         if isinstance(banner, tuple) and isinstance(banner[1], bytes):
             utils.log(f"[Banner Grab] IP {ip}, Port {port}, Content:\n {banner[1].decode('utf-8', errors='ignore').strip()}")
             print(f"[Banner Grab] IP {ip}, Port {port}, Content:\n {banner[1].decode('utf-8', errors='ignore').strip()}")
-            return {"ip":ip, "port":port, "serive":"null", "banner":banner[1].decode('utf-8', errors='ignore').strip()}
+            return {"ip":ip, "port":port, "service":"null", "banner":banner[1].decode('utf-8', errors='ignore').strip()}
         else:
             raise asyncio.TimeoutError("No response received from the server")
 
     except asyncio.TimeoutError:
         utils.log(f"[Banner Grab] IP {ip}, Port {port},  Timeout")
         print(f"[Banner Grab] IP {ip}, Port {port},  Timeout")
-        return {"ip":ip, "port":port, "serive":"null", "banner":"timeout"}
+        return {"ip":ip, "port":port, "service":"null", "banner":"timeout"}
     except OSError as exc:
         utils.log(f"[Banner Grab] IP {ip}, Port {port},  {str(exc)}")
         print(f"[Banner Grab] IP {ip}, Port {port},  {str(exc)}")
-        return {"ip":ip, "port":port, "serive":"null", "banner":"refused"}
+        return {"ip":ip, "port":port, "service":"null", "banner":"refused"}
     finally:
         sock.close()
 ```
