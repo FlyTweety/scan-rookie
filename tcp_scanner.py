@@ -126,6 +126,10 @@ class TCPScanner():
                 print("Last one of this batch:", ip, str(last_one))
                 print(f'Time for this batch: {time.time() - start_time:.2f}')
 
+                time_used = time.time() - start_time
+                if time_used < 10:
+                    time.sleep(5)
+
     def getResult(self):
         return self.result_collect
             
