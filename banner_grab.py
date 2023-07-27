@@ -27,11 +27,12 @@ class BannerGrab:
         banner_collect = []
         ip, port = target
 
+        sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+        sock.setblocking(False)
+
         # STEP 1  Build TCP Connection
         try:
             # Create a socket object and connect to an IP  and Port.
-            sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-            sock.setblocking(False)
             await asyncio.wait_for(
                 asyncio.get_running_loop().sock_connect(sock, (ip, port)), 
                 timeout=3.0

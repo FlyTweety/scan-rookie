@@ -258,13 +258,11 @@ class SSDPScanner():
 
         start_time = time.time()
 
-        while True:
+        continue_listen = True
+        while continue_listen:
             try:
                 resp, raddr = sock.recvfrom(1024)
-            except:
-                pass
-            if resp:
-                data = self.get_serv_ua(resp.decode())
+                #data = self.get_serv_ua(resp.decode())
                 #print("\n")
                 #print("####RESP =", resp)
                 #print("####raddr =", raddr)
@@ -284,7 +282,17 @@ class SSDPScanner():
                 current_time = time.time()
                 elapsed_time = current_time - start_time
                 if elapsed_time > sniff_time:
-                    break
+                    print("[SSDP Scanning] time is up")
+                    continue_listen = False
+
+            except:
+                print("[SSDP Scanning] no msg in 5s")
+                current_time = time.time()
+                elapsed_time = current_time - start_time
+                if elapsed_time > sniff_time:
+                    print("[SSDP Scanning] time is up")
+                    continue_listen = False
+
                         
         sock.close()
 
@@ -318,5 +326,5 @@ class SSDPScanner():
 
 if __name__ == "__main__":
     SSDPScannerInstance = SSDPScanner()
-    SSDPScannerInstance.scan()
-    SSDPScannerInstance.sniff()
+    #SSDPScannerInstance.scan()
+    SSDPScannerInstance.sniff(sniff_time=60)
