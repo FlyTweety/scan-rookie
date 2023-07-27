@@ -37,9 +37,23 @@ class BannerGrab:
                 timeout=3.0
             )
         except Exception as e:
-            print(f"[Banner Grab] IP {ip}, Port {port}: {type(e).__name__} - {str(e)}")
-            utils.log(f"[Banner Grab] IP {ip}, Port {port}: {type(e).__name__} - {str(e)}")
-            return {"ip":ip, "port":port, "serive":"null", "banner":[(-2, f"{type(e).__name__}")]}
+            if isinstance(e, ConnectionResetError) or isinstance(e, BrokenPipeError):
+                try:
+                    await asyncio.sleep(3.0)
+                    await asyncio.wait_for(
+                        asyncio.get_running_loop().sock_connect(sock, (ip, port)), 
+                        timeout=3.0
+                    )
+                    print(f"[Banner Grab] IP {ip}, Port {port}: {type(e).__name__} reconnect success")
+                    utils.log(f"[Banner Grab] IP {ip}, Port {port}: {type(e).__name__}  reconnect success")
+                except:
+                    print(f"[Banner Grab] IP {ip}, Port {port}: {type(e).__name__} - {str(e)}")
+                    utils.log(f"[Banner Grab] IP {ip}, Port {port}: {type(e).__name__} - {str(e)}")
+                    return {"ip":ip, "port":port, "serive":"null", "banner":[(-2, f"{type(e).__name__}")]}
+            else:
+                print(f"[Banner Grab] IP {ip}, Port {port}: {type(e).__name__} - {str(e)}")
+                utils.log(f"[Banner Grab] IP {ip}, Port {port}: {type(e).__name__} - {str(e)}")
+                return {"ip":ip, "port":port, "serive":"null", "banner":[(-2, f"{type(e).__name__}")]}
 
 
         # STEP 2  Wait for server to send banner
@@ -49,24 +63,37 @@ class BannerGrab:
                 timeout=5.0
             )
         except Exception as e:
-            print(f"[Banner Grab] IP {ip}, Port {port}: {type(e).__name__} - {str(e)}")
-            utils.log(f"[Banner Grab] IP {ip}, Port {port}: {type(e).__name__} - {str(e)}")
-            banner_collect.append((-1, f"{type(e).__name__}"))
+            if isinstance(e, ConnectionResetError) or isinstance(e, BrokenPipeError):
+                try:
+                    await asyncio.sleep(3.0)
+                    await asyncio.wait_for(
+                        asyncio.get_running_loop().sock_connect(sock, (ip, port)), 
+                        timeout=3.0
+                    )
+                    print(f"[Banner Grab] IP {ip}, Port {port}: {type(e).__name__} reconnect success")
+                    utils.log(f"[Banner Grab] IP {ip}, Port {port}: {type(e).__name__}  reconnect success")
+                    banner_collect.append((-1, f"{type(e).__name__} reconnect success"))
+                except:
+                    print(f"[Banner Grab] IP {ip}, Port {port}: {type(e).__name__} reconnect fail")
+                    utils.log(f"[Banner Grab] IP {ip}, Port {port}: {type(e).__name__} reconnect fail")
+                    banner_collect.append((-1, f"{type(e).__name__} reconnect fail"))
+            else:
+                print(f"[Banner Grab] IP {ip}, Port {port}: {type(e).__name__} - {str(e)}")
+                utils.log(f"[Banner Grab] IP {ip}, Port {port}: {type(e).__name__} - {str(e)}")
+                banner_collect.append((-1, f"{type(e).__name__}"))
         else:
-            if isinstance(data, List) and isinstance(data[1], bytes): # data[0]:result of asyncio.sleep(3)  data[1]:result of loop.sock_recv(sock, 1024)
-                initial_data = data[1]
+            if isinstance(data, bytes): # data[0]:result of asyncio.sleep(3)  data[1]:result of loop.sock_recv(sock, 1024)
+                initial_data = data
                 utils.log(f"[Banner Grab] IP {ip}, Port {port}, Get Initial Data:\n {initial_data.decode('utf-8', errors='ignore') }")
                 print(f"[Banner Grab] IP {ip}, Port {port}, Get Initial Data:\n {initial_data.decode('utf-8', errors='ignore') }")
                 banner_collect.append((-1, initial_data.decode('utf-8', errors='ignore') ))
                 #return {"ip":ip, "port":port, "serive":"null", "banner":initial_data.decode('utf-8', errors='ignore') } # No need for take initiative to send data
             else:
-                print("[Banner Grab] get wrong inital data = ", data)
+                print(f"[Banner Grab] IP {ip}, Port {port}, get wrong inital data = {data}")
                 banner_collect.append((-1, "Wrong Initial Data"))
 
 
         # STEP 3  Send different bytes to server
-
-        # 多次频繁发送容易导致失败, 现在加个asyncio.sleep看看
 
         grab_msg_list = [self.generate_random_string(2), self.generate_random_string(32), self.generate_random_string(128), self.generate_random_string(2048)] + self.banner_grab_task_send_message
         for i in range(0, len(grab_msg_list)):
@@ -80,9 +107,24 @@ class BannerGrab:
                 print(f"[Banner Grab] IP {ip}, Port {port}, Content:\n {banner.decode('utf-8', errors='ignore') }")
                 banner_collect.append((i, banner.decode('utf-8', errors='ignore') ))
             except Exception as e:
-                print(f"[Banner Grab] IP {ip}, Port {port}: {type(e).__name__} - {str(e)}")
-                utils.log(f"[Banner Grab] IP {ip}, Port {port}: {type(e).__name__} - {str(e)}")
-                banner_collect.append((i, f"{type(e).__name__}"))
+                if isinstance(e, ConnectionResetError) or isinstance(e, BrokenPipeError):
+                    try:
+                        await asyncio.sleep(3.0)
+                        await asyncio.wait_for(
+                            asyncio.get_running_loop().sock_connect(sock, (ip, port)), 
+                            timeout=3.0
+                        )
+                        print(f"[Banner Grab] IP {ip}, Port {port}: {type(e).__name__} reconnect success")
+                        utils.log(f"[Banner Grab] IP {ip}, Port {port}: {type(e).__name__}  reconnect success")
+                        banner_collect.append((i, f"{type(e).__name__} reconnect success"))
+                    except:
+                        print(f"[Banner Grab] IP {ip}, Port {port}: {type(e).__name__} reconnect fail")
+                        utils.log(f"[Banner Grab] IP {ip}, Port {port}: {type(e).__name__} reconnect fail")
+                        banner_collect.append((i, f"{type(e).__name__} reconnect fail"))
+                else:
+                    print(f"[Banner Grab] IP {ip}, Port {port}: {type(e).__name__} - {str(e)}")
+                    utils.log(f"[Banner Grab] IP {ip}, Port {port}: {type(e).__name__} - {str(e)}")
+                    banner_collect.append((i, f"{type(e).__name__}"))
             
         sock.close()
         return {"ip":ip, "port":port, "serive":"null", "banner":banner_collect}
