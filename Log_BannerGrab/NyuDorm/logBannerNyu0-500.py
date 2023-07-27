@@ -7,6 +7,13 @@ with open('logBannerNyu0-500.txt', 'w') as file:
     for item in list_726:
         file.write(str(item) + '\n')
 
+# 去掉banner前面的标号
+for i in range(0, len(list_726)):
+    banner_list = list_726[i]['banner']
+    new_banner_list = []
+    for banner in banner_list:
+        new_banner_list.append(banner[1])
+    list_726[i]['banner'] = new_banner_list
 
 import pandas as pd
 
@@ -14,6 +21,6 @@ df = pd.DataFrame(list_726)
 
 df_expanded = pd.concat([df.drop("banner", axis=1), df["banner"].apply(pd.Series)], axis=1)
 
-df_expanded.to_excel("logBannerNyu0-500.xlsx", index=False)
+df_expanded = df_expanded.replace('[\x00-\x08\x0b\x0c\x0e-\x1f]|[\ud800-\udfff]', 'X', regex=True)
 
-df = pd.DataFrame(list_726)
+df_expanded.to_excel("logBannerNyu0-500.xlsx", index=False)
