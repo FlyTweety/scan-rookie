@@ -128,7 +128,7 @@ class TCPScanner():
 
                 time_used = time.time() - start_time
                 if time_used < 10:
-                    time.sleep(5)
+                    time.sleep(3)
 
     def getResult(self):
         return self.result_collect
