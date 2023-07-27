@@ -310,8 +310,6 @@ class SSDPScanner():
                     print('[SSDP Scanning] Sniffer known location\t%s' % location)
                     utils.log('[SSDP Scanning] Sniffer known location\t%s' % location)
 
-            #要先判断每个location是不是已经在self.result_collect里面了
-
             if len(new_locations) > 0:
                 self.parse_locations(new_locations)
 
