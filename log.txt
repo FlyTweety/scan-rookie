@@ -74,3 +74,11 @@
 [2023-07-26 22:23:22.660748] [Banner Grab] Start Banner Grab on 1 target ('127.0.0.1', 80)
 [2023-07-26 22:23:22.661359] [Banner Grab] IP 127.0.0.1, Port 80: ConnectionRefusedError - [Errno 111] Connect call failed ('127.0.0.1', 80)
 [2023-07-26 22:23:22.661578] [Banner Grab] Done
+[2023-07-27 21:17:52.638323] [TCP Scanning] Start scanning 9 IPs: 1, 2, 7, ., 0, ., 0, ., 1
+[2023-07-27 21:17:52.638549] [TCP Scanning] Scan 65K ports
+[2023-07-27 21:18:08.716948] [TCP Scanning] Start scanning 9 IPs: 1, 2, 7, ., 0, ., 0, ., 1
+[2023-07-27 21:18:08.717147] [TCP Scanning] Scan 65K ports
+[2023-07-27 21:18:27.990099] [TCP Scanning] Start scanning 1 IPs: 127.0.0.1
+[2023-07-27 21:18:27.990392] [TCP Scanning] Scan 65K ports
+[2023-07-27 21:18:44.561406] [TCP Scanning] Start scanning 1 IPs: 127.0.0.1
+[2023-07-27 21:18:44.561667] [TCP Scanning] Scan 65K ports

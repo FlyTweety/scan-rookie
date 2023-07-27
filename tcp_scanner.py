@@ -4,6 +4,8 @@ import time
 import asyncio
 from asyncio import Queue, TimeoutError, gather
 from typing import List
+import random
+
 
 import scapy.all as sc
 
@@ -110,7 +112,10 @@ class TCPScanner():
             
     
             for batch_port_list in split_ip_port_list:
+
+                random.shuffle(batch_port_list)
                 
+                last_one = batch_port_list[-1]
                 start_time = time.time()
 
                 if sys.version_info.major == 3 and sys.version_info.minor >= 7:
@@ -118,7 +123,7 @@ class TCPScanner():
                 else:
                     asyncio.get_event_loop().run_until_complete(self.async_scan_tasks(ip, batch_port_list))
                 
-                print("Last one of this batch:", ip, str(batch_port_list[-1]))
+                print("Last one of this batch:", ip, str(last_one))
                 print(f'Time for this batch: {time.time() - start_time:.2f}')
 
     def getResult(self):
@@ -129,4 +134,4 @@ class TCPScanner():
 
 if __name__ == '__main__':
     TCPScannerInstance = TCPScanner()
-    TCPScannerInstance.scan("127.0.0.1", scanAll = True)
+    TCPScannerInstance.scan(["127.0.0.1"], scanAll = True)
