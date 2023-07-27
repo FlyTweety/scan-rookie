@@ -211,7 +211,11 @@ class SSDPScanner():
     def scan(self):
         print("[SSDP Scanning] Start.")
         locations, ip_ports = self.discover_pnp_locations()
-        self.parse_locations(locations)
+        new_locations = []
+        for location in locations:
+            if self.alreadyKnownThisLocation(location) == False:
+                new_locations.append(location)
+        self.parse_locations(new_locations)
         print("[SSDP Scanning] Finish.")
 
     def get_serv_ua(self, resp):
