@@ -32,7 +32,7 @@ class TCPScanner():
             ip, port = ip_port
             #print(ip, port)
             sock = socket(AF_INET, SOCK_STREAM)
-            #sock.setblocking(False) #有时能大幅加速，有时不能
+            sock.setblocking(False) # Sometimes can dramatically accerate the scan. May be detrimental for low performance device
             try:
                 if sys.version_info.major == 3 and sys.version_info.minor >= 7:
                     async with timeout(self.timeout):
@@ -110,7 +110,6 @@ class TCPScanner():
         for ip in target_ip_list:
             print("[TCP Scanning] Start scan on ip =", ip)
             
-    
             for batch_port_list in split_ip_port_list:
 
                 random.shuffle(batch_port_list)
@@ -126,9 +125,10 @@ class TCPScanner():
                 print("Last one of this batch:", ip, str(last_one))
                 print(f'Time for this batch: {time.time() - start_time:.2f}')
 
-                time_used = time.time() - start_time
-                if time_used < 10:
-                    time.sleep(3)
+                # If you dont like scan too fast
+                # time_used = time.time() - start_time
+                # if time_used < 10:
+                #     time.sleep(3)
 
     def getResult(self):
         return self.result_collect
