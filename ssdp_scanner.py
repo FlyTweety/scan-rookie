@@ -13,7 +13,6 @@ try:
 except ImportError:
     from urllib.parse import urlparse
 
-#现在能正常工作，但不知道该把哪些记到log里
 
 class SSDPInfo():
 
@@ -42,9 +41,6 @@ class SSDPScanner():
 
     def __init__(self):
         self.result_collect = []
-        #要把ip-port-具体服务串起来 要把这个代码给我列出的各种属性都放一起
-        #具体的服务就不管了
-        #find-mapping这个就不管了
 
     ###
     # Send a multicast message tell all the pnp services that we are looking
@@ -69,7 +65,7 @@ class SSDPScanner():
                         '\r\n')
 
         sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
-        #sock.setblocking(False) #这里没做并发，所以没什么区别
+        #sock.setblocking(False) # we are not async here, so we don't make it nonblocking
         sock.sendto(ssdpDiscover.encode('ASCII'), ("239.255.255.250", 1900))
         sock.settimeout(5)
         try:
@@ -85,7 +81,7 @@ class SSDPScanner():
                     ip_ports.add(ip_port)
 
         except socket.error:
-            sock.close() # 因为都是通过异常来退出，所以肯定会运行到这里
+            sock.close() # Exit while loop with exception, so this line will always been executed
 
         print('[SSDP Scanning] Discovery complete')
         print('[SSDP Scanning] %d locations found:' % len(locations))
@@ -129,7 +125,8 @@ class SSDPScanner():
                 ssdp_info = SSDPInfo()
                 try:
                     resp = requests.get(location, timeout=3)
-                    #能运行到这里说明获取到回复了
+
+                    # if we can reach this place, we must have got some reply
                     ssdp_info.scan_time = time.time()
                     ssdp_info.location = location
                     match = re.search(r"http://(\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}):(\d+)/(.*)", location)
@@ -203,7 +200,7 @@ class SSDPScanner():
                 except requests.exceptions.ReadTimeout:
                     print('[SSDP Scanning] Timeout reading from %s' % location)
 
-                self.result_collect.append(ssdp_info) #应该就是一堆字符串，不会占太多空间吧
+                self.result_collect.append(ssdp_info) 
             print("[SSDP Scanning] Done Parsing")
             utils.log("[SSDP Scanning] Done Parsing")
         return
@@ -231,9 +228,8 @@ class SSDPScanner():
                 return True
         return False
 
-    def sniff(self, sniff_time = 10): #和scan同时运行可能会出错
+    def sniff(self, sniff_time = 10): # Don't run it with scan() at the same time
 
-        #添加从监听解析位置的选项（记住有哪些位置）
         print("[SSDP Scanning] [sniffer mode] Max sniff time =", str(sniff_time))
         utils.log("[SSDP Scanning] [sniffer mode] start")
 
@@ -241,7 +237,7 @@ class SSDPScanner():
         sock.settimeout(5)
 
         try:
-            #现在windows这里会报错，可能是windows只能绑本机的，或者没开多播，或者防火墙
+            # ! can not work on windows here
             sock.bind(("239.255.255.250", 1900)) 
         except:
             print("[SSDP Scanning] System does not support SSDP sniff")
