@@ -19,21 +19,21 @@ class SSDPInfo():
 
     def __init__(self):
 
-        self.scan_time = None
+        self.scan_time = 0
 
-        self.location = None
-        self.ip = None
-        self.port = None
-        self.outer_file_name = None
+        self.location = ""
+        self.ip = ""
+        self.port = ""
+        self.outer_file_name = ""
 
-        self.server_string = None
-        self.device_type = None
-        self.friendly_name = None
-        self.manufacturer = None
-        self.manufacturer_url = None
-        self.model_description = None
-        self.model_name = None
-        self.model_number = None
+        self.server_string = ""
+        self.device_type = ""
+        self.friendly_name = ""
+        self.manufacturer = ""
+        self.manufacturer_url = ""
+        self.model_description = ""
+        self.model_name = ""
+        self.model_number = ""
 
         self.services_list = []
 
@@ -171,7 +171,7 @@ class SSDPScanner():
                         print('\t\t=> Control: %s' % control)
                         print('\t\t=> Events: %s' % events)
 
-                        this_service = {"service_url":None, "service_type":service_type, "control":control, "events":events, "actions":[]}
+                        this_service = {"service_url":"", "service_type":service_type, "control":control, "events":events, "actions":[]}
 
                         # Add a lead in '/' if it doesn't exist
                         scp = service.find('./{urn:schemas-upnp-org:device-1-0}SCPDURL').text
