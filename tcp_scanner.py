@@ -32,15 +32,12 @@ class TCPScanner():
             ip, port = ip_port
             #print(ip, port)
             sock = socket(AF_INET, SOCK_STREAM)
-            sock.setblocking(False) # Sometimes can dramatically accerate the scan. May be detrimental for low performance device
+            sock.setblocking(False) # May be detrimental for low performance device
             try:
                 if sys.version_info.major == 3 and sys.version_info.minor >= 7:
                     async with timeout(self.timeout):
-                        # 这里windows和Linux返回值不一样
-                        # windows返回sock对象，Linux返回None
                         await asyncio.get_event_loop().sock_connect(sock, (ip, port))
                         t2 = time.time()
-                        # 所以这里直接直接判断sock
                         if sock:
                             self.result_collect.append((ip, port))
                             print(time.strftime('%Y-%m-%d %H:%M:%S'), ip, port, 'open', round(t2 - t1, 2))
@@ -51,12 +48,12 @@ class TCPScanner():
                         if sock:
                             self.result_collect.append((ip, port))
                             print(time.strftime('%Y-%m-%d %H:%M:%S'), ip, port, 'open', round(t2 - t1, 2))
-            # we have to deal with the exception, otherwise it will stopp
+                sock.close()
+            # we have to deal with the exception, otherwise this task will stop
             except:
                 #self.error.append((ip, port))
                 #print("exception")
                 sock.close()
-            sock.close()
             self.queue.task_done()
             #print("done")
 
@@ -103,14 +100,14 @@ class TCPScanner():
 
         if scanAll == True:
             all_port_list = [i for i in range(1, 65536)]
-            split_ip_port_list = utils.split_array(all_port_list, 5000) #python垃圾回收机制会自动处理all_port_list？
+            split_port_list = utils.split_array(all_port_list, 5000) 
         else:
-            split_ip_port_list = [utils.get_port_list()]
+            split_port_list = [utils.get_port_list()]
 
         for ip in target_ip_list:
             print("[TCP Scanning] Start scan on ip =", ip)
             
-            for batch_port_list in split_ip_port_list:
+            for batch_port_list in split_port_list:
 
                 random.shuffle(batch_port_list)
                 
